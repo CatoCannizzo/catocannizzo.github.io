@@ -72,3 +72,15 @@ a {
   color: #fff;
   text-decoration: none;
 }
+
+.flexb {
+  display: flex;
+  justify-content: space-around;
+}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}

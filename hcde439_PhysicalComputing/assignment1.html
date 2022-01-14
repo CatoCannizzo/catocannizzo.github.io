@@ -14,11 +14,120 @@
         <div class="header">
             <h1>Example Student's Assignment 1!</h1>
             <p>
-            <img src="red-panda.jpg" width=400></a>
+            <img src="Pictures/CircuitOperation.gif" width=400></a>
             </p>
             <p>
             Here is all the documentation for assignment 1!
             </p>
+            <div class = "flexb">
+                <div>
+                    <h3>Schematic</h3>
+                    <img src="Pictures/schematic_1.jpg" width=400></a>
+                </div>
+                <div>
+                    <h3>Circuit</h3>
+                    <img src="Pictures/Circuit.jpg" width=400></a>  
+                </div>
+            </div>
+            <pre>
+                <code>                    
+// Initializes the variable wait1 to be a int of 100
+int wait1 = 50;
+// Initializes the variable wait2 to be a int of 500
+int wait2 = 500;
+// Initializes the variable wait3 to be a int of 1000
+int wait3 = 1000;
+// Initializes the variable wait4 to be a int of 250
+int wait4 = 200;
+  
+void setup() {
+  // put your setup code here, to run once:
+
+  // Initializes pin 1
+  pinMode(1,OUTPUT);
+  // Initializes pin 2
+  pinMode(2,OUTPUT);
+  // Initializes pin 3
+  pinMode(3,OUTPUT);
+}
+
+void loop() {
+    // put your main code here, to run repeatedly:
+
+    // A for loop to run the following segment 3 times, telling me my code is about to start
+    for (int i = 0; i <= 3; i++) {
+        // turns on led connected to pin 1
+        digitalWrite(1, HIGH);
+        // turns on led connected to pin 2
+        digitalWrite(2, HIGH);
+        // turns on led connected to pin 3
+        digitalWrite(3, HIGH);
+        // stops code for wait1 miliseconds
+        delay(wait1);
+        // turns off led connected to pin 1
+        digitalWrite(1, LOW);
+        // turns off led connected to pin 2
+        digitalWrite(2, LOW);
+        // turns off led connected to pin 3
+        digitalWrite(3, LOW);
+        // stops code for wait1 miliseconds
+        delay(wait1);
+    }
+    // waits 0.75 sec for lights to start
+    delay(750);
+    // Calls main function of repeating code
+    melodyFunction();
+    // Calls main function of repeating code
+    melodyFunction();
+    // Calls secondary segment of code passing in 3 to light up the 3 LED
+    oneUhPenny(3);
+    // Calls secondary segment of code passing in 2 to light up the 2 LED
+    oneUhPenny(2);
+    // Calls main function of repeating code
+    melodyFunction();
+    // waits 2 seconds to give visual rest after the presentation
+    delay(2000);  
+}
+
+// makes a function for the secondary repeated segment of code with a variable being passed in for which LED to light up
+int oneUhPenny(int x) {
+    // For loop to run the following segment of code 4 times
+    for (int i=0; i <=4; i++){
+        //Turns on the LED (pin) for which ever variable was passed
+        digitalWrite(x, HIGH);
+        // stops code for wait4 miliseconds
+        delay(wait4);
+        //Turns off the LED (pin) for which ever variable was passed
+        digitalWrite(x, LOW);
+        // stops code for wait1 miliseconds
+        delay(wait1);
+    }
+}
+
+// makes a function for the repeated segment of  code
+void melodyFunction(){
+  // turns on led connected to pin 1
+  digitalWrite(1, HIGH);
+   // stops code for wait2 miliseconds
+  delay(wait2);
+  // turns off led connected to pin 1
+  digitalWrite(1, LOW);
+  // turns on led connected to pin 2
+  digitalWrite(2, HIGH);
+   // stops code for wait2 miliseconds
+  delay(wait2);
+  // turns off led connected to pin 2
+  digitalWrite(2, LOW);
+  // turns on led connected to pin 3
+  digitalWrite(3, HIGH);
+   // stops code for wait3 miliseconds
+  delay(wait3);
+  // turns off led connected to pin 3
+  digitalWrite(3, LOW);
+}
+                </code>
+            </pre>
+            
         </div>
         
     </body>
