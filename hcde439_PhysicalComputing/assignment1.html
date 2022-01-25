@@ -23,6 +23,15 @@
                 <div>
                     <h3>Schematic</h3>
                     <img src="Pictures/updatedSchematic.jpg" width=400></a>
+                    <p>I used a 100 and two 220 resistors for the blue and yellow/red leds<br>
+                        respectively as they were the smallest resistors possible while <br>
+                        not overloading the LEDs max current. The blue LED has a higher voltage <br>
+                        drop so has a smaller resistor.</p>
+                    <p>Resistor math: <br> 
+                        RYG LEDs have a 1.8 V drop => 5 V (from power) - 1.8 V = 3.2 V<br>
+                        3.2 V / 0.02 I (ideal current) = 160 Ω (Closest higher Ω resistor is 220)<br>
+                        This math is repeated for Blue & White LEDs 3.3 V drop giving us 85 Ω rounded <br>
+                        to the closest resistor of 100 Ω</p>
                 </div>
                 <div>
                     <h3>Circuit</h3>
