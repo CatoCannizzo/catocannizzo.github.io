@@ -3,39 +3,45 @@
     <head> 
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
-
-        <title>Cato Cannizzo's HCDE 439 Physical Computing Page!</title> 
-
-        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
-
+        <title>Cato's HCDE 439 </title> 
+        <link href="styles/style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="styles/breakpoints.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="styles/images.css" media="screen" rel="stylesheet" type="text/css" />
     </head> 
-    <body> 
 
+    <body> 
         <div class="header">
             <h1>Cato Cannizzo's HCDE 439 Physical Computing Page!</h1>
-            <p>
-            <img src="Pictures/CatoNaturePortrait.JPG" width=400></a>
-            </p>
+            <div class="imageHead"></div>
             <p>
             My name is Cato Cannizzo! I'm an HCDE major and excited to learn the following things in this class: how to use git, and how to make physical prototypes.
             </p>
         </div>
-        <div class="assignments">
+        <div class = "flexb left">
+            <div class="assignments">
 
-            <div class="assignment">
-              <a href="assignment1.html"><h2>Assignment 1: Blink!</h2>
-                  <img src="Pictures/updatedSchematic.jpg" height=175></a>
-                <p>
-		Assignment 1 was Hot Cross Buns!
-                </p>
+                <a href="assignment1.html"><div class="item assignment">
+                <h2>Assignment 1: Blink!</h2>
+                    <div class="imageA1"></div>
+                    <p>
+                    Assignment 1 was Hot Cross Buns!
+                    </p>
+                </div></a>
+
+                <a href="assignment2.html"><div class="item assignment">
+                    <h2>Assignment 2: Fade!</h2>
+                    <div class="imageA2"></div>
+                    <p>
+                    Assignment 2 was physically controling a LED!
+                    </p>
+                </div></a>
             </div>
-
-            <div class="assignment">
-              <a href="assignment2.html"><h2>Assignment 2: Fade!</h2>
-                  <img src="Pictures/A2/a2schematic.jpg" height=175></a>
-                <p>
-		Assignment 2 was physically controling a LED!
-                </p>
+            <div class="item list" width=175>
+                <h3 style = "margin: 0.5rem 0 1rem;">List of in class assignments (ICAs)</h3>
+                <a href="ICAphotoresistor.html"></a><div class="ICAlink">
+                    <h3 style = "color:blue">ICA for 25-01-22</h3>
+                    <p>Today we controlled a LED with a photoresistor</p>
+                </div></a>
             </div>
 	</div>
     </body>

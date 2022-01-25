@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 13px;
+    /*You can add other changes here say if you want 
+      your header to change by a bigger ratio than the 
+      the font size ratio found here*/
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+}

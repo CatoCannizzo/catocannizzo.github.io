@@ -1,0 +1,108 @@
+.imageHead {
+  background: url("../Pictures/LandingPage/CatoNaturePortrait.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 15rem;
+  width: 25rem;
+  border-radius: 1rem;
+}
+.imageA1 {
+  background: url("../Pictures/A1/updatedSchematic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 1rem;
+}
+.imageA2 {
+  background: url("../Pictures/A2/a2schematic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 15rem;
+  width: 18rem;
+  border-radius: 1rem;
+}
+.imageA1Gif {
+  background: url("../Pictures/A1/CircuitOperation.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 1rem;
+}
+.imageA1Schem {
+  background: url("../Pictures/A1/updatedSchematic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 1rem;
+}
+.imageA1Circuit {
+  background: url("../Pictures/A1/Circuit.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 1rem;
+}
+.imageA2gif {
+  background: url("../Pictures/A2/a2gif.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 1rem;
+}
+.imageA2schem {
+  background: url("../Pictures/A2/a2schematic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 33rem;
+  border-radius: 1rem;
+}
+.imageA2circ {
+  background: url("../Pictures/A2/a2circuit.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 1rem;
+}
+.ICAgif {
+  background: url("../Pictures/ICA_PhotoR/photoR.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 1rem;
+}
+.ICAschem {
+  background: url("../Pictures/ICA_PhotoR/ICAphotoresistor.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 40rem;
+  border-radius: 1rem;
+}
+.ICAcirc {
+  background: url("../Pictures/ICA_PhotoR/PXL_20220125_190909829.MP.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 1rem;
+}

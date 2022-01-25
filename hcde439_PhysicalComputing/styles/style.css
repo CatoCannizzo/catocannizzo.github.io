@@ -1,0 +1,93 @@
+html,
+body {
+  padding: 0 0 0 0;
+  margin: 0;
+  font-family: "helvetica", "arial", "sans";
+  /* background: linear-gradient(45deg, #bdc3c7, #2c3e50); */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "helvetica", "arial", "sans";
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1.1rem;
+}
+p {
+  font-size: 0.8rem;
+}
+
+a {
+  color: #000;
+}
+
+.header {
+  color: #000;
+  height: auto;
+  padding: 2rem 2rem 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.assignment {
+  line-height: 1.5rem;
+  font-family: "helvetica", "arial", "sans";
+  overflow: hidden;
+  float: left;
+}
+
+.assignment:hover {
+  overflow: auto;
+  background: #f06;
+  text-decoration: none;
+}
+
+.flexb {
+  display: flex;
+}
+
+pre code {
+  background-color: #eee;
+  border: 0.1rem solid #999;
+  display: block;
+  padding: 1rem;
+}
+
+.left {
+  justify-content: left;
+}
+
+.item {
+  width: 19rem;
+  height: 20rem;
+  border-style: solid;
+  border-color: darkgray;
+  border-width: 0.2rem;
+  border-radius: 1rem;
+  margin: 0.25rem 0.5rem;
+  padding: 0 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: lightgrey;
+}
+
+.list h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.list p {
+  margin: 0 0 1rem;
+}

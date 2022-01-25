@@ -1,36 +1,47 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 
-        <title>Cato's HCDE 439 ICA for 25-01-22!</title> 
+    <title>Cato's HCDE 439 ICA for 25-01-22!</title>
 
-        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
-
-    </head> 
-    <body> 
-
-        <div class="header">
-            <h1>Catos's ICA with photo Resistors!</h1>
-            <p>
-            <img src="Pictures/ICA_PhotoR/photoR.gif" width=400></a>
-            </p>
-            <p>
-            Here is all the documentation for assignment 1!
-            </p>
-            <div class = "flexb">
-                <div>
-                    <h3>Schematic</h3>
-                    <img src="Pictures/ICA_PhotoR/ICAphotoresistor.png" width=400></a>
-                </div>
-                <div>
-                    <h3>Circuit</h3>
-                    <img src="Pictures/ICA_PhotoR/PXL_20220125_190909829.MP.jpg" width=400></a>  
-                </div>
-            </div>
-            <h3>Code</h3>
-            <pre>
+    <link
+      href="styles/style.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="styles/breakpoints.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="styles/images.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Catos's ICA with photo Resistors!</h1>
+      <div class="ICAgif"></div>
+      <p>Here is all the documentation for the In Class Assignment!</p>
+      <div class="flexb">
+        <div>
+          <h3>Schematic</h3>
+          <div class="ICAschem"></div>
+        </div>
+        <div>
+          <h3>Circuit</h3>
+          <div class="ICAcirc"></div>
+        </div>
+      </div>
+      <h3>Code</h3>
+      <pre>
                 <code>                    
 const int analogIn = A0;
 const int LEDout = 6;
@@ -53,8 +64,6 @@ void loop() {
 
                 </code>
             </pre>
-            
-        </div>
-        
-    </body>
+    </div>
+  </body>
 </html>
