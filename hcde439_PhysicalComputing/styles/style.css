@@ -28,6 +28,7 @@ p {
 
 a {
   color: #000;
+  text-decoration: none;
 }
 
 .header {
@@ -89,5 +90,16 @@ pre code {
   margin: 0;
 }
 .list p {
-  margin: 0 0 1rem;
+  margin: 0;
+}
+.ICAlink {
+  border-style: solid;
+  border-radius: 0.3rem;
+  border-color: rgb(126, 146, 177);
+  border-width: 0.2rem;
+  padding: 0.2rem;
+  width: 17rem;
+}
+.ICAlink:hover {
+  background: #f06;
 }

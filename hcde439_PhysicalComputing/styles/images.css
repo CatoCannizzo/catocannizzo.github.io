@@ -79,7 +79,7 @@
   width: 20rem;
   border-radius: 1rem;
 }
-.ICAgif {
+.ICA1gif {
   background: url("../Pictures/ICA_PhotoR/photoR.gif");
   background-position: center;
   background-repeat: no-repeat;
@@ -88,7 +88,7 @@
   width: 20rem;
   border-radius: 1rem;
 }
-.ICAschem {
+.ICA1schem {
   background: url("../Pictures/ICA_PhotoR/ICAphotoresistor.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -97,8 +97,35 @@
   width: 40rem;
   border-radius: 1rem;
 }
-.ICAcirc {
+.ICA1circ {
   background: url("../Pictures/ICA_PhotoR/PXL_20220125_190909829.MP.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 1rem;
+}
+.ICA2gif {
+  background: url("../Pictures/ICA_Servo/ICA2gif.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 1rem;
+}
+.ICA2schem {
+  background: url("../Pictures/ICA_Servo/ICA2Schem.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 40rem;
+  border-radius: 1rem;
+}
+.ICA2circ {
+  background: url("../Pictures/ICA_Servo/ICA2Circuit.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
