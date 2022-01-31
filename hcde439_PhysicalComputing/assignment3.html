@@ -54,12 +54,12 @@ const int servoPin = 3; //analog output pin that will control angle to the servo
 int lightRead = 0; //raw value from photoresistor. Not to long of a value... you could say its a lightweight read
 int sevOut = 0; //mapped value outputted to servo
 
-# include <Servo.h> //adds library for servo
+# include &lt;Servo.h&gt; //adds library for servo
 Servo myS; //initalizes servo as myS
 
 void setup() {
     // put your setup code here, to run once:
-    Serial.begin(9600); // Initializes serial outpur @ 9600 cereals err bits a second. Useful for learning, mapping and debugging.
+    Serial.begin(9600); // Initializes serial output @ 9600 cereals err bits a second. Useful for learning, mapping and debugging.
     myS.attach(servoPin); // Initializes servopin as a servopin output with the servo library
 }
 
@@ -72,7 +72,7 @@ void loop() {
     Serial.print("raw light: ");
     Serial.println(lightRead);
 
-    sevOut = map(lightRead, 0, 1023, 0, 180);//maps input and output 20 was the lowest reading so defaulted to 0 to avoid the use of constrain the highest was 1010 so again I defaulted to 10123
+    sevOut = map(lightRead, 0, 1023, 0, 180);//maps input and output 20 was the lowest reading so defaulted to 0 to avoid the use of constrain the highest was 1010 so again I defaulted to 1023
     myS.write(sevOut); //outputs to servo
     delay(500); //lets the servo move with out being interupted 
 
