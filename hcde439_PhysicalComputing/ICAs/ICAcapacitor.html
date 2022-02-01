@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+    <title>Cato's HCDE 439 ICA for 25-01-22!</title>
+
+    <link
+      href="../styles/style.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../styles/breakpoints.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../styles/images.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Catos's ICA with capacitor!</h1>
+      <div class="ICA3gif"></div>
+      <p>Here is all the documentation for the In Class Assignment (ICA)!</p>
+      <div class="flexb">
+        <div>
+          <h3>Schematic</h3>
+          <div class="ICA3schem"></div>
+        </div>
+        <div>
+          <h3>Circuit</h3>
+          <div class="ICA3circ"></div>
+        </div>
+      </div>
+      <h3>Code</h3>
+      <pre>
+                <code>                    
+                    #include <CapacitiveSensor.h>
+CapacitiveSensor   cs_4_2 = CapacitiveSensor(4,2);      // 1 megohm resistor between pins 4 & 2, pin 2 is sensor pin, add wire, metal thing
+int mappedOut = 0;
+
+void setup() {
+    cs_4_2.set_CS_AutocaL_Millis(0xFFFFFFFF);  // turn off autocalibrate on channel 1 - just as an example
+    Serial.begin(9600);
+}
+
+void loop()                  
+{
+    long start = millis();
+    long total1 =  cs_4_2.capacitiveSensor(30);
+
+    Serial.print(millis() - start);     // check on performance in milliseconds
+    Serial.print("\t");                 // tab character for debug window spacing
+
+    delay(10);  // arbitrary delay to limit data to serial port
+    total1 = constrain(total1, 50, 1000);
+    mappedOut = map(total1, 50,1000, 0, 255);
+    analogWrite(3, mappedOut);
+
+    Serial.println(total1);             // print sensor output 1
+}
+                </code>
+            </pre>
+    </div>
+  </body>
+</html>

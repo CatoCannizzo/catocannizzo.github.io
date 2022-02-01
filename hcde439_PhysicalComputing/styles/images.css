@@ -169,3 +169,57 @@
 	width: 10rem;
 	border-radius: 1rem;
 }
+.ICA3gif {
+	background: url("../Pictures/ICACap/ICACapgif.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 15rem;
+	border-radius: 1rem;
+}
+.ICA3schem {
+	background: url("../Pictures/ICACap/ICA3CapSchem.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 20rem;
+	border-radius: 1rem;
+}
+.ICA3circ {
+	background: url("../Pictures/ICACap/ICACapCircuit.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 19rem;
+	border-radius: 1rem;
+}
+.ICA4gif {
+	background: url("../Pictures/ICARemote/ICARemotegif.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 15rem;
+	border-radius: 1rem;
+}
+.ICA4schem {
+	background: url("../Pictures/ICARemote/ICA4Remote.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 20rem;
+	border-radius: 1rem;
+}
+.ICA4circ {
+	background: url("../Pictures/ICARemote/ICERemoteCirc.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 19rem;
+	border-radius: 1rem;
+}
