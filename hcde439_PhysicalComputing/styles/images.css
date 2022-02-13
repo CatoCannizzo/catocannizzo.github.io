@@ -223,3 +223,39 @@
 	width: 19rem;
 	border-radius: 1rem;
 }
+.imageA4gif {
+	background: url("../Pictures/A4/A4Gif.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 28rem;
+	border-radius: 1rem;
+}
+.imageA4schem {
+	background: url("../Pictures/A4/A4Schem.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 40rem;
+	border-radius: 1rem;
+}
+.imageA4circ {
+	background: url("../Pictures/A4/A4Circ.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 30rem;
+	border-radius: 1rem;
+}
+.imageA4 {
+	background: url("../Pictures/A4/A4Schem.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 9.5rem;
+	width: 18rem;
+	border-radius: 1rem;
+}
