@@ -259,3 +259,30 @@
 	width: 18rem;
 	border-radius: 1rem;
 }
+.ICA5gif {
+	background: url("../Pictures/ICA_HBridgeDC/ICA5_Gif.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 20rem;
+	border-radius: 1rem;
+}
+.ICA5schem {
+	background: url("");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 20rem;
+	border-radius: 1rem;
+}
+.ICA5circ {
+	background: url("../Pictures/ICA_HBridgeDC/ICA5_Circ.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 20rem;
+	border-radius: 1rem;
+}
