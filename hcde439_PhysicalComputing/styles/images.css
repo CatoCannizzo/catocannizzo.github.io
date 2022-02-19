@@ -286,3 +286,39 @@
 	width: 20rem;
 	border-radius: 1rem;
 }
+.imageA5gif {
+	background: url("../Pictures/A5/A5Gif.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 15rem;
+	border-radius: 1rem;
+}
+.imageA5schem {
+	background: url("../Pictures/A5/A5Schem.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 25rem;
+	border-radius: 1rem;
+}
+.imageA5circ {
+	background: url("../Pictures/A5/A5Circ.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 18rem;
+	border-radius: 1rem;
+}
+.imageA5 {
+	background: url("../Pictures/A5/A5Schem.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 9.5rem;
+	width: 15rem;
+	border-radius: 1rem;
+}
