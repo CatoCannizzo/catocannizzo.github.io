@@ -55,6 +55,7 @@ a {
 
 .flexb {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 pre code {
@@ -72,7 +73,7 @@ pre code {
 	width: 19rem;
 	height: 20rem;
 	border-style: solid;
-	border-color: darkgray;
+	border-color: black;
 	border-width: 0.2rem;
 	border-radius: 1rem;
 	margin: 0.25rem 0.5rem;
@@ -81,9 +82,12 @@ pre code {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: lightgrey;
+	background: white;
 }
-
+.list {
+	overflow: scroll;
+	overflow-x: hidden;
+}
 .list h3 {
 	font-size: 1.1rem;
 	margin: 0;
@@ -97,7 +101,7 @@ pre code {
 	border-color: rgb(126, 146, 177);
 	border-width: 0.2rem;
 	padding: 0.2rem;
-	width: 17rem;
+	width: 100%;
 }
 .ICAlink:hover {
 	background: #f06;
