@@ -1,0 +1,155 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Cato's Assignment 5!</title> 
+
+        <link href="../styles/style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../styles/breakpoints.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../styles/images.css" media="screen" rel="stylesheet" type="text/css" />
+    </head> 
+    <body> 
+
+        <div class="header">
+            <h1>Cato's Assignment 5!</h1>
+            <p>
+            Here is all the documentation for the remote control LED strip I made!
+            </p>
+            <div class = "flexb">
+                <div>       
+                    <h3>Gif</h3> 
+                    <div class="imageA5gif"></div>
+                    </div>
+                <div>
+                    <h3>Schematic</h3>
+                    <div class="imageA5schem"></div>
+                </div>
+                <div>
+                    <h3>Circuit</h3>
+                    <div class="imageA5circ"></div>
+                </div>
+            </div>
+        <div class = "flexb">
+            <div style="max-width: 30rem; margin-right: 2rem;"><p>Transistor:<br>
+                The transistor can take a max of 60 V or 32 A on the drain side.
+                The gate of the transistor recieves 5 V.
+                The drain can recieve a max of 12 V & 1.5 A as thats what the LED lights are rated for.
+                </p></div>
+
+        </div>        
+            <div class="flexb">
+                <div>
+                    <h3>Code</h3>
+                    <pre>
+                        <code>                    
+#include &lt;IRremote.h&gt;
+
+    bool pwr = false;
+    bool fade = false;
+    int led = 9;           // the PWM pin the LED is attached to
+    int brightness = 200;    // how bright the LED is
+    int fadeAmount = 5;    // how many points to fade the LED by
+    const int RECV_PIN = 7; //the pin the reciever sends signals to
+    String value;
+    
+    IRrecv irrecv(RECV_PIN); //tells the IRremote library where to listen to
+    decode_results results; //makes a variable in which IR signal results are stored
+    
+    void setup()
+    {
+        Serial.begin(9600); //begin serial logging
+        irrecv.enableIRIn(); // Start the receiver
+        pinMode(led, OUTPUT);// declare pin 9 to be an output
+    }
+    
+    void debug(){
+        Serial.print("fadeAmount: ");
+        Serial.println(fadeAmount);
+        Serial.print("brightness: ");
+        Serial.println(brightness);
+        Serial.print("fade: ");
+        Serial.println(fade);
+        Serial.print("pwr: ");
+        Serial.println(pwr);
+    }
+    void action(){
+        value = String(results.value, HEX);
+        Serial.print("value: ");
+        Serial.println(value);
+        
+        if (value == "ffa25d"){
+            Serial.println("Woo pwr");
+            pwr = !pwr;
+        }  
+        else if (value == "ff02fd"){
+            Serial.println("Woo pause");
+            fade = !fade;
+        }  
+        else if (value == "ff30cf"){
+            Serial.println("Woo 1");
+            fade = false;
+            brightness = 25;
+        }  
+        else if (value == "ff38c7"){
+            Serial.println("Woo 5");
+            fade = false;
+            brightness = 100;
+        }
+        else if (value == "ff52ad"){
+            Serial.println("Woo 9");
+            fade = false;
+            brightness = 200;
+        }  
+        else if (value == "ff906f"){
+            Serial.println("Woo up");
+            fadeAmount = fadeAmount+2;
+        }  
+        else if (value == "ffe01f"){
+            Serial.println("Woo down");
+            fadeAmount = fadeAmount-2;
+        }
+        else{
+            Serial.print("Unknown ");
+            Serial.println(results.value);    
+        }
+    }
+    
+    void loop() {
+        if (irrecv.decode(&results)) {
+        Serial.println(results.value, HEX); //stores hex code in serial log
+        delay(600); // delay here as rudimentary debounce
+        action();
+        debug();
+        Serial.println("");
+        irrecv.resume(); // Receive the next value
+        }
+    
+    
+        if (pwr) {
+            // set the brightness of pin 9:
+        analogWrite(led, brightness);
+            if (fade) {
+                // change the brightness for next time through the loop:
+                brightness = brightness + fadeAmount;
+                // reverse the direction of the fading at the ends of the fade:
+                if (brightness <= 0 || brightness >= 255) {
+                fadeAmount = -fadeAmount;
+                }
+                // wait for 30 milliseconds to see the dimming effect
+                delay(30);
+            }
+        } else {
+            analogWrite(led, 0);
+        }
+    }
+                                            
+                        </code>
+                    </pre>
+            </div>
+
+        </div>
+        
+    </body>
+</html>

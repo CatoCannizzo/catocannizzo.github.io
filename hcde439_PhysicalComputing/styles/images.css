@@ -322,3 +322,48 @@
 	width: 15rem;
 	border-radius: 1rem;
 }
+.imageA6gif {
+	background: url("../Pictures/A6/A6gif.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 17rem;
+	border-radius: 1rem;
+}
+.imageA6webgif {
+	background: url("../Pictures/A6/A6Webgif.gif");
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 20rem;
+	border-radius: 1rem;
+}
+.imageA6schem {
+	background: url("../Pictures/A6/A6Schem.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 17rem;
+	width: 30rem;
+	border-radius: 1rem;
+}
+.imageA6circ {
+	background: url("../Pictures/A6/A6Circ.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 18rem;
+	border-radius: 1rem;
+}
+.imageA6 {
+	background: url("../Pictures/A6/A6Schem.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 10rem;
+	width: 16.5rem;
+	border-radius: 1rem;
+}
