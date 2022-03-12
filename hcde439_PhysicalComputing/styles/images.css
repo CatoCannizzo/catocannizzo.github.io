@@ -367,3 +367,49 @@
 	width: 16.5rem;
 	border-radius: 1rem;
 }
+
+.imagefgif {
+	background: url("../Pictures/Final/fgif.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 17rem;
+	border-radius: 1rem;
+}
+.imagefcirc1 {
+	background: url("../Pictures/Final/FCircuit1.jpg");
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 20rem;
+	border-radius: 1rem;
+}
+.imagefschem {
+	background: url("../Pictures/Final/FCircuit.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 17rem;
+	width: 30rem;
+	border-radius: 1rem;
+}
+.imagefcirc2 {
+	background: url("../Pictures/Final/FCircuit2.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 20rem;
+	width: 18rem;
+	border-radius: 1rem;
+}
+.imageffinal {
+	background: url("../Pictures/Final/FFinal.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 10rem;
+	width: 16.5rem;
+	border-radius: 1rem;
+}
