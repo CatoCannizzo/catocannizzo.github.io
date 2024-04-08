@@ -1,5 +1,7 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+"use client";
+
+import * as React from "react";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -20,10 +22,9 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "Product Teardowns",
     href: "/CaseStudies/Misinfo",
-    description:
-      "Construing the design process for other products.",
+    description: "Construing the design process for other products.",
   },
-]
+];
 
 export default function NavigationMenuDemo() {
   return (
@@ -37,22 +38,23 @@ export default function NavigationMenuDemo() {
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
+                    href="/">
                     <div className="mb-2 mt-4 text-lg font-medium">
                       What is UX?
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      insert quote here 
+                      insert quote here
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
               <ListItem href="/CaseStudies/GetGreen" title="GetGreen">
-              Studying different ways to retain users, for a eco-friendly habit-building app.
+                Studying different ways to retain users, for a eco-friendly
+                habit-building app.
               </ListItem>
               <ListItem href="/CaseStudies/Misinfo" title="Misinfo Systems">
-              Developing a hypothetical app to help combat misinformation spreading on social media.
+                Developing a hypothetical app to help combat misinformation
+                spreading on social media.
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -65,8 +67,7 @@ export default function NavigationMenuDemo() {
                 <ListItem
                   key={component.title}
                   title={component.title}
-                  href={component.href}
-                >
+                  href="/underconstruction">
                   {component.description}
                 </ListItem>
               ))}
@@ -74,15 +75,18 @@ export default function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <a aria-label= "Open P D F resume in new window" target="_blank" href="/Cannizzo.pdf" data-astro-reload>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Portfolio
-            </NavigationMenuLink>
+          <a
+            className={navigationMenuTriggerStyle()}
+            aria-label="Open P D F resume in new window"
+            target="_blank"
+            href="/Cannizzo.pdf"
+            data-astro-reload>
+            Portfolio
           </a>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -96,10 +100,9 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
-          {...props}
-        >
+          {...props}>
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
@@ -107,6 +110,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";

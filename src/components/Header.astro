@@ -1,5 +1,10 @@
 ---
 import Navbar from "./reactComps/Navbar";
+import { Image } from "astro:assets";
+import logo from "../assets/CCLogo.svg";
 ---
 
-<header><Navbar client:load /><li>hello</li><li>hi</li></header>
+<header class="flex justify-between">
+  <Image src={logo} alt="Cato's personal logo" width="75" />
+  <Navbar client:load />
+</header>

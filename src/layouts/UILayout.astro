@@ -1,0 +1,14 @@
+---
+import Base from "./baseLayout.astro";
+import Header from "@/components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
+---
+
+<head>
+  <ViewTransitions />
+</head>
+<Base
+  ><Header transition:persist /><div transition:animate="slide">
+    <slot />
+  </div></Base
+>

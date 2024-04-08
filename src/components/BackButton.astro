@@ -1,0 +1,32 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+
+interface Props {
+	butDialog: string;
+}
+
+//The : Props below isn't necessary and I am not sure why.
+const { butDialog }: Props = Astro.props;
+---
+
+<a
+	class={buttonVariants({
+		variant: "default",
+		size: "lg",
+		class: "font-bold mt-5",
+	})}
+	data-astro-reload
+	id="back2saftey"
+	href="/#">{butDialog}</a
+>
+
+<script>
+	var button = document.getElementById("back2saftey");
+	if (button) {
+		button.setAttribute("href", document.referrer);
+		button.onclick = () => {
+			history.back();
+			return false;
+		};
+	}
+</script>
