@@ -26,14 +26,15 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export default function NavigationMenuDemo() {
+export default function NavMenu({ isVert }: { isVert: boolean }) {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
+    <NavigationMenu isVert={isVert} className="h-5 py-10">
+      {/* !!! */}
+      <NavigationMenuList className={cn(isVert && "flex-col items-start")}>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Case Studies</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid w-[300px] gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
@@ -62,7 +63,7 @@ export default function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Under Construction</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[300px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
                 <ListItem
                   key={component.title}

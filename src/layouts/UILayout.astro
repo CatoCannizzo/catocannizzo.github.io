@@ -2,13 +2,15 @@
 import Base from "./baseLayout.astro";
 import Header from "@/components/Header.astro";
 import { ViewTransitions } from "astro:transitions";
+import Footer from "@/components/Footer.astro";
 ---
 
 <head>
-  <ViewTransitions />
+	<ViewTransitions />
 </head>
-<Base
-  ><Header transition:persist /><div transition:animate="slide">
-    <slot />
-  </div></Base
->
+<Base>
+	<Header transition:persist /><div transition:animate="slide">
+		<slot />
+	</div>
+	<Footer />
+</Base>
