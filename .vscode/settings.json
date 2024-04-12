@@ -1,5 +1,11 @@
 {
   "prettier.requireConfig": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

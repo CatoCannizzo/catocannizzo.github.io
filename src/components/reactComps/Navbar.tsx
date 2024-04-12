@@ -12,17 +12,47 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+interface linkContainer {
+  grouping: string;
+  list: {
+    title: string;
+    href: string;
+    description: string;
+  }[];
+}
+const components: linkContainer[] = [
   {
-    title: "SILI",
-    href: "/CaseStudies/GetGreen",
-    description:
-      "Silly Ideas for Loony Issues - I make up problems, then make up solutions.",
+    grouping: "Case Studies",
+    list: [
+      {
+        title: "GetGreen",
+        href: "/casestudies/getgreen",
+        description:
+          "Studying different ways to retain users, for a eco-friendly habit-building app.",
+      },
+      {
+        title: "Misinfomation Systems",
+        href: "/casestudies/misinfosystems",
+        description:
+          "Developing a hypothetical app to help combat misinformation spreading on social media.",
+      },
+    ],
   },
   {
-    title: "Product Teardowns",
-    href: "/CaseStudies/Misinfo",
-    description: "Construing the design process for other products.",
+    grouping: "Other Work",
+    list: [
+      {
+        title: "SILI",
+        href: "/underconstruction",
+        description:
+          "Silly Ideas for Loony Issues - I make up problems, then make up solutions.",
+      },
+      {
+        title: "Product Teardowns",
+        href: "/underconstruction",
+        description: "Construing the design process for other products.",
+      },
+    ],
   },
 ];
 
@@ -32,7 +62,9 @@ export default function NavMenu({ isVert }: { isVert: boolean }) {
       {/* !!! */}
       <NavigationMenuList className={cn(isVert && "flex-col items-start")}>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Case Studies</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            {components[0].grouping}
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[300px] gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -49,26 +81,29 @@ export default function NavMenu({ isVert }: { isVert: boolean }) {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/CaseStudies/GetGreen" title="GetGreen">
-                Studying different ways to retain users, for a eco-friendly
-                habit-building app.
-              </ListItem>
-              <ListItem href="/CaseStudies/Misinfo" title="Misinfo Systems">
-                Developing a hypothetical app to help combat misinformation
-                spreading on social media.
-              </ListItem>
+
+              {components[0].list.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}>
+                  {component.description}
+                </ListItem>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Under Construction</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            {components[1].grouping}
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[300px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {components[1].list.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
-                  href="/underconstruction">
+                  href={component.href}>
                   {component.description}
                 </ListItem>
               ))}

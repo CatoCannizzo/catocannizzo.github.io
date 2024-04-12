@@ -1,16 +1,13 @@
 "use client";
-import { useMediaQuery } from "@/hooks/use-media-query";
 import Navbar from "./Navbar";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 import { MenuIcon } from "lucide-react";
 
-export default function MainMenu() {
-  const isNotMobile = useMediaQuery("(min-width: 768px)");
-  return isNotMobile ? (
-    <div>
-      <Navbar isVert={false}></Navbar>
-    </div>
-  ) : (
+import { useMediaQuery } from "@/hooks/use-media-query";
+//   const isMobile = useMediaQuery("(min-width: 768px)");
+
+export default function MainMenu(isMobile: boolean) {
+  return isMobile ? (
     <Drawer direction="right">
       <DrawerTrigger>
         <MenuIcon />
@@ -18,8 +15,12 @@ export default function MainMenu() {
       <DrawerContent>
         <div className="my-auto ">
           <Navbar isVert={true}></Navbar>
-        </div>{" "}
+        </div>
       </DrawerContent>
     </Drawer>
+  ) : (
+    <div>
+      <Navbar isVert={false}></Navbar>
+    </div>
   );
 }
