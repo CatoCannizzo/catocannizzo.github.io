@@ -7,45 +7,45 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-		<meta name="viewport" content="wideth=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<style>
-			/* !!!Put this in tailwind sometime */
-			@font-face {
-				font-family: "Inter";
-				src: url("/fonts/Inter-Regular.woff2") format("woff2");
-				font-display: swap;
-				font-weight: 400;
-			}
-			@font-face {
-				font-family: "Inter";
-				src: url("/fonts/Inter-Italic.woff2") format("woff2");
-				font-display: swap;
-				font-weight: 400;
-				font-style: italic;
-			}
-			@font-face {
-				font-family: "Inter";
-				src: url("/fonts/Inter-Bold.woff2") format("woff2");
-				font-display: swap;
-				font-weight: 700;
-				font-style: Bold;
-			}
-			/* !!! Prevents scroll bar from shifting screen! */
-			html {
-				overflow-x: hidden;
-				margin-right: calc(-1 * (100vw - 100%));
-			}
-		</style>
-	</head>
-	<body class="dark:bg-zinc-950 dark:text-white">
-		<div
-			class="mx-auto flex min-h-[105vh] max-w-5xl flex-col justify-between px-5">
-			<slot />
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="viewport" content="wideth=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <style>
+      /* !!!Put this in tailwind sometime */
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/Inter-Regular.woff2") format("woff2");
+        font-display: swap;
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/Inter-Italic.woff2") format("woff2");
+        font-display: swap;
+        font-weight: 400;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/Inter-Bold.woff2") format("woff2");
+        font-display: swap;
+        font-weight: 700;
+        font-style: Bold;
+      }
+      /* !!! Prevents scroll bar from shifting screen! */
+      html {
+        overflow-x: hidden;
+        margin-right: calc(-1 * (100vw - 100%));
+      }
+    </style>
+  </head>
+  <body class="dark:bg-zinc-950 dark:text-white">
+    <div
+      class="mx-auto flex min-h-[105vh] max-w-5xl flex-col items-center px-5">
+      <slot />
+    </div>
+  </body>
 </html>

@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/CCLogo.svg";
-import MobileNav from "@/components/reactComps/NavSelector";
+import NavSelector from "@/components/reactComps/NavSelector";
 ---
 
-<header class="mt-5 flex justify-between">
-	<Image src={logo} alt="Cato's personal logo" width="75" />
-	<MobileNav client:load />
+<header class="mt-5 flex w-full justify-between">
+  <Image src={logo} alt="Cato's personal logo" width="75" />
+  <NavSelector client:load />
 </header>

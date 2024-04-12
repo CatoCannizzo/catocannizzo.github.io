@@ -1,0 +1,43 @@
+---
+import { Image, getImage } from "astro:assets";
+
+interface imgProps {
+  src: string;
+  width: number;
+  height: number;
+  expandedWidth: number;
+  expandedHeight: number;
+  alt: string;
+}
+
+const { src, width, height, expandedWidth, expandedHeight, alt }: imgProps =
+  Astro.props;
+
+// const expandedImage //= await getImage({
+//   src: src,
+//   width: expandedWidth,
+//   height: expandedHeight,
+// });
+// ---
+---
+
+<Image
+  width={width}
+  height={height}
+  alt={alt}
+  src={src}
+  class="expandable"
+  data-expanded-src={expandedImage}
+/>
+
+<script>
+  document.querySelectorAll(".expandable").forEach((img) => {
+    img.addEventListener("click", () => {
+      img.src = img.dataset.expandedSrc;
+      let values = JSON.stringify(img.dataset.expandedSrc);
+      let w = JSON.stringify(values);
+      console.log(w);
+      console.log(values);
+    });
+  });
+</script>

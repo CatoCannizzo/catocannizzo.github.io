@@ -1,0 +1,34 @@
+---
+import UI from "./UILayout.astro";
+---
+
+<div
+  id="popup"
+  class="sticky left-0 top-0 hidden min-h-[100vh] cursor-zoom-out bg-black/75">
+  <img id="popupimg" src="" class="m-auto max-h-[90vh] max-w-[90vw]" />
+</div>
+<UI>
+  <slot />
+</UI>
+<script>
+  // add mobile support for touch
+  function addPopout() {
+    const images = document.querySelectorAll("img.popout");
+    images.forEach((imgp) => {
+      imgp.style.cursor = "zoom-in";
+      imgp.addEventListener("click", () => {
+        document.getElementById("popup").classList.toggle("hidden");
+        document.getElementById("popup").classList.toggle("flex");
+
+        document.getElementById("popupimg").src = imgp.getAttribute("src");
+      });
+    });
+    document.getElementById("popup").onclick = () => {
+      document.getElementById("popup").classList.toggle("flex");
+      document.getElementById("popup").classList.toggle("hidden");
+    };
+  }
+  window.addEventListener("load", function () {
+    addPopout();
+  });
+</script>

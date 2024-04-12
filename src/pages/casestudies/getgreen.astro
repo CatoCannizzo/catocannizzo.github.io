@@ -1,5 +1,5 @@
 ---
-import UILayout from "@/layouts/UILayout.astro";
+import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
 import { Image } from "astro:assets";
 import GGLogo from "../../assets/getgreen/getgreen-logo.png";
 import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
@@ -14,10 +14,10 @@ import Wireframe from "../../assets/getgreen/Wireframe.png";
 import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
 ---
 
-<!-- !!! Scroll to top to show progress --><!-- !!! Add side nave on md or higher to jump -->
-<UILayout>
+<!-- !!! Scroll to top to show progress --><!-- !!! Add side nave on md or higher to jump --><!-- Make this black a gray -->
+<WriteUpLayout>
   <div
-    class="dark:prose:invert prose prose-slate lg:prose-lg mx-auto mb-5 max-w-prose">
+    class="dark:prose:invert prose prose-slate lg:prose-lg mx-auto my-5 max-w-prose">
     <figure>
       <Image src={GGLogo} alt="Logo for Get Greens" width="300" />
     </figure>
@@ -79,6 +79,7 @@ import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
         src={Persona}
         alt="Persona of an amalgamated user of the GetGreen app."
         width="500"
+        class=""
       />
       <figcaption>This persona shows...</figcaption>
     </figure>
@@ -93,6 +94,7 @@ import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
       <Image
         src={JourneyMap}
         alt="Journey map of an personafied GetGreen user."
+        class="popout"
       />
       <figcaption>This journey map shows...</figcaption>
     </figure>
@@ -147,6 +149,7 @@ import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
       <Image
         src={LofiPrototype}
         alt="Collection of several low fidelity screenshots with arrows pointing from page to page."
+        class="popout"
       />
       <figcaption>
         In terms of overall experience, our low fidelity designs averaged at 81
@@ -197,7 +200,9 @@ import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
     <!-- !!! Add pic table here when ready to experiment with tables -->
 
     <figure class="flex flex-col items-center">
-      <Image src={HabitFreq} alt="hello" width="150" />
+      <div class="max-w-80">
+        <Image src={HabitFreq} alt="hello" class="popout" />
+      </div>
       <figcaption></figcaption>
     </figure>
     <h2>Reflection</h2><p>
@@ -218,4 +223,4 @@ import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
       experience with.
     </p>
   </div>
-</UILayout>
+</WriteUpLayout>
