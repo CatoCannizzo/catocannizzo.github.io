@@ -1,3 +1,4 @@
+//!?
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -15,7 +16,7 @@ export default function ImageCarousel(imgA) {
           <CarouselItem key={index}>
             <div>
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
+                <CardContent className="flex aspect-square items-center justify-center p-2">
                   <img
                     src={image.src}
                     decoding={image.attributes.decoding}

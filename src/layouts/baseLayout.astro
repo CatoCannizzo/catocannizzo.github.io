@@ -1,6 +1,8 @@
 ---
 import "../globals.css";
-//https://stackoverflow.com/questions/38729486/typescript-difference-between-import-and-import-with-curly-braces
+import { ViewTransitions } from "astro:transitions";
+
+//!? https://stackoverflow.com/questions/38729486/typescript-difference-between-import-and-import-with-curly-braces
 
 const { title } = Astro.props;
 ---
@@ -41,10 +43,10 @@ const { title } = Astro.props;
         margin-right: calc(-1 * (100vw - 100%));
       }
     </style>
+    <ViewTransitions />
   </head>
   <body class="dark:bg-zinc-950 dark:text-white">
-    <div
-      class="mx-auto flex min-h-[105vh] max-w-5xl flex-col items-center px-5">
+    <div class="mx-auto max-w-5xl">
       <slot />
     </div>
   </body>

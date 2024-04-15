@@ -2,12 +2,12 @@
 import UILayout from "@/layouts/UILayout.astro";
 import BackButton from "@/components/BackButton.astro";
 import CopyBtn from "@/components/reactComps/CopyBtn.tsx";
-import {Toaster} from "@/components/ui/sonner.tsx"
+import { Toaster } from "@/components/ui/sonner.tsx";
 ---
 
 <UILayout>
-  <div class="mx-auto mt-10 text-center">
-    <div>
+  <div class="m-auto items-center text-center">
+    <div class="prose">
       <h1>This page is under construction!</h1>
       <br />
       I'm sorry it looks like I haven't gotten around to creating that page yet!
@@ -15,10 +15,9 @@ import {Toaster} from "@/components/ui/sonner.tsx"
       to email me at cannizzo@uw.edu!
     </div>
     <div>
-      <CopyBtn client:load name="email address", text="cannizzo@uw.edu"/>
-      <Toaster client:load/>
+      <CopyBtn client:load name="email address" , text="cannizzo@uw.edu" />
+      <Toaster client:load />
     </div>
     <BackButton butDialog="Okay I'll explore something else!" />
   </div>
 </UILayout>
-

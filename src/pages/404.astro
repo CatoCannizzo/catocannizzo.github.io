@@ -1,13 +1,23 @@
 ---
 import Base from "@/layouts/baseLayout.astro";
 import SafteyButton from "@/components/BackButton.astro";
+import { buttonVariants } from "@/components/ui/button";
 ---
 
 <Base>
-	<div class="flex h-screen">
-		<div class="m-auto text-center">
-			<h3>It appears you are lost, and something might have broke!</h3>
-			<SafteyButton butDialog="Take me back to saftey!" />
-		</div>
-	</div>
+  <div class="flex h-screen">
+    <div class="m-auto text-center">
+      <h3>It appears you are lost, and something might have broke!</h3>
+      <SafteyButton butDialog="Go back to saftey" /><a
+        class={buttonVariants({
+          variant: "default",
+          size: "lg",
+          class: "font-bold m-5",
+        })}
+        data-astro-reload
+        id="back2saftey"
+        href="/">Go to the homepage</a
+      >
+    </div>
+  </div>
 </Base>

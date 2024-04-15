@@ -4,7 +4,7 @@ import { Image, getImage } from "astro:assets";
 import ImageCarousel from "@/components/reactComps/ImageCarousel";
 
 import GGLogo from "../../assets/getgreen/getgreen-logo.png";
-// import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
+import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
 import GoalPage from "../../assets/getgreen/GetGreenGoal.png";
 // import GoalActions from "../../assets/getgreen/GetGreenGoalAction.png";
 import HomePage from "../../assets/getgreen/HomepageWithGoal.png";
@@ -14,6 +14,8 @@ import HabitFreq from "../../assets/getgreen/HabitFreqPage.png";
 import JourneyMap from "../../assets/getgreen/JackieJourney.png";
 import Wireframe from "../../assets/getgreen/Wireframe.png";
 import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
+import TimeOfDay from "../../assets/getgreen/TimeofDay.png";
+import ActionSettings from "../../assets/getgreen/ActionSettings.png";
 
 const optHP = await getImage({
   src: HomePage,
@@ -27,7 +29,31 @@ const optHPnoG = await getImage({
   alt: "img1",
 });
 
-const carousel1 = [optHPnoG, optHP];
+const actionRedesign = [optHPnoG, optHP];
+
+const habitFrq = await getImage({
+  src: HabitFreq,
+  format: "webp",
+  height: "700",
+  alt: "img1",
+});
+const ActionSet = await getImage({
+  src: ActionSettings,
+  format: "webp",
+  alt: "img1",
+});
+const ActionTime = await getImage({
+  src: TimeOfDay,
+  format: "webp",
+  alt: "img1",
+});
+const connectGoal = await getImage({
+  src: ConnectedGoal,
+  format: "webp",
+  alt: "img1",
+});
+
+const goalRedesign = [ActionSet, habitFrq, ActionTime, connectGoal];
 ---
 
 <!-- !!! Scroll to top to show progress --><!-- !!! Add side nave on md or higher to jump --><!-- Make this black a gray -->
@@ -35,69 +61,75 @@ const carousel1 = [optHPnoG, optHP];
   <div
     class="dark:prose:invert prose prose-slate mx-auto my-5 max-w-prose lg:prose-lg">
     <figure>
-      <Image src={GGLogo} alt="Logo for Get Greens" width="300" />
+      <Image src={GGLogo} alt="Logo for Get Green" width="300" />
     </figure>
     <h2>Context</h2>
     <p>
       Problem: The Get Green app has issues engaging users to make long-term
-      sustainable habits. Goal: Design a system of friendly UI features and
-      personalized goal setting to ensure long-term engagement.
+      sustainable habits.
+    </p><p>
+      Goal: Design a system of friendly UI features to ensure long-term
+      engagement.
     </p>
     <ul>
-      <li><strong>Role:</strong> UX Designer</li>
+      <li><strong>Role:</strong> UX Designer, & User Researcher</li>
       <li><strong>Team Size:</strong> 4</li>
       <li><strong>Duration:</strong> 3 months</li>
       <li>
-        <strong>Tools:</strong> Diary Studies, Usability Studies, Participatory Design,
-        Figma,
+        <strong>UR Techniques:</strong> Diary Studies, Participatory, Usability Studies
       </li>
     </ul>
     <h3>Process Overview</h3>
 
     <p><b>Problem Definition:</b></p>
     <p>
-      Through talking to GetGreens we explored their interest in directions to
-      grow the app and related deliverables for our team. We reestablished the
-      problem definition with GetGreen between each of the following sections.
+      Through talking to Get Green we explored the directions they wanted grow
+      their app and they immediately talked about user retention. My team and I
+      described various methods of increasing retention, and while initially Get
+      Green wanted to explore some geo-location based features, they settled on
+      gamifing their app due to development limitations on their end.
     </p>
     <p><b>Exploring the problem:</b></p>
     <p>
-      My group sought to understand long term pain points with a diary study,
-      while searching for short term pain points with a participatory design
-      session. Additionally we used a survey to search for outling issues we
-      might of missed.
+      To understand where Get Green was losing users. My group sought to
+      understand long term pain points with a diary study, while searching for
+      short term pain points with a participatory design session. Additionally
+      we used a survey to search for outling issues we might of missed in both
+      techniques.
     </p>
     <p><b>Design:</b></p>
     <p>
-      The team and I synthesized the data from our user research, ideated
+      The team and I then synthesized the data from our user research, ideated
       through solutions grading them on feasability and cohesion, then
       wireframed a serries of potential solutions.
     </p>
     <p><b>Evaluation:</b></p>
     <p>
-      We validated our solutions by running usability tests on lofi prototypes.
-      Once validated we created high fi prototypes and design assets for Get
-      Green to integrate.
+      Once we had a cohesive design system that addressed all the painpoints we
+      found. We validated our selected solutions by running usability tests on
+      lofi prototypes. Once validated we created high fi prototypes and design
+      assets for Get Green to integrate.
     </p>
     <h2>Exploring the Problem Space</h2><p>
-      Preliminary Work / Exploring the Problem Mention affordance of time, and
-      GetGreens willingness to send beta versions of the app to usability study
-      participants. GetGreen is a sustainability habit building app that's
-      looking to increase user retention through task recommendations and
-      eco-friendly goals. Due to an abundance of time and high engagement with
-      GetGreen our team was able to deeply dive into the problem space. Over two
-      weeks our team set up a multiple week diary study, a survey of additional
-      users, and a focused three-person participatory design session.
+      Get Green is a sustainability habit building app that is looking to reduce
+      its users carbon foot print through task recommendations and eco-friendly
+      goals. Due to an abundance of time and high engagement with Get Green our
+      team was able to deeply dive into the problem space. Over two weeks our
+      team set up a multiple week diary study, a survey of additional users, and
+      a focused three-person participatory design session.
     </p>
     <!-- !!! Add second persona here when ready to experiment with tables -->
     <figure class="flex flex-col items-center">
       <Image
         src={Persona}
-        alt="Persona of an amalgamated user of the GetGreen app."
+        alt="Persona of an amalgamated user of the Get Green app."
         width="500"
         class=""
       />
-      <figcaption>This persona shows...</figcaption>
+      <figcaption>
+        Most people using the app were passively intrested in reducing their
+        carbon foot print, but did not want to give up their quality of life.
+      </figcaption>
     </figure>
     <p>
       We then synthesized the data we collected through affinity mapping, and
@@ -112,7 +144,11 @@ const carousel1 = [optHPnoG, optHP];
         alt="Journey map of an personafied GetGreen user."
         class="popout"
       />
-      <figcaption>This journey map shows...</figcaption>
+      <figcaption>
+        Is was an almost constant finding in our research that the app annoyed
+        its users after about 2-3 days with it through actionless notificaions,
+        or an inability to make it feel personalized.
+      </figcaption>
     </figure>
 
     <p>
@@ -120,20 +156,17 @@ const carousel1 = [optHPnoG, optHP];
       <ol>
         <li>
           Smooth out information presentation in the app, by reducing first
-          login questions and adding more repeatable habit-forming
-          functionalities for longevity.
+          login questions and adding popups on the second or third login.
         </li>
-        <li>Redesign how users add, track and manage action items</li>
-        <li>
-          Increase personalization of the app through unique settings and goals.
-        </li>
+        <li>Redesign how users add track and manage action items</li>
+        <li>Increase personalization of the app through unique goals.</li>
       </ol>
 
       After discussions with GetGreen, we prioritized the following design
       spaces and began wireframing solutions: <ol>
-        <li>App navigation & onboarding</li><li>Action item redesign</li><li>
-          Personalization Settings
-        </li>
+        <li>Action item redesign</li>
+        <li>Personalization Settings</li>
+        <li>App navigation & onboarding</li>
       </ol>
     </p>
 
@@ -151,7 +184,10 @@ const carousel1 = [optHPnoG, optHP];
         alt="Wireframe of a homescreen page showing a draft layout of the Get Green app."
         class="max-w-[250px]"
       />
-      <figcaption>This wireframe shows...</figcaption>
+      <figcaption>
+        Here we attempted to redesign the home screen to show users actions that
+        they could look forward to doing.
+      </figcaption>
     </figure>
     <p>
       Then we took our final design system and made low fidelity prototypes. We
@@ -174,51 +210,58 @@ const carousel1 = [optHPnoG, optHP];
     </figure>
     <h2>Evaluation</h2>
     <p>
-      Then we conducted a short usability test with select users with these mock
+      Then we conducted a short usability test with select users on these lofi
       designs. We had the participants complete four tasks while thinking out
       loud throughout the process. Then we graded our prototypes by the
-      following metrics: number of critical errors, satisfaction rates, and our
-      own observation of the users. This final round of user testing gave us
-      feedback on small pain points and which user flows were more used that we
-      were able to incorporate into our final mock up.
+      following metrics: number of critical errors made by users, satisfaction
+      rates, and our own observation of the users. This final round of user
+      testing gave us feedback on small pain points and which user flows were
+      more used that we were able to incorporate into our final mock up.
     </p>
     <p>
       We then recreated our designs into high fidelity wireframes incorporating
-      the visual branding and UI elements of the GetGreen application. We
-      completely redesigned the onboarding module which should lead to users
-      with shorter initial sessions within the app followed closely by several
-      more consistent sessions in the following days.
+      the visual branding and UI elements of the GetGreen application. First we
+      completely redesigned the onboarding module to help users to have a
+      shorter initial sessions within the app followed closely by several more
+      consistent sessions in the following days.
     </p>
     <!-- !!! Add second pic (goalactions) here when ready to experiment with tables -->
     <figure class="flex flex-col items-center">
       <Image src={GoalPage} alt="hello" width="300" />
-      <figcaption></figcaption>
+      <figcaption>
+        One of the first screens a user should see in out redesign prompts them
+        to choose a goal that aligns with their lifestyle.
+      </figcaption>
     </figure>
 
     <p>
-      We improved the interactivity of the 'action items' which reduce user
-      frustration with the app, and allow for more flexibility when it comes to
-      the user self monitoring.
+      We improved the interactivity of the 'action items' which would reduce
+      user frustration with the app, and allow for more flexibility when it
+      comes to a user self monitoring.
     </p>
 
     <!-- !!! Add second pic (goalactions) here when ready to experiment with tables -->
-    <figure class="flex justify-center">
-      <ImageCarousel client:visible imgArray={carousel1} class="mx-auto" />
-      <figcaption></figcaption>
+    <figure class="flex flex-col items-center justify-center">
+      <ImageCarousel client:visible imgArray={actionRedesign} class="mx-auto" />
+      <figcaption>
+        Here you can see a the differnce between the base homepage, and one
+        after a user has chosen a goal and specific actions.
+      </figcaption>
     </figure>
     <p>
       Finally we increased the options available to users in their settings and
-      on their homepage. This should help even out the time users initially
+      with their actions. This should help even out the time users initially
       spend with the app and increase long term engagement with a goal centric
       improvement model to build towards.
     </p>
     <!-- !!! Add pic table here when ready to experiment with tables -->
 
-    <figure class="flex flex-col items-center">
-      <div class="max-w-80">
-        <Image src={HabitFreq} alt="hello" class="popout" />
-      </div>
-      <figcaption></figcaption>
+    <figure class="flex flex-col items-center justify-center">
+      <ImageCarousel client:visible imgArray={goalRedesign} class="mx-auto" />
+      <figcaption>
+        Here is a collection of popups that could stem from a user trying to
+        customize an action card.
+      </figcaption>
     </figure>
     <h2>Reflection</h2><p>
       Through this capstone I have learned a lot about user research and team
