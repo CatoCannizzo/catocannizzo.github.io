@@ -1,23 +1,39 @@
 ---
 import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
+import ImageCarousel from "@/components/reactComps/ImageCarousel";
+
 import GGLogo from "../../assets/getgreen/getgreen-logo.png";
-import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
+// import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
 import GoalPage from "../../assets/getgreen/GetGreenGoal.png";
-import GoalActions from "../../assets/getgreen/GetGreenGoalAction.png";
+// import GoalActions from "../../assets/getgreen/GetGreenGoalAction.png";
 import HomePage from "../../assets/getgreen/HomepageWithGoal.png";
-import HomewoGoal from "../../assets/getgreen/HomepageNoGoal.png";
+import HomenoGoal from "../../assets/getgreen/HomepageNoGoal.png";
 import Persona from "../../assets/getgreen/DanPersona.png";
 import HabitFreq from "../../assets/getgreen/HabitFreqPage.png";
 import JourneyMap from "../../assets/getgreen/JackieJourney.png";
 import Wireframe from "../../assets/getgreen/Wireframe.png";
 import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
+
+const optHP = await getImage({
+  src: HomePage,
+  format: "webp",
+  height: "700",
+  alt: "img1",
+});
+const optHPnoG = await getImage({
+  src: HomenoGoal,
+  format: "webp",
+  alt: "img1",
+});
+
+const carousel1 = [optHPnoG, optHP];
 ---
 
 <!-- !!! Scroll to top to show progress --><!-- !!! Add side nave on md or higher to jump --><!-- Make this black a gray -->
 <WriteUpLayout>
   <div
-    class="dark:prose:invert prose prose-slate lg:prose-lg mx-auto my-5 max-w-prose">
+    class="dark:prose:invert prose prose-slate mx-auto my-5 max-w-prose lg:prose-lg">
     <figure>
       <Image src={GGLogo} alt="Logo for Get Greens" width="300" />
     </figure>
@@ -184,11 +200,10 @@ import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
       frustration with the app, and allow for more flexibility when it comes to
       the user self monitoring.
     </p>
-    <!-- !!! Add second pic (goalactions) here when ready to experiment with tables -->
-    <figure class="flex flex-wrap items-start">
-      <Image src={HomePage} alt="hello" width="300" class="m-1" />
-      <Image src={HomewoGoal} alt="hello" width="300" class="m-1" />
 
+    <!-- !!! Add second pic (goalactions) here when ready to experiment with tables -->
+    <figure class="flex justify-center">
+      <ImageCarousel client:visible imgArray={carousel1} class="mx-auto" />
       <figcaption></figcaption>
     </figure>
     <p>
