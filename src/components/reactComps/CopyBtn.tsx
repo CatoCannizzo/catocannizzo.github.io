@@ -14,7 +14,7 @@ function ExeCopy(text: string) {
 
 export default function CopyBtn({ name, text }: Props) {
   return (
-    <Button className="mt-5" variant="outline" onClick={() => ExeCopy(text)}>
+    <Button variant="outline" onClick={() => ExeCopy(text)}>
       <p>Copy {name}</p>
     </Button>
   );

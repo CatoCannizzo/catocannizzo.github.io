@@ -13,20 +13,27 @@ import UI from "./UILayout.astro";
 <script>
   // add mobile support for touch
   function addPopout() {
-    const images = document.querySelectorAll("img.popout");
-    images.forEach((imgp) => {
-      imgp.style.cursor = "zoom-in";
-      imgp.addEventListener("click", () => {
-        document.getElementById("popup").classList.toggle("hidden");
-        document.getElementById("popup").classList.toggle("flex");
-
-        document.getElementById("popupimg").src = imgp.getAttribute("src");
+    const images: HTMLImageElement[] = document.querySelectorAll("img.popout");
+    const popup = document.getElementById("popup");
+    const popupimg: HTMLImageElement = document.getElementById(
+      "popupimg",
+    ) as HTMLImageElement;
+    if (!popupimg || !popup) {
+      throw new Error("The element #popup or popupimg wasn't found");
+    } else {
+      images.forEach((imgp) => {
+        imgp.style.cursor = "zoom-in";
+        imgp.addEventListener("click", () => {
+          popup.classList.toggle("hidden");
+          popup.classList.toggle("flex");
+          popupimg.src = imgp.getAttribute("src");
+        });
       });
-    });
-    document.getElementById("popup").onclick = () => {
-      document.getElementById("popup").classList.toggle("flex");
-      document.getElementById("popup").classList.toggle("hidden");
-    };
+      popup.onclick = () => {
+        popup.classList.toggle("flex");
+        popup.classList.toggle("hidden");
+      };
+    }
   }
   window.addEventListener("load", function () {
     addPopout();

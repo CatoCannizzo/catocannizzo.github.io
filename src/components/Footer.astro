@@ -1,14 +1,30 @@
 ---
 import Social from "@comps/Social.astro";
+import CopyBtn from "./reactComps/CopyBtn";
+
+const { nobutton } = Astro.props;
 ---
 
-<footer class="flex justify-between">
-	<div>
-		<p>Built with <a href="https://astro.build">{Astro.generator}</a></p>
-	</div>
-	<div></div>
-	<div class="">
-		<Social platform="github" username="Catocannizzo" />
-		<Social platform="linkedin" username="in/Cato-cannizzo" />
-	</div>
+<footer class="mt-5 flex items-end justify-between">
+  <div>
+    <p>Built with <a href="https://astro.build">{Astro.generator}</a></p>
+  </div>
+  {
+    !nobutton && (
+      <div class="flex items-center">
+        <p>Have Feedback?</p>
+        <div class="mx-2">
+          <CopyBtn
+            client:visible
+            name="my email address"
+            text="Cannizzo@uw.edu"
+          />
+        </div>
+      </div>
+    )
+  }
+  <div class="">
+    <Social platform="github" username="Catocannizzo" />
+    <Social platform="linkedin" username="in/Cato-cannizzo" />
+  </div>
 </footer>

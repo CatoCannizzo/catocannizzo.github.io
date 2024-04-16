@@ -2,6 +2,7 @@
 import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
 import { Image, getImage } from "astro:assets";
 import ImageCarousel from "@/components/reactComps/ImageCarousel";
+import { buttonVariants } from "@/components/ui/button";
 
 import GGLogo from "../../assets/getgreen/getgreen-logo.png";
 import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
@@ -79,6 +80,18 @@ const goalRedesign = [ActionSet, habitFrq, ActionTime, connectGoal];
         <strong>UR Techniques:</strong> Diary Studies, Participatory, Usability Studies
       </li>
     </ul>
+    <a
+      class={buttonVariants({
+        variant: "default",
+        size: "lg",
+        class: "font-bold mt-5 ",
+      })}
+      data-astro-reload
+      id="back2saftey"
+      aria-label="Open Get Green Process book in new window"
+      target="_blank"
+      href="/GetGreenProcessBook.pdf">Download Full Process Book</a
+    >
     <h3>Process Overview</h3>
 
     <p><b>Problem Definition:</b></p>
