@@ -8,11 +8,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export default function ImageCarousel(imgA) {
+export default function ImageCarousel(imgAObj) {
   return (
     <Carousel className="w-full max-w-xs">
       <CarouselContent>
-        {imgA.imgArray.map((image, index) => (
+        {imgAObj.imgArrayOpt.map((image, index) => (
           <CarouselItem key={index}>
             <div>
               <Card>

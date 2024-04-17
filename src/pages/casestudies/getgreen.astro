@@ -1,11 +1,11 @@
 ---
 import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
+import ImgGetter from "@/components/ImgMapGet.astro";
 import { Image, getImage } from "astro:assets";
-import ImageCarousel from "@/components/reactComps/ImageCarousel";
 import { buttonVariants } from "@/components/ui/button";
 
 import GGLogo from "../../assets/getgreen/getgreen-logo.png";
-import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
+// import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
 import GoalPage from "../../assets/getgreen/GetGreenGoal.png";
 // import GoalActions from "../../assets/getgreen/GetGreenGoalAction.png";
 import HomePage from "../../assets/getgreen/HomepageWithGoal.png";
@@ -18,43 +18,31 @@ import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
 import TimeOfDay from "../../assets/getgreen/TimeofDay.png";
 import ActionSettings from "../../assets/getgreen/ActionSettings.png";
 
-const optHP = await getImage({
-  src: HomePage,
-  format: "webp",
-  height: "700",
-  alt: "img1",
-});
-const optHPnoG = await getImage({
-  src: HomenoGoal,
-  format: "webp",
-  alt: "img1",
-});
-
-const actionRedesign = [optHPnoG, optHP];
-
-const habitFrq = await getImage({
-  src: HabitFreq,
-  format: "webp",
-  height: "700",
-  alt: "img1",
-});
-const ActionSet = await getImage({
-  src: ActionSettings,
-  format: "webp",
-  alt: "img1",
-});
-const ActionTime = await getImage({
-  src: TimeOfDay,
-  format: "webp",
-  alt: "img1",
-});
-const connectGoal = await getImage({
-  src: ConnectedGoal,
-  format: "webp",
-  alt: "img1",
-});
-
-const goalRedesign = [ActionSet, habitFrq, ActionTime, connectGoal];
+const actionRedesign = [
+  {
+    src: HomenoGoal,
+    alt: "A redesigned Get Green homescreen showing a blank template where a user can add goals and actions.",
+  },
+  {
+    src: HomePage,
+    alt: "A redesigned Get Green homescreen showing a template where a user can measure their goal progress and see curent, upcoming, and actions with subtasks",
+    height: "700",
+  },
+];
+const goalRedesign = [
+  {
+    src: ActionSettings,
+    alt: "An example popup showing actions a user can take if they click on the settings of a action card. Such as editing action frequency, customing notifications, scheculing a reminder, or sharing or removing the action.",
+  },
+  {
+    src: HabitFreq,
+    alt: "An example popup showing the UI view of the set action frequency.",
+  },
+  {
+    src: TimeOfDay,
+    alt: "An example popup showing the UI view of the schedule reminder.",
+  },
+];
 ---
 
 <!-- !!! Scroll to top to show progress --><!-- !!! Add side nave on md or higher to jump --><!-- Make this black a gray -->
@@ -255,7 +243,7 @@ const goalRedesign = [ActionSet, habitFrq, ActionTime, connectGoal];
 
     <!-- !!! Add second pic (goalactions) here when ready to experiment with tables -->
     <figure class="flex flex-col items-center justify-center">
-      <ImageCarousel client:visible imgArray={actionRedesign} class="mx-auto" />
+      <ImgGetter imageArrayUnopt={actionRedesign} class="mx-auto" />
       <figcaption>
         Here you can see a the differnce between the base homepage, and one
         after a user has chosen a goal and specific actions.
@@ -270,7 +258,7 @@ const goalRedesign = [ActionSet, habitFrq, ActionTime, connectGoal];
     <!-- !!! Add pic table here when ready to experiment with tables -->
 
     <figure class="flex flex-col items-center justify-center">
-      <ImageCarousel client:visible imgArray={goalRedesign} class="mx-auto" />
+      <ImgGetter imageArrayUnopt={goalRedesign} class="mx-auto" />
       <figcaption>
         Here is a collection of popups that could stem from a user trying to
         customize an action card.
