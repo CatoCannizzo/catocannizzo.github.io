@@ -11,5 +11,6 @@ const { nobutton } = Astro.props;
     class="mx-auto flex min-h-[80vh] flex-col items-center px-5">
     <slot />
   </div>
+  <!-- !!! make this not display on mobile -->
   <Footer nobutton={nobutton} />
 </Base>

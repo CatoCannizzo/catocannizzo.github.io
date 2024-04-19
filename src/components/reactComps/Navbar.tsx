@@ -31,8 +31,8 @@ const components: linkContainer[] = [
           "Studying different ways to retain users, for a eco-friendly habit-building app.",
       },
       {
-        title: "Misinfomation Systems",
-        href: "/casestudies/misinfosystems",
+        title: "ACES Misinfomation Control",
+        href: "/casestudies/acesinfosystem",
         description:
           "Developing a hypothetical app to help combat misinformation spreading on social media.",
       },
