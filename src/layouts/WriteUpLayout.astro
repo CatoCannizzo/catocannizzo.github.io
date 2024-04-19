@@ -8,7 +8,10 @@ import UI from "./UILayout.astro";
   <img id="popupimg" src="" class="m-auto max-h-[90vh] max-w-[90vw]" />
 </div>
 <UI>
-  <slot />
+  <div
+    class="prose prose-slate mx-auto my-5 max-w-prose dark:prose-invert lg:prose-lg">
+    <slot />
+  </div>
 </UI>
 <script>
   // add mobile support for touch

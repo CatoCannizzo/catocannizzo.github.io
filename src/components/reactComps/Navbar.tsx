@@ -28,13 +28,13 @@ const components: linkContainer[] = [
         title: "GetGreen",
         href: "/casestudies/getgreen",
         description:
-          "Studying different ways to retain users, for a eco-friendly habit-building app.",
+          "Studying user retention, for a eco-friendly habit-building app.",
       },
       {
         title: "ACES Misinfomation Control",
         href: "/casestudies/acesinfosystem",
         description:
-          "Developing a hypothetical app to help combat misinformation spreading on social media.",
+          "Developing a hypothetical system to help combat misinformation.",
       },
     ],
   },
@@ -59,8 +59,12 @@ const components: linkContainer[] = [
 export default function NavMenu({ isVert }: { isVert: boolean }) {
   return (
     <NavigationMenu isVert={isVert} className="h-5 py-10">
-      {/* !!! */}
       <NavigationMenuList className={cn(isVert && "flex-col items-start")}>
+        <NavigationMenuItem>
+          <a className={navigationMenuTriggerStyle()} href="/">
+            Home
+          </a>
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
             {components[0].grouping}
@@ -73,10 +77,10 @@ export default function NavMenu({ isVert }: { isVert: boolean }) {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/">
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      What is UX?
+                      What is design?
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      insert quote here
+                      "Outcomes mediated by constraints"
                     </p>
                   </a>
                 </NavigationMenuLink>
@@ -93,7 +97,7 @@ export default function NavMenu({ isVert }: { isVert: boolean }) {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>
             {components[1].grouping}
           </NavigationMenuTrigger>
@@ -109,7 +113,7 @@ export default function NavMenu({ isVert }: { isVert: boolean }) {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem>asd */}
         <NavigationMenuItem>
           <a
             className={navigationMenuTriggerStyle()}

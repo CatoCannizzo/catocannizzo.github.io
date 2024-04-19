@@ -5,13 +5,13 @@ import CopyBtn from "./reactComps/CopyBtn";
 const { nobutton } = Astro.props;
 ---
 
-<footer class="mt-5 flex items-end justify-between">
+<footer class="m-5 flex items-center justify-between">
   <div>
     <p>Built with <a href="https://astro.build">{Astro.generator}</a></p>
   </div>
   {
     !nobutton && (
-      <div class="flex items-center">
+      <div class=" hidden items-center sm:flex">
         <p>Have Feedback?</p>
         <div class="mx-2">
           <CopyBtn

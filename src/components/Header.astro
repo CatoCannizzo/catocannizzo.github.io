@@ -1,10 +1,25 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../assets/CCLogo.svg";
-import NavSelector from "@/components/reactComps/NavSelector";
+import MobileNav from "@comps/reactComps/MobileNav";
+import Navbar from "@comps/reactComps/Navbar";
+import ThemeIcon from "@comps/ThemeIcon.astro";
 ---
 
-<header class="mt-5 flex w-full justify-between">
-  <a href="/"><Image src={logo} alt="Cato's personal logo" width="75" /></a>
-  <NavSelector client:load />
+<header class="m-5 flex w-full items-center pl-5 pr-12">
+  <a href="/" class="mr-auto">
+    <svg
+      class="h-20 w-20 fill-current stroke-2 text-accent"
+      viewBox="0 0 110 96"
+      ><g
+        ><path
+          d="M77 0a48 48 0 0 0-7 1l10 6a42 42 0 0 1 6-1 42 42 0 0 1 22 7h2A48 48 0 0 0 77 0zM56 11l-10 1a48 48 0 0 0-17 36 48 48 0 0 0 17 36 38 38 0 0 0 20 0 42 42 0 0 1-18-20 42 42 0 0 1-2-4 42 42 0 0 1 0-1 42 42 0 0 1-1-5 42 42 0 0 1-1-6 42 42 0 0 1 22-36l-10-1zm52 72a42 42 0 0 1-22 6 42 42 0 0 1-6 0l-10 6a48 48 0 0 0 7 1 48 48 0 0 0 33-13z"
+        ></path>
+        <path
+          d="M48 0A48 48 0 0 0 0 48a48 48 0 0 0 3 15 48 48 0 0 0 0 2 48 48 0 0 0 1 1 48 48 0 0 0 44 30 48 48 0 0 0 33-13h-3a42 42 0 0 1-22 7 42 42 0 0 1-41-42A42 42 0 0 1 56 7a42 42 0 0 1 22 6h3A48 48 0 0 0 48 0z"
+        ></path>
+      </g></svg
+    >
+  </a>
+  <div class="hidden sm:flex"><Navbar isVert={false} client:visible /></div>
+  <ThemeIcon />
+  <MobileNav client:visible />
 </header>
