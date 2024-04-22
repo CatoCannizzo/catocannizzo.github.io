@@ -35,18 +35,23 @@ const components: linkContainer[] = [
         href: "/casestudies/acesinfosystem",
         description:
           "Developing a hypothetical system to help combat misinformation.",
+      },      {
+        title: "Portfolio Creation",
+        href: "/underconstruction",
+        description:
+          "Insight to my design methodology as I created this website.",
       },
     ],
   },
   {
     grouping: "Other Work",
     list: [
-      {
-        title: "SILI",
-        href: "/underconstruction",
-        description:
-          "Silly Ideas for Loony Issues - I make up problems, then make up solutions.",
-      },
+      // {
+      //   title: "SILI",
+      //   href: "/underconstruction",
+      //   description:
+      //     "Silly Ideas for Loony Issues - I make up problems, then make up solutions.",
+      // },
       {
         title: "Product Teardowns",
         href: "/underconstruction",
