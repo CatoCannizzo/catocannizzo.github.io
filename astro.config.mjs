@@ -8,5 +8,7 @@ import tunnel from "astro-tunnel";
 export default defineConfig({
   integrations: [react(), tailwind({
     applyBaseStyles: false
-  }), tunnel()]
+  }), tunnel()],
+  site: 'https://catocannizzo.github.io/',
+  base: '',
 });
