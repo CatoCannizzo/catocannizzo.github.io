@@ -15,25 +15,25 @@ import passive from "@/assets/aces/PassiveInc.png";
 const stage2 = [
   {
     src: stage2neg,
-    alt: "...",
+    alt: "A image of TikTok with a popup up showing a list of reasons to not trust a tiktok",
   },
   {
     src: stage2pos,
-    alt: "...",
+    alt: "A image of TikTok with a popup showing a list of reasons to trust a tiktok",
   },
 ];
 const stage3 = [
   {
     src: stage3info,
-    alt: "...",
+    alt: "A image of TikTok with a popup showing a user instructions for how to complete stage 3",
   },
   {
     src: stage3pro,
-    alt: "...",
+    alt: "A image of TikTok with a popup showing summarized information from stage 2",
   },
   {
     src: stage3creation,
-    alt: "...",
+    alt: "A image of TikTok with a popup showing a user typing in a write up for stage 3",
   },
 ];
 ---
@@ -47,7 +47,7 @@ const stage3 = [
     anti-information groups like anti-vaxxers, modern systems of information
     flow need to be changed.
   </p><p>
-    Goal: Design and explore the feasability of a system that incentivizes users
+    Goal: Design and explore the feasibility of a system that incentivizes users
     to engage in accurate community-based content moderation.
   </p>
   <ul>
@@ -114,21 +114,19 @@ const stage3 = [
     other members looked up, and current moderation standards. There were three
     primary methods of moderation, algorithmic, professional, and community.
   </p><p>
-    Algorithmic moderation is a good preliminary step for sifting through the
-    worst content offenders and has the most throughput, it also has the highest
-    ratio of edge cases, and misclassifications. So most platforms use 3rd party
-    professional moderators to sort throught the edgecases however this leaves
-    two problems. The first is “coded” language: where a clique of the internet
-    establishes their own meanings for phrases allowing them to pass off hate
-    speech as seemingly innocuous language which professional and algorithmic
-    moderators have hard time detecting. And secondly misinformation, which
-    oftentimes falls within platform code of conduct and isn't moderated at all.
-    Both of these issues can be addressed by the third type of moderation
-    community moderation. But poorly implimented community moderation like in
-    Reddit's case can lead to severe echo chambers and even condoning posts
-    against the platform's code of conduct. However the fix to this can be as
-    simple as Twitter's implementation were they randomly choose tweets for its
-    community moderators to look at.
+    Algorithmic moderation is a good preliminary step for sifting through the worst 
+    content offenders and has the most throughput, it also has the highest ratio of 
+    edge cases, and misclassifications. So most platforms use 3rd party professional 
+    moderators to sort through the edge cases however this leaves two problems. The 
+    first is “coded” language: where a clique of the internet establishes their own 
+    meanings for phrases allowing them to pass off hate speech as seemingly innocuous
+     language which professional and algorithmic moderators have hard time detecting. 
+     And secondly misinformation, which oftentimes falls within platform code of conduct 
+     and isn't moderated at all. Both of these issues can be addressed by the third type
+      of moderation community moderation. But poorly implemented community moderation like in
+       Reddit's case can lead to severe echo chambers and even condoning posts against the
+        platform's code of conduct. However the fix to this can be as simple as Twitter's implementation 
+        where they randomly choose tweets for its community moderators to look at.
   </p><p>
     My research led me to suggest to my team that we change scope down our
     design to move away from a fact checking framework, and instead design ACES
@@ -200,13 +198,13 @@ const stage3 = [
       <figure class="flex flex-col items-center">
         <Image
           src={stage1}
-          alt="General purpose image of TikTok"
+          alt="A image of tiktok with a pop up asking if the user trusts the information presented."
           width="300"
           class=""
         />
         <figcaption>
           Stage 1 would compare the results from native and non-native audiences
-          to see if this TikTok really need moderation.
+          to see if this TikTok really needs moderation.
         </figcaption>
       </figure>
       <li>
@@ -229,7 +227,7 @@ const stage3 = [
         <ImgGetter imageArrayUnopt={stage3} class="mx-auto" />
         <figcaption>
           Only a few users would have to complete this stage, as it would take
-          an unequal amount of time compare to the other stages.
+          an unequal amount of time compared to the other stages.
         </figcaption>
       </figure>
       <li>
@@ -239,7 +237,7 @@ const stage3 = [
       <figure class="flex flex-col items-center justify-center">
         <Image
           src={stage4}
-          alt="General purpose image of TikTok"
+          alt="A background image of TikTok with a pop up asking the user to select between 3 summaries."
           width="300"
           class=""
         />
@@ -268,7 +266,7 @@ const stage3 = [
   <figure class="flex flex-col items-center justify-center">
     <Image
       src={passive}
-      alt="General purpose image of TikTok"
+      alt="A image of a profile page on Tik Tok where a new section called moderator stats has been added showing the users moderation streak, consensus matching, and the consistency is key bage."
       width="300"
       class=""
     />
