@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/react": "^3.1.1",
+    "@astrojs/react": "^3.3.0",
     "@astrojs/tailwind": "^5.1.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
@@ -21,7 +21,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
-    "astro": "^4.5.16",
+    "astro": "^4.6.3",
     "astro-tunnel": "^0.1.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
