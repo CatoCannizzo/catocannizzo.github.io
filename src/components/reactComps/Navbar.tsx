@@ -27,19 +27,18 @@ const components: linkContainer[] = [
       {
         title: "GetGreen",
         href: "/casestudies/getgreen",
-        description:
-          "Studying user retention, for a eco-friendly habit-building app.",
+        description: "Studying user retention, for a habit-building app.",
       },
       {
-        title: "ACES Misinfomation Control",
+        title: "ACES Misinformation Control",
         href: "/casestudies/acesinfosystem",
         description:
-          "Developing a hypothetical system to help combat misinformation.",
-      },      {
+          "Developing a hypothetical system to combat misinformation.",
+      },
+      {
         title: "Portfolio Creation",
         href: "/underconstruction",
-        description:
-          "Insight to my design methodology as I created this website.",
+        description: "Insight to my design methodology for this website.",
       },
     ],
   },
@@ -53,9 +52,15 @@ const components: linkContainer[] = [
       //     "Silly Ideas for Loony Issues - I make up problems, then make up solutions.",
       // },
       {
-        title: "Product Teardowns",
+        title: "Product Teardown",
         href: "/underconstruction",
-        description: "Construing the design process for other products.",
+        description: "Analyzing the design process for other products.",
+      },
+      {
+        title: "Digital Designs",
+        href: "/underconstruction",
+        description:
+          "Fictitious websites designed to practice web development standards.",
       },
     ],
   },
