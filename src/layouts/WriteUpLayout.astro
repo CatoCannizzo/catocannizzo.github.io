@@ -14,7 +14,7 @@ import UI from "./UILayout.astro";
   </div>
 </UI>
 <script>
-  // add mobile support for touch
+  // !!! add mobile support for touch or use lightbox library
   function addPopout() {
     const images: any = document.querySelectorAll("img.popout");
     const popup = document.getElementById("popup");
@@ -24,13 +24,12 @@ import UI from "./UILayout.astro";
     if (!popupimg.src || !popup) {
       throw new Error("The element popup or popupimg wasn't found");
     } else {
-      images.forEach((imgp:  any) => {
+      images.forEach((imgp: any) => {
         imgp.style.cursor = "zoom-in";
         imgp.addEventListener("click", () => {
           popup.classList.toggle("hidden");
           popup.classList.toggle("flex");
-         popupimg.src = imgp.getAttribute("src");
-          
+          popupimg.src = imgp.getAttribute("src");
         });
       });
       popup.onclick = () => {
