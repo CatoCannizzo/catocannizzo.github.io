@@ -17,22 +17,24 @@ import Wireframe from "../../assets/getgreen/Wireframe.png";
 import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
 import TimeOfDay from "../../assets/getgreen/TimeofDay.png";
 import ActionSettings from "../../assets/getgreen/ActionSettings.png";
+// import DSNoteAM from "@/assets/getgreen/DSNotificationAM.png";
+// import PDActionAM from "@/assets/getgreen/PDActionDesignAM.png";
 
 const actionRedesign = [
   {
     src: HomenoGoal,
-    alt: "A redesigned Get Green homescreen showing a blank template where a user can add goals and actions.",
+    alt: "A redesigned Get Green home screen showing a blank template where a user can add goals and actions.",
   },
   {
     src: HomePage,
-    alt: "A redesigned Get Green homescreen showing a template where a user can measure their goal progress and see curent, upcoming, and actions with subtasks",
+    alt: "A redesigned Get Green home screen showing a template where a user can measure their goal progress and see current, upcoming, and actions with subtasks",
     height: "700",
   },
 ];
 const goalRedesign = [
   {
     src: ActionSettings,
-    alt: "An example popup showing actions a user can take if they click on the settings of a action card. Such as editing action frequency, customing notifications, scheculing a reminder, or sharing or removing the action.",
+    alt: "An example popup showing actions a user can take if they click on the settings of a action card. Such as editing action frequency, customizing notifications, scheduling a reminder, or sharing or removing the action.",
   },
   {
     src: HabitFreq,
@@ -55,7 +57,7 @@ const goalRedesign = [
     Problem: The Get Green app has issues engaging users to make long-term
     sustainable habits.
   </p><p>
-    Goal: Design a system of friendly UI features to ensure long-term
+    Goal: Design a system of consistent UI features to ensure long-term
     engagement.
   </p>
   <ul>
@@ -90,24 +92,26 @@ const goalRedesign = [
   </p>
   <p><b>Exploring the problem:</b></p>
   <p>
-    To understand where Get Green was losing users. My group sought to
+    To understand where Get Green was losing users, my group sought to
     understand long term pain points with a diary study, while searching for
     short term pain points with a participatory design session. Additionally we
-    used a survey to search for outlining  issues we might have missed in both
+    used a survey to search for outlining issues we might have missed in both
     techniques.
   </p>
   <p><b>Design:</b></p>
   <p>
-    The team and I then synthesized the data from our user research, ideated
-    through solutions grading them on feasibility and cohesion, then wireframed
-    a series of potential solutions.
+    The team and I then synthesized the data from our user research. First we
+    affinity mapped our raw data to help code and comprehend that data we got
+    back. Then we ideated through different design solutions on pen and paper
+    grading them on feasibility and cohesion, finally we wireframed a series of
+    potential solutions.
   </p>
   <p><b>Evaluation:</b></p>
   <p>
     Once we had a cohesive design system that addressed all the pain points we
-    found. We validated our selected solutions by running usability tests on
-    lofi prototypes. Once validated we created high fi prototypes and design
-    assets for Get Green to integrate.
+    found. We validated our selected solutions by running usability tests on low
+    fidelity prototypes. Once validated we created high fidelity prototypes and
+    design assets for Get Green to integrate.
   </p>
   <h2>Exploring the Problem Space</h2><p>
     Get Green is a sustainability habit building app that is looking to reduce
@@ -117,17 +121,17 @@ const goalRedesign = [
     set up a multiple week diary study, a survey of additional users, and a
     focused three-person participatory design session.
   </p>
-  <!-- !!! Add second persona here when ready to experiment with tables -->
   <figure class="flex flex-col items-center">
     <Image
       src={Persona}
-      alt="Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download enviromental wellness apps, few want to give up their lifestyle "
+      alt="Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download environmental wellness apps, few want to give up their lifestyle "
       width="500"
       class=""
     />
     <figcaption>
       Most people using the app were passively interested in reducing their
-      carbon foot print, but did not want to give up their quality of thier lifestyle.
+      carbon foot print, but did not want to give up the quality of their
+      lifestyle.
     </figcaption>
   </figure>
   <p>
@@ -136,20 +140,20 @@ const goalRedesign = [
     Once the data from the diary studies came back we were able to create
     accurate journey maps.
   </p>
-  <!-- !!! Add click to full size -->
+
   <figure class="flex flex-col items-center">
     <Image
       src={JourneyMap}
-      alt="Journey map of an personafied GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app."
+      alt="Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app."
       class="popout"
     />
     <figcaption>
       It was an almost constant finding in our research that the app annoyed its
-      users after about 2-3 days with it through actionless notifications, or an
-      inability to make it feel personalized.
+      users after about 2-3 days through actionless notifications, and
+      repeatedly highlighting actions the user either could not do or had just
+      completed.
     </figcaption>
   </figure>
-
   <p>
     From the data we collected we offered the following advice to GetGreen.
     <ol>
@@ -189,10 +193,10 @@ const goalRedesign = [
     </figcaption>
   </figure>
   <p>
-    Then we took our final design system and made low fidelity prototypes. We
-    combined the lofi prototypes with user flow diagrams to show how users could
-    go about adding and tracking action items as well as navigating throughout
-    the different functionalities.
+    Then we took our final design system and made low fidelity (lofi)
+    prototypes. We combined the lofi prototypes with user flow diagrams to show
+    how users could go about adding and tracking action items as well as
+    navigating throughout the different functionalities.
   </p>
   <!-- !!! Add click to full size -->
 
@@ -214,22 +218,26 @@ const goalRedesign = [
     throughout the process. Then we graded our prototypes by the following
     metrics: number of critical errors made by users, satisfaction rates, and
     our own observation of the users. This final round of user testing gave us
-    feedback on small pain points and which user flows were more used that we
-    were able to incorporate into our final mock up.
+    feedback on small pain points we overlooked and which user flows were used
+    more.
   </p>
   <p>
-    We then recreated our designs into high fidelity wireframes incorporating
+    We then recreated our designs into high fidelity prototypes incorporating
     the visual branding and UI elements of the GetGreen application. First we
-    completely redesigned the onboarding module to help users to have  shorter
+    completely redesigned the onboarding module to help users to have shorter
     initial sessions within the app followed closely by several more consistent
     sessions in the following days.
   </p>
-  <!-- !!! Add second pic (goalactions) here when ready to experiment with tables -->
+  <!-- !!! Add second pic (goal actions) here when ready to experiment with tables -->
   <figure class="flex flex-col items-center">
-    <Image src={GoalPage} alt="An image of an alternative Get Green on boarding experience that prompts the user to select a goal they want to accomplish with the app." width="300" />
+    <Image
+      src={GoalPage}
+      alt="An image of an alternative Get Green on boarding experience that prompts the user to select a goal they want to accomplish with the app."
+      width="300"
+    />
     <figcaption>
-      One of the first screens a user should see in our redesign, prompts them to
-      choose a goal that aligns with their lifestyle.
+      One of the first screens a user should see in our redesign, prompts them
+      to choose a goal that aligns with their lifestyle.
     </figcaption>
   </figure>
 
@@ -243,8 +251,8 @@ const goalRedesign = [
   <figure class="flex flex-col items-center justify-center">
     <ImgGetter imageArrayUnopt={actionRedesign} class="mx-auto" />
     <figcaption>
-      Here you can see the difference between the base homepage, and one after
-      a user has chosen a goal and specific actions.
+      Here you can see the difference between the base homepage, and one after a
+      user has chosen a goal and specific actions.
     </figcaption>
   </figure>
   <p>
