@@ -15,22 +15,27 @@ import UI from "./UILayout.astro";
 </UI>
 <script>
   // add mobile support for touch
+  function isHTMLImageElement(ele: unknown): ele is HTMLImageElement {
+    return ele instanceof HTMLImageElement;
+  }
+
   function addPopout() {
-    const images: any = document.querySelectorAll("img.popout");
+    const images = document.querySelectorAll("img.popout");
     const popup = document.getElementById("popup");
-    const popupimg: HTMLImageElement = document.getElementById(
-      "popupimg",
-    ) as HTMLImageElement;
-    if (!popupimg.src || !popup) {
+    const popupimg = document.getElementById("popupimg");
+
+    if (!isHTMLImageElement(popupimg) || !popupimg.src || !popup) {
       throw new Error("The element popup or popupimg wasn't found");
     } else {
-      images.forEach((imgp:  any) => {
-        imgp.style.cursor = "zoom-in";
-        imgp.addEventListener("click", () => {
+      images.forEach((img) => {
+        if (!isHTMLImageElement(img)) {
+          throw new Error("The element popup images have disappeared");
+        }
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => {
           popup.classList.toggle("hidden");
           popup.classList.toggle("flex");
-         popupimg.src = imgp.getAttribute("src");
-          
+          popupimg.src = img.src;
         });
       });
       popup.onclick = () => {
