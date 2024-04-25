@@ -7,17 +7,19 @@ import { Toaster } from "@/components/ui/sonner.tsx";
 
 <UILayout nobutton={true}>
   <div class="m-auto items-center text-center">
-    <div class="prose prose-slate mx-auto max-w-prose dark:prose-invert lg:prose-lg">
+    <div
+      class="prose prose-slate mx-auto max-w-prose dark:prose-invert lg:prose-lg">
       <h1>This page is under construction!</h1>
       <br />
       I'm sorry it looks like I haven't gotten around to creating that page yet!
-      I usually update this website atleast once a week, so be sure to check back soon.
-      In the mean time if you want to learn more about my design process of this project feel free
-      to email me at cannizzo@uw.edu!
-    </div>
-    <div>
-      <!-- !!! Update this to feature like the github copy button -->
-      <CopyBtn client:load name="email address" , text="cannizzo@uw.edu" />
+      I usually update this website atleast once a week, so be sure to check back
+      soon. In the mean time if you want to learn more about my design process of
+      this project feel free to email me at cannizzo@uw.edu!<CopyBtn
+        client:load
+        name="email address"
+        ,
+        text="cannizzo@uw.edu"
+      />
       <Toaster client:load />
     </div>
     <BackButton butDialog="Okay I'll explore something else!" />

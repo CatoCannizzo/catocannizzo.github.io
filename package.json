@@ -20,6 +20,7 @@
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "astro": "^4.6.3",
