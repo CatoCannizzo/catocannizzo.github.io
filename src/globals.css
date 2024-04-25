@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
   :root {
     --background: 240 20% 95%; /*Base White*/
     --foreground: 240 60% 5%; /*rich black */
@@ -65,12 +71,8 @@
     --ring: 240 4.9% 83.9%;
   }
 }
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
+@layer components {
+  .is-Stuck {
+    @apply rounded-b-lg bg-secondary/[98%] shadow-md focus:ring focus:ring-ring focus:ring-opacity-75;
   }
 }
