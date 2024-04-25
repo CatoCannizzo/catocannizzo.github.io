@@ -1,4 +1,3 @@
-"use client";
 import Navbar from "./Navbar";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 import { MenuIcon } from "lucide-react";
