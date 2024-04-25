@@ -73,6 +73,6 @@
 }
 @layer components {
   .is-Stuck {
-    @apply rounded-b-lg bg-secondary/[98%] shadow-md focus:ring focus:ring-ring focus:ring-opacity-75;
+    @apply rounded-b-lg  bg-secondary/[98%] shadow-md focus:ring focus:ring-ring focus:ring-opacity-75;
   }
 }
