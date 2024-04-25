@@ -30,15 +30,17 @@ import ThemeIcon from "@comps/ThemeIcon.astro";
   function isHTMLElement(ele: unknown): ele is HTMLElement {
     return ele instanceof HTMLElement;
   }
-  const el = document.querySelector(".stickyHeader");
-  const observer = new IntersectionObserver(
-    ([e]) => e.target.classList.toggle("is-Stuck", e.intersectionRatio < 1),
-    { threshold: [1] },
-  );
-  if (!isHTMLElement(el)) {
-    throw new Error(
-      "The header has been manipulated and may not behave correctly",
+  document.addEventListener("astro:page-load", () => {
+    const el = document.querySelector(".stickyHeader");
+    const observer = new IntersectionObserver(
+      ([e]) => e.target.classList.toggle("is-Stuck", e.intersectionRatio < 1),
+      { threshold: [1] },
     );
-  }
-  observer.observe(el);
+    if (!isHTMLElement(el)) {
+      throw new Error(
+        "The header has been manipulated and may not behave correctly",
+      );
+    }
+    observer.observe(el);
+  });
 </script>

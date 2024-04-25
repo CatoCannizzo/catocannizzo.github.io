@@ -45,6 +45,10 @@ import UI from "./UILayout.astro";
       };
     }
   }
+  document.addEventListener("astro:page-load", () => {
+    addPopout();
+  });
+
   window.addEventListener("load", function () {
     addPopout();
   });
