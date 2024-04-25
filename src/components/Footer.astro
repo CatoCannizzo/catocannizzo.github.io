@@ -1,26 +1,24 @@
 ---
 import Social from "@comps/Social.astro";
 import CopyBtn from "./reactComps/CopyBtn";
+import { Toaster } from "@/components/ui/sonner.tsx";
 
 const { nobutton } = Astro.props;
 ---
 
 <!--!!! Add a nav element to this footer, add a background color to this footer, add a copywright to this footer -->
-<footer class="mx-5 flex items-center justify-between">
+<footer class="m-5 flex items-center justify-between">
   <div>
     <p>Built with <a href="https://astro.build">{Astro.generator}</a></p>
   </div>
   {
     !nobutton && (
       <div class=" hidden items-center sm:flex">
-        <p>Have Feedback?</p>
+        <p>Have Feedback? Email me at Cannizzo@uw.edu</p>
         <div class="mx-2">
-          <CopyBtn
-            client:visible
-            name="my email address"
-            text="Cannizzo@uw.edu"
-          />
+          <CopyBtn client:visible name="email address" text="Cannizzo@uw.edu" />
         </div>
+        <Toaster client:load />
       </div>
     )
   }
