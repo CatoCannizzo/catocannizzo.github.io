@@ -27,7 +27,7 @@ const ImageCarousel: React.FC<Props> = ({ imgArrayOpt }) => {
           <CarouselItem key={index}>
             <div>
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-2">
+                <CardContent className="flex items-center justify-center p-2">
                   <img
                     src={image.src}
                     decoding={image.attributes.decoding}

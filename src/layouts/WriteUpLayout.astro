@@ -14,11 +14,10 @@ import UI from "./UILayout.astro";
   </div>
 </UI>
 <script>
-  // add mobile support for touch
+  // !!! add mobile support for touch or use lightbox library
   function isHTMLImageElement(ele: unknown): ele is HTMLImageElement {
     return ele instanceof HTMLImageElement;
   }
-
   function addPopout() {
     const images = document.querySelectorAll("img.popout");
     const popup = document.getElementById("popup");
