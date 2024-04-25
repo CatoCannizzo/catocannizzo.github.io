@@ -5,9 +5,8 @@ import { Image } from "astro:assets";
 import { buttonVariants } from "@/components/ui/button";
 
 import GGLogo from "../../assets/getgreen/getgreen-logo.png";
-// import ConnectedGoal from "../../assets/getgreen/AddConnectedGoal.png";
 import GoalPage from "../../assets/getgreen/GetGreenGoal.png";
-// import GoalActions from "../../assets/getgreen/GetGreenGoalAction.png";
+import GoalActions from "../../assets/getgreen/GetGreenGoalAction.png";
 import HomePage from "../../assets/getgreen/HomepageWithGoal.png";
 import HomenoGoal from "../../assets/getgreen/HomepageNoGoal.png";
 import Persona from "../../assets/getgreen/DanPersona.png";
@@ -19,7 +18,17 @@ import TimeOfDay from "../../assets/getgreen/TimeofDay.png";
 import ActionSettings from "../../assets/getgreen/ActionSettings.png";
 // import DSNoteAM from "@/assets/getgreen/DSNotificationAM.png";
 // import PDActionAM from "@/assets/getgreen/PDActionDesignAM.png";
-
+//!!! Add affinity mapping pictures
+const goalPages = [
+  {
+    src: GoalPage,
+    alt: "An image of an alternative Get Green on boarding experience that prompts the user to select a goal they want to accomplish with the app.",
+  },
+  {
+    src: GoalActions,
+    alt: "A redesigned Get Green home screen showing a template where a user can measure their goal progress and see current, upcoming, and actions with subtasks",
+  },
+];
 const actionRedesign = [
   {
     src: HomenoGoal,
@@ -225,13 +234,8 @@ const goalRedesign = [
     initial sessions within the app followed closely by several more consistent
     sessions in the following days.
   </p>
-  <!-- !!! Add second pic (goal actions) here when ready to experiment with tables -->
   <figure class="flex flex-col items-center">
-    <Image
-      src={GoalPage}
-      alt="An image of an alternative Get Green on boarding experience that prompts the user to select a goal they want to accomplish with the app."
-      width="300"
-    />
+    <ImgGetter imageArrayUnopt={goalPages} class="mx-auto" />
     <figcaption>
       One of the first screens a user should see in our redesign, prompts them
       to choose a goal that aligns with their lifestyle.
