@@ -38,302 +38,307 @@ const stage3 = [
 ];
 ---
 
-<WriteUpLayout>
-  <h1 class="text-primary">ACES</h1>
-  <h2>Context</h2>
-  <p>
-    Problem: The rise of disinformation in online spaces across the world, from
-    organized misinformation attacks, to the prevalence and rise of
-    anti-information groups like anti-vaxxers.
-  </p><p>
-    Goal: Design and explore the feasibility of an Accountability & Content
-    Evaluation System (ACES) with incentives for users to engage in
-    community-based content moderation.
-  </p>
-  <ul>
-    <li><strong>Role:</strong> User Researcher</li>
-    <li><strong>Team Size:</strong> 4</li>
-    <li><strong>Duration:</strong> 4 weeks</li>
-    <li>
-      <strong>Tools:</strong> Figma, Usability Tests
-    </li>
-  </ul>
-  <a
-    class={buttonVariants({
-      variant: "default",
-      size: "lg",
-      class: "font-bold mt-5 ",
-    })}
-    data-astro-reload
-    id="back2saftey"
-    aria-label="Open Get Green Process book in new window"
-    target="_blank"
-    href="/ACESFinalReport.pdf">Download Full Report</a
-  >
-  <h3>Process Overview</h3>
-
-  <p>
-    <strong>Literary Research:</strong>
-    My team and I reviewed several HCI papers on social media moderation and conducted
-    competitive analysis to see what the current methods for moderation are, as well
-    as their strengths and weaknesses. We also scoped down our design to move away
-    from a fact checking framework, and instead, designed it to act as a basis for
-    establishing epistemological media literacy, or in other words, provide context
-    instead of flag posts as false.
-  </p>
-  <p>
-    <strong> Design:</strong>
-    To address the points we found in our research we split our design space into
-    two different systems: Post Evaluation, and Gamification. In post evaluation
-    we came up with a 4 tiered system, with each tier slowly building upon the previous
-    stage so as to not give any one user too much power or work. However having a
-    potential moderator only able to do 1/4 the work of moderating a post steeply
-    increases the amount of community moderators needed. So we designed a currency
-    that could be exchanged for ad removal, post visibility, or gifts. We also designed
-    badges, achievements and stats summaries that could be shown off on the user's
-    profile for further incentivization.
-  </p>
-  <p>
-    <strong>Evaluation: </strong>After coming up with final designs of each
-    section of the system, we made low fidelity prototypes that were scripted
-    together to be clicked through and ran usability tests to evaluate them. The
-    main takeaway of this testing led us to shift our design by having the
-    warning banner for contentious posts appear half way into the video, in
-    theory, after the viewer gets invested but before they make up their mind.
-  </p>
-  <p>
-    <strong>Conclusion:</strong>As social media companies grow, so do the unique
-    nuances in their diaspora of internet cultures. This makes traditional
-    moderation harder and harder as it must adapt to the specific subgroup it is
-    moderating. Incentivising a community to perform its own moderation with
-    tools that provide them the ability to foster perspective answers this
-    concern.
-  </p>
-  <h2>Literary Research</h2><p>
-    My first step was to help inform the team via a competitive analysis, as
-    other members looked up, current moderation standards, and current best
-    practices in literary discourse.
-  </p><p>
-    I found that there were three primary methods of moderation, algorithmic,
-    professional, and community. Algorithmic moderation is a good preliminary
-    step for sifting through the worst content offenders and has the most
-    throughput, it also has the highest ratio of edge cases, and
-    misclassifications. So most platforms use 3rd party professional moderators
-    to sort through the edge cases however these two moderation techniques leave
-    two problems. The first is “coded” language: where a clique of the internet
-    establishes their own meanings for phrases allowing them to pass off hate
-    speech as seemingly innocuous language which professional and algorithmic
-    moderators have hard time detecting. And secondly misinformation, which
-    oftentimes falls within platform code of conduct and isn't moderated at all.
-    Both of these issues can be addressed by the third type of moderation
-    community moderation. But poorly implemented community moderation like in
-    Reddit's case can lead to severe echo chambers and even to condoning posts
-    against the platform's code of conduct. However change this behavior can be
-    as simple as Twitter's implementation where they randomly choose tweets for
-    its community moderators to look at. (More information about these
-    moderation techniques can be found in the full report at the top of the
-    page.)
-  </p><p>
-    My research led me to suggest to my team that we change scope down our
-    design to move away from a fact checking framework, and instead design ACES
-    to act as a base for epistemological media literacy. Or in other words move
-    from trying to strictly moderate posts via community moderation and instead
-    do "soft moderation" (using informational summaries and warnings) and design
-    the system in such a way as to be able to pass important information to the
-    platform hosting the content.
-  </p><p>
-    After summarizing the rest of the teams research findings and we came up
-    with the following research takeaways:<ol>
-      <li>
-        <strong>Design Constraint:</strong> Literature has shown that community moderators
-        are seldom as accurate as professional moderators. <br />
-        <strong>Solution:</strong> Design our implementation to focus on binary metrics
-        and a focus on increasing perspective rather than trying to give posts a
-        quantitative trustworthiness score.
-      </li>
-      <li>
-        <strong>Design Constraint:</strong> Each social media platform has unique
-        interactions methods making a one-size fits all solution infeasible. <br
-        />
-        <strong>Solution:</strong> Reduce solution space to only TikTok as they have
-        a strong reliance on their algorithm which historically leads to echo chambers,
-        and they have some of the weakest content moderation.
-      </li>
-      <li>
-        <strong>Design Constraint:</strong> Currently, the majority of social media
-        platforms rely on user's altruistic tendencies to participate in content
-        moderation.<br />
-        <strong>Solution:</strong> Derive incentives to gamify the peer review process.
-      </li>
-    </ol>
-  </p>
-  <!-- !!! Add second persona here when ready to experiment with tables -->
-  <figure class="flex flex-col items-center">
-    <Image src={tiktok} alt="General purpose image of TikTok" />
-    <figcaption>
-      Misinformation on TikTok poses an interesting challenge as users can use
-      audio from other videos, making the original content and claims attached
-      to it become hidden.
-    </figcaption>
-  </figure>
-
-  <h2>Design</h2>
-  <p>
-    Our ACES system was divided into two design spaces, 'Post Evaluation' where
-    the trustworthiness of a post is evaluated, and 'Incentives' where we
-    designed active and passive benefits to encourage users to volunteer for the
-    system.
-  </p>
-  <p>
-    In post evaluation we came up with a 4 tiered system. We tried to design
-    these stages to be completed quickly as so not to interrupt the users
-    scrolling through TikTok.
-    <ol>
-      <li>
-        Stage 1 is to “verify targeted posts” where a mix of the native audience
-        of the post, and non-native audience from ACES volunteers would be asked
-        if they trust the information presented in the TikTok.
-      </li>
-      <figure class="flex flex-col items-center">
-        <Image
-          src={stage1}
-          alt="A image of tiktok with a pop up asking if the user trusts the information presented."
-          width="300"
-          class=""
-        />
-        <figcaption>
-          Stage 1 would compare the results from native and non-native audiences
-          to see if this TikTok really needs moderation.
-        </figcaption>
-      </figure>
-      <li>
-        Stage 2 is to “identify fault” where an even broader audience would be
-        asked first to complete stage 1, then to select from a predefined list
-        of reasons as to why they trust or distrust the post.
-      </li>
-      <figure class="flex flex-col items-center justify-center">
-        <ImgGetter imageArrayUnopt={stage2} class="mx-auto" />
-        <figcaption>
-          Stage 2 collects public opinion in a controlled manner.
-        </figcaption>
-      </figure>
-      <li>
-        Stage 3 called “summary declaration” asks a few volunteers to write a
-        declaration to help inform other viewers of the post, using the
-        information collected in stage 2.
-      </li>
-      <figure class="flex flex-col items-center justify-center">
-        <ImgGetter imageArrayUnopt={stage3} class="mx-auto" />
-        <figcaption>
-          Only a few users would have to complete this stage, as it would take
-          an unequal amount of time compared to the other stages.
-        </figcaption>
-      </figure>
-      <li>
-        Stage 4 would be “verify declaration” where another large group would be
-        asked to pick the most informative summary out of several options.
-      </li>
-      <figure class="flex flex-col items-center justify-center">
-        <Image
-          src={stage4}
-          alt="A background image of TikTok with a pop up asking the user to select between 3 summaries."
-          width="300"
-          class=""
-        />
-      </figure>
-    </ol>
-  </p>
-  <p>
-    With our system divided into four sections and any one volunteer not being
-    able to participate in more than one section per post ACES would need a
-    large volunteer group to be productive. To address this concern we suggest
-    gamifying the moderation process to allow volunteers to passively quantify
-    their altruism, earn benefits in the app, and show off to friends.
-  </p>
-  <p>
-    TikTok coins would be the main driver for increased volunteering. Users
-    would be able to exchange coins they get through moderation for supporting
-    influencers, ad removal, or post visibility.
-  </p>
-  <p>
-    Next would be the passive systems, each designed to encourage different
-    types of users to volunteer. For social-users we suggest being able to view
-    details about their moderation style, including how often they matched the
-    eventual moderation consensus of a post. Or how often a post they helped
-    moderate got removed, to increase the feeling of altruism.
-  </p>
-  <figure class="flex flex-col items-center justify-center">
-    <Image
-      src={passive}
-      alt="A image of a profile page on Tik Tok where a new section called moderator stats has been added showing the users moderation streak, consensus matching, and the consistency is key bage."
-      width="300"
-      class=""
-    />
-  </figure>
-
-  <p>
-    For more progress oriented users ACES would have sets of moderation tasks to
-    receive bonus TikCoin, badges. For instance a “quest” could pop up on the
-    user's profile page and ask if they would like to begin the quest to
-    complete a certain number of moderation tasks, in order to receive a bonus.
-    Once acquired these badges could be selected to be displayed on their
-    profile page.
-  </p>
-  <h2>Evaluation</h2>
-  <p>
-    After coming up with final designs of each section of the system, we made a
-    low fidelity prototype that was scripted together to be clicked through and
-    ran usability tests to evaluate them. The test included a short survey at
-    the end to help assess the incentivization of our gamified designs. However
-    such feedback and our takeaways were limited due to not having enough time
-    to prototype out the gamification features or run the usability test with a
-    large number of volunteers. Nevertheless our testers revealed the following
-    information:
-
+<WriteUpLayout title="Content Evaluation">
+  <section>
+    <h1 class="text-primary">ACES</h1>
+    <h2>Context</h2>
+    <p>
+      Problem: The rise of disinformation in online spaces across the world,
+      from organized misinformation attacks, to the prevalence and rise of
+      anti-information groups like anti-vaxxers.
+    </p><p>
+      Goal: Design and explore the feasibility of an Accountability & Content
+      Evaluation System (ACES) with incentives for users to engage in
+      community-based content moderation.
+    </p>
     <ul>
+      <li><strong>Role:</strong> User Researcher</li>
+      <li><strong>Team Size:</strong> 4</li>
+      <li><strong>Duration:</strong> 4 weeks</li>
       <li>
-        Just the presence of a moderation task alters the moderator's opinion of
-        the post.
-      </li>
-      <li>
-        Most testers spent a long time writing declarations, however, a minority
-        of testers enjoyed stage 3 the most.
-      </li>
-      <li>
-        Around half of the testers mentioned they would just click through a
-        warning banner if it appeared before or after a post.
-      </li>
-      <li>
-        For the gamification aspect one user noted that implementing the ability
-        to send gift currency was also a point of contention for an app that
-        children used.
+        <strong>Tools:</strong> Figma, Usability Tests
       </li>
     </ul>
-  </p>
-  <p>
-    These takeaways led us to shift our design by having the warning banner for
-    contentious posts appear half way into the video, in theory, after the
-    viewer gets invested but before they make up their mind. And while not
-    specifically designed, we suggested an algorithm that could be made to pair
-    ACES community moderators with their favorite tasks. Finally we removed the
-    gift ideas, as not only did it spark contention in one of our testers, it
-    was also the lowest motivating ranked overall.
-  </p>
+    <a
+      class={buttonVariants({
+        variant: "default",
+        size: "lg",
+        class: "font-bold mt-5 ",
+      })}
+      data-astro-reload
+      id="back2saftey"
+      aria-label="Open Get Green Process book in new window"
+      target="_blank"
+      href="/ACESFinalReport.pdf">Download Full Report</a>
+  </section><section>
+    <h3>Process Overview</h3>
 
-  <h2>Conclusion</h2><p>
-    Moderation solutions for social media need to adapt to the changing attacks
-    on our information spaces. As social media companies grow, so do the unique
-    nuances in their diaspora of internet cultures. This makes traditional
-    moderation harder and harder as it must adapt to the specific subgroup it is
-    moderating. Incentivising a community to perform its own moderation with
-    tools that provide them the ability to foster perspective answers this
-    concern. This draws in the second key design space of ACES, incentivization.
-    While the gamification, and the incentives listed in our design are not new
-    our literature review showed very little integration of these systems into
-    moderation. Our contribution to this space is envisioning how these systems
-    can be used to foster a grass roots moderation for posts regardless of post
-    status. We see this as an improvement on Twitter's Birdwatch system whose
-    hands off approach limits their volunteers reach to popular posts
-    disproportionately and almost never extends to fringe communities.
-  </p>
+    <p>
+      <strong>Literary Research:</strong>
+      My team and I reviewed several HCI papers on social media moderation and conducted
+      competitive analysis to see what the current methods for moderation are, as
+      well as their strengths and weaknesses. We also scoped down our design to move
+      away from a fact checking framework, and instead, designed it to act as a basis
+      for establishing epistemological media literacy, or in other words, provide
+      context instead of flag posts as false.
+    </p>
+    <p>
+      <strong> Design:</strong>
+      To address the points we found in our research we split our design space into
+      two different systems: Post Evaluation, and Gamification. In post evaluation
+      we came up with a 4 tiered system, with each tier slowly building upon the
+      previous stage so as to not give any one user too much power or work. However
+      having a potential moderator only able to do 1/4 the work of moderating a post
+      steeply increases the amount of community moderators needed. So we designed
+      a currency that could be exchanged for ad removal, post visibility, or gifts.
+      We also designed badges, achievements and stats summaries that could be shown
+      off on the user's profile for further incentivization.
+    </p>
+    <p>
+      <strong>Evaluation: </strong>After coming up with final designs of each
+      section of the system, we made low fidelity prototypes that were scripted
+      together to be clicked through and ran usability tests to evaluate them.
+      The main takeaway of this testing led us to shift our design by having the
+      warning banner for contentious posts appear half way into the video, in
+      theory, after the viewer gets invested but before they make up their mind.
+    </p>
+    <p>
+      <strong>Conclusion:</strong>As social media companies grow, so do the
+      unique nuances in their diaspora of internet cultures. This makes
+      traditional moderation harder and harder as it must adapt to the specific
+      subgroup it is moderating. Incentivising a community to perform its own
+      moderation with tools that provide them the ability to foster perspective
+      answers this concern.
+    </p>
+  </section><section>
+    <h2>Literary Research</h2><p>
+      My first step was to help inform the team via a competitive analysis, as
+      other members looked up, current moderation standards, and current best
+      practices in literary discourse.
+    </p><p>
+      I found that there were three primary methods of moderation, algorithmic,
+      professional, and community. Algorithmic moderation is a good preliminary
+      step for sifting through the worst content offenders and has the most
+      throughput, it also has the highest ratio of edge cases, and
+      misclassifications. So most platforms use 3rd party professional
+      moderators to sort through the edge cases however these two moderation
+      techniques leave two problems. The first is “coded” language: where a
+      clique of the internet establishes their own meanings for phrases allowing
+      them to pass off hate speech as seemingly innocuous language which
+      professional and algorithmic moderators have hard time detecting. And
+      secondly misinformation, which oftentimes falls within platform code of
+      conduct and isn't moderated at all. Both of these issues can be addressed
+      by the third type of moderation community moderation. But poorly
+      implemented community moderation like in Reddit's case can lead to severe
+      echo chambers and even to condoning posts against the platform's code of
+      conduct. However change this behavior can be as simple as Twitter's
+      implementation where they randomly choose tweets for its community
+      moderators to look at. (More information about these moderation techniques
+      can be found in the full report at the top of the page.)
+    </p><p>
+      My research led me to suggest to my team that we change scope down our
+      design to move away from a fact checking framework, and instead design
+      ACES to act as a base for epistemological media literacy. Or in other
+      words move from trying to strictly moderate posts via community moderation
+      and instead do "soft moderation" (using informational summaries and
+      warnings) and design the system in such a way as to be able to pass
+      important information to the platform hosting the content.
+    </p><p>
+      After summarizing the rest of the teams research findings and we came up
+      with the following research takeaways:<ol>
+        <li>
+          <strong>Design Constraint:</strong> Literature has shown that community
+          moderators are seldom as accurate as professional moderators. <br />
+          <strong>Solution:</strong> Design our implementation to focus on binary
+          metrics and a focus on increasing perspective rather than trying to give
+          posts a quantitative trustworthiness score.
+        </li>
+        <li>
+          <strong>Design Constraint:</strong> Each social media platform has unique
+          interactions methods making a one-size fits all solution infeasible. <br
+          />
+          <strong>Solution:</strong> Reduce solution space to only TikTok as they
+          have a strong reliance on their algorithm which historically leads to echo
+          chambers, and they have some of the weakest content moderation.
+        </li>
+        <li>
+          <strong>Design Constraint:</strong> Currently, the majority of social media
+          platforms rely on user's altruistic tendencies to participate in content
+          moderation.<br />
+          <strong>Solution:</strong> Derive incentives to gamify the peer review
+          process.
+        </li>
+      </ol>
+    </p>
+    <figure class="flex flex-col items-center">
+      <Image src={tiktok} alt="General purpose image of TikTok" />
+      <figcaption>
+        Misinformation on TikTok poses an interesting challenge as users can use
+        audio from other videos, making the original content and claims attached
+        to it become hidden.
+      </figcaption>
+    </figure>
+  </section><section>
+    <h2>Design</h2>
+    <p>
+      Our ACES system was divided into two design spaces, 'Post Evaluation'
+      where the trustworthiness of a post is evaluated, and 'Incentives' where
+      we designed active and passive benefits to encourage users to volunteer
+      for the system.
+    </p>
+    <p>
+      In post evaluation we came up with a 4 tiered system. We tried to design
+      these stages to be completed quickly as so not to interrupt the users
+      scrolling through TikTok.
+      <ol>
+        <li>
+          Stage 1 is to “verify targeted posts” where a mix of the native
+          audience of the post, and non-native audience from ACES volunteers
+          would be asked if they trust the information presented in the TikTok.
+        </li>
+        <figure class="flex flex-col items-center">
+          <Image
+            src={stage1}
+            alt="A image of tiktok with a pop up asking if the user trusts the information presented."
+            width="300"
+            class=""
+          />
+          <figcaption>
+            Stage 1 would compare the results from native and non-native
+            audiences to see if this TikTok really needs moderation.
+          </figcaption>
+        </figure>
+        <li>
+          Stage 2 is to “identify fault” where an even broader audience would be
+          asked first to complete stage 1, then to select from a predefined list
+          of reasons as to why they trust or distrust the post.
+        </li>
+        <figure class="flex flex-col items-center justify-center">
+          <ImgGetter imageArrayUnopt={stage2} class="mx-auto" />
+          <figcaption>
+            Stage 2 collects public opinion in a controlled manner.
+          </figcaption>
+        </figure>
+        <li>
+          Stage 3 called “summary declaration” asks a few volunteers to write a
+          declaration to help inform other viewers of the post, using the
+          information collected in stage 2.
+        </li>
+        <figure class="flex flex-col items-center justify-center">
+          <ImgGetter imageArrayUnopt={stage3} class="mx-auto" />
+          <figcaption>
+            Only a few users would have to complete this stage, as it would take
+            an unequal amount of time compared to the other stages.
+          </figcaption>
+        </figure>
+        <li>
+          Stage 4 would be “verify declaration” where another large group would
+          be asked to pick the most informative summary out of several options.
+        </li>
+        <figure class="flex flex-col items-center justify-center">
+          <Image
+            src={stage4}
+            alt="A background image of TikTok with a pop up asking the user to select between 3 summaries."
+            width="300"
+            class=""
+          />
+        </figure>
+      </ol>
+    </p>
+    <p>
+      With our system divided into four sections and any one volunteer not being
+      able to participate in more than one section per post ACES would need a
+      large volunteer group to be productive. To address this concern we suggest
+      gamifying the moderation process to allow volunteers to passively quantify
+      their altruism, earn benefits in the app, and show off to friends.
+    </p>
+    <p>
+      TikTok coins would be the main driver for increased volunteering. Users
+      would be able to exchange coins they get through moderation for supporting
+      influencers, ad removal, or post visibility.
+    </p>
+    <p>
+      Next would be the passive systems, each designed to encourage different
+      types of users to volunteer. For social-users we suggest being able to
+      view details about their moderation style, including how often they
+      matched the eventual moderation consensus of a post. Or how often a post
+      they helped moderate got removed, to increase the feeling of altruism.
+    </p>
+    <figure class="flex flex-col items-center justify-center">
+      <Image
+        src={passive}
+        alt="A image of a profile page on Tik Tok where a new section called moderator stats has been added showing the users moderation streak, consensus matching, and the consistency is key bage."
+        width="300"
+        class=""
+      />
+    </figure>
+
+    <p>
+      For more progress oriented users ACES would have sets of moderation tasks
+      to receive bonus TikCoin, badges. For instance a “quest” could pop up on
+      the user's profile page and ask if they would like to begin the quest to
+      complete a certain number of moderation tasks, in order to receive a
+      bonus. Once acquired these badges could be selected to be displayed on
+      their profile page.
+    </p>
+  </section><section>
+    <h2>Evaluation</h2>
+    <p>
+      After coming up with final designs of each section of the system, we made
+      a low fidelity prototype that was scripted together to be clicked through
+      and ran usability tests to evaluate them. The test included a short survey
+      at the end to help assess the incentivization of our gamified designs.
+      However such feedback and our takeaways were limited due to not having
+      enough time to prototype out the gamification features or run the
+      usability test with a large number of volunteers. Nevertheless our testers
+      revealed the following information:
+
+      <ul>
+        <li>
+          Just the presence of a moderation task alters the moderator's opinion
+          of the post.
+        </li>
+        <li>
+          Most testers spent a long time writing declarations, however, a
+          minority of testers enjoyed stage 3 the most.
+        </li>
+        <li>
+          Around half of the testers mentioned they would just click through a
+          warning banner if it appeared before or after a post.
+        </li>
+        <li>
+          For the gamification aspect one user noted that implementing the
+          ability to send gift currency was also a point of contention for an
+          app that children used.
+        </li>
+      </ul>
+    </p>
+    <p>
+      These takeaways led us to shift our design by having the warning banner
+      for contentious posts appear half way into the video, in theory, after the
+      viewer gets invested but before they make up their mind. And while not
+      specifically designed, we suggested an algorithm that could be made to
+      pair ACES community moderators with their favorite tasks. Finally we
+      removed the gift ideas, as not only did it spark contention in one of our
+      testers, it was also the lowest motivating ranked overall.
+    </p>
+  </section><aside>
+    <h2>Conclusion</h2><p>
+      Moderation solutions for social media need to adapt to the changing
+      attacks on our information spaces. As social media companies grow, so do
+      the unique nuances in their diaspora of internet cultures. This makes
+      traditional moderation harder and harder as it must adapt to the specific
+      subgroup it is moderating. Incentivising a community to perform its own
+      moderation with tools that provide them the ability to foster perspective
+      answers this concern. This draws in the second key design space of ACES,
+      incentivization. While the gamification, and the incentives listed in our
+      design are not new our literature review showed very little integration of
+      these systems into moderation. Our contribution to this space is
+      envisioning how these systems can be used to foster a grass roots
+      moderation for posts regardless of post status. We see this as an
+      improvement on Twitter's Birdwatch system whose hands off approach limits
+      their volunteers reach to popular posts disproportionately and almost
+      never extends to fringe communities.
+    </p>
+  </aside>
 </WriteUpLayout>

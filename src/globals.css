@@ -13,8 +13,8 @@
     --background: 240 20% 95%; /*Base White*/
     --foreground: 240 60% 5%; /*rich black */
 
-    --card: 0 0% 100%; /*white*/
-    --card-foreground: 240 60% 5%;
+    --card: 240 20% 85%; /*white*/
+    --card-foreground: 240 20% 5%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 240 60% 5%;
@@ -26,7 +26,7 @@
     --secondary-foreground: 220 14.3% 98%;
 
     --muted: 240 20% 85%; /*<= this is the gettingstarted shade box // shaded base white*/
-    --muted-foreground: 220 8.9% 30%; /*Text muted*/
+    --muted-foreground: 220 8.9% 20%; /*Text muted*/
 
     --accent: 50 93% 60%; /*Sunset*/ /*This is the hover color */
     --accent-foreground: 220.9 20% 8%; /*Text dark */
@@ -45,7 +45,7 @@
     --background: 240 10% 4%;
     --foreground: 240 20% 95%;
 
-    --card: 240 60% 10%;
+    --card: 240 10% 14%;
     --card-foreground: 240 20% 95%;
 
     --popover: 0 0% 0%; /*!!! Make this actual in theme black*/
@@ -57,7 +57,7 @@
     --secondary: 93 56% 26%; /*The Green*/
     --secondary-foreground: 220 14.3% 98%;
 
-    --muted: 240 20% 85%; /*<= this is the gettingstarted shade box // shaded base white*/
+    --muted: 240 10% 14%; /*<= this is the gettingstarted shade box // shaded base white*/
     --muted-foreground: 240 20% 80%; /*Text muted*/
 
     --accent: 38 95% 32%; /*Sunset*/ /*This is the hover color */
@@ -73,6 +73,6 @@
 }
 @layer components {
   .is-Stuck {
-    @apply rounded-b-lg bg-secondary/[98%] shadow-md focus:ring focus:ring-ring focus:ring-opacity-75;
+    @apply rounded-b-lg  bg-secondary/[98%] shadow-md focus:ring focus:ring-ring focus:ring-opacity-75;
   }
 }

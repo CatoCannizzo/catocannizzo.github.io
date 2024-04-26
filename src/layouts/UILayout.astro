@@ -2,16 +2,19 @@
 import Base from "./baseLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-const { nobutton } = Astro.props;
+interface Props {
+  title: string;
+  nobutton?: boolean;
+}
+const { nobutton, title } = Astro.props;
 ---
 
-<Base>
+<Base title={title}>
   <Header transition:persist /><div
     transition:animate="slide"
-    class="mx-auto flex min-h-[80vh] flex-col items-center
+    class="mx-auto flex flex-col items-center
   px-5">
     <slot />
   </div>
-  <!-- !!! make this not display on mobile -->
   <Footer nobutton={nobutton} />
 </Base>

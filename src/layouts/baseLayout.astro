@@ -3,16 +3,22 @@ import "../globals.css";
 import { ViewTransitions } from "astro:transitions";
 
 //!? https://stackoverflow.com/questions/38729486/typescript-difference-between-import-and-import-with-curly-braces
-
+interface Props {
+  title: string;
+}
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    <meta name="viewport" content="wideth=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Cato Cannizzo's personal potfolio showcasing previous projects and his design preferences and methodology"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -43,7 +49,7 @@ const { title } = Astro.props;
         font-weight: 700;
         font-style: Bold;
       }
-      /* !!! Prevents scroll bar from shifting screen! */
+      /*!? Prevents scroll bar from shifting screen! */
       html {
         overflow-x: hidden;
         margin-right: calc(-1 * (100vw - 100%));
@@ -51,7 +57,7 @@ const { title } = Astro.props;
     </style>
     <ViewTransitions />
   </head>
-  <body class="dark:bg-zinc-950 dark:text-white">
+  <body class="h-full dark:bg-zinc-950 dark:text-white">
     <div class="mx-auto max-w-5xl">
       <slot />
     </div>
