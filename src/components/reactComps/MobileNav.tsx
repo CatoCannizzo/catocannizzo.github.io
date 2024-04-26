@@ -8,7 +8,7 @@ export default function NavMenu() {
     <div className="visibile sm:hidden">
       <Drawer direction="right">
         <DrawerTrigger>
-          <MenuIcon />
+          <MenuIcon aria-label="Menu" />
         </DrawerTrigger>
         <DrawerContent>
           <div className="my-auto ">

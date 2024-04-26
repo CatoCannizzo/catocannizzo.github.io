@@ -3,7 +3,9 @@ import "../globals.css";
 import { ViewTransitions } from "astro:transitions";
 
 //!? https://stackoverflow.com/questions/38729486/typescript-difference-between-import-and-import-with-curly-braces
-
+interface Props {
+  title: string;
+}
 const { title } = Astro.props;
 ---
 
