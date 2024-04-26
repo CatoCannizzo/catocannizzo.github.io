@@ -2,7 +2,6 @@
 import UILayout from "@/layouts/UILayout.astro";
 import BackButton from "@/components/BackButton.astro";
 import CopyBtn from "@/components/reactComps/CopyBtn.tsx";
-import { Toaster } from "@/components/ui/sonner.tsx";
 ---
 
 <UILayout nobutton={true} title="Under construction">
@@ -20,7 +19,6 @@ import { Toaster } from "@/components/ui/sonner.tsx";
         ,
         text="cannizzo@uw.edu"
       />
-      <Toaster client:load />
     </div>
     <BackButton butDialog="Okay I'll explore something else!" />
   </main>

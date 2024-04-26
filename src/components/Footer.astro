@@ -1,8 +1,6 @@
 ---
 import Social from "@comps/Social.astro";
 import CopyBtn from "./reactComps/CopyBtn";
-import { Toaster } from "@/components/ui/sonner.tsx";
-
 const { nobutton } = Astro.props;
 ---
 
@@ -18,7 +16,6 @@ const { nobutton } = Astro.props;
         <div class="mx-2">
           <CopyBtn client:visible name="email address" text="Cannizzo@uw.edu" />
         </div>
-        <Toaster client:load />
       </div>
     )
   }
