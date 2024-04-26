@@ -4,37 +4,66 @@ import Navbar from "@comps/reactComps/Navbar";
 import ThemeIcon from "@comps/ThemeIcon.astro";
 ---
 
-<!-- !!!Align with Hi on home screen --><!-- Sticky styleing is done as a class in global.css-->
-<header
-  class="stickyHeader sticky top-[-1px] z-50 mx-5 flex max-w-5xl items-center px-5 md:mx-auto">
-  <a href="/" class="mr-auto">
-    <svg
-      class="h-16 w-16 fill-current stroke-2 text-accent"
-      viewBox="0 0 110 96"
-      ><g
-        ><path
-          d="M77 0a48 48 0 0 0-7 1l10 6a42 42 0 0 1 6-1 42 42 0 0 1 22 7h2A48 48 0 0 0 77 0zM56 11l-10 1a48 48 0 0 0-17 36 48 48 0 0 0 17 36 38 38 0 0 0 20 0 42 42 0 0 1-18-20 42 42 0 0 1-2-4 42 42 0 0 1 0-1 42 42 0 0 1-1-5 42 42 0 0 1-1-6 42 42 0 0 1 22-36l-10-1zm52 72a42 42 0 0 1-22 6 42 42 0 0 1-6 0l-10 6a48 48 0 0 0 7 1 48 48 0 0 0 33-13z"
-        ></path>
-        <path
-          d="M48 0A48 48 0 0 0 0 48a48 48 0 0 0 3 15 48 48 0 0 0 0 2 48 48 0 0 0 1 1 48 48 0 0 0 44 30 48 48 0 0 0 33-13h-3a42 42 0 0 1-22 7 42 42 0 0 1-41-42A42 42 0 0 1 56 7a42 42 0 0 1 22 6h3A48 48 0 0 0 48 0z"
-        ></path>
-      </g></svg
-    >
-  </a>
-  <div class="bg hidden sm:flex"><Navbar isVert={false} client:visible /></div>
-  <MobileNav client:visible />
-  <div class="px-2"><ThemeIcon /></div>
-</header>
+<!-- Sticky styleing is done as a class in global.css--><!-- !!! Figure out why intersection observer doesn't work on mobile then removesm:sticky for sticky -->
+<div class="stickyContainer sticky top-[-1px] z-50 px-5">
+  <header class="stickyHeader mx-auto flex max-w-5xl items-center px-5">
+    <a href="/" class="mr-auto">
+      <svg
+        class="h-16 w-16 fill-current stroke-2 text-accent"
+        viewBox="0 0 110 96"
+        ><g
+          ><path
+            d="M77 0a48 48 0 0 0-7 1l10 6a42 42 0 0 1 6-1 42 42 0 0 1 22 7h2A48 48 0 0 0 77 0zM56 11l-10 1a48 48 0 0 0-17 36 48 48 0 0 0 17 36 38 38 0 0 0 20 0 42 42 0 0 1-18-20 42 42 0 0 1-2-4 42 42 0 0 1 0-1 42 42 0 0 1-1-5 42 42 0 0 1-1-6 42 42 0 0 1 22-36l-10-1zm52 72a42 42 0 0 1-22 6 42 42 0 0 1-6 0l-10 6a48 48 0 0 0 7 1 48 48 0 0 0 33-13z"
+          ></path>
+          <path
+            d="M48 0A48 48 0 0 0 0 48a48 48 0 0 0 3 15 48 48 0 0 0 0 2 48 48 0 0 0 1 1 48 48 0 0 0 44 30 48 48 0 0 0 33-13h-3a42 42 0 0 1-22 7 42 42 0 0 1-41-42A42 42 0 0 1 56 7a42 42 0 0 1 22 6h3A48 48 0 0 0 48 0z"
+          ></path>
+        </g></svg
+      >
+    </a>
+    <div class="bg hidden sm:flex">
+      <Navbar isVert={false} client:visible />
+    </div>
+    <MobileNav client:visible />
+    <div class="px-2"><ThemeIcon /></div>
+  </header>
+</div>
 
 <script>
   function isHTMLElement(ele: unknown): ele is HTMLElement {
     return ele instanceof HTMLElement;
   }
-  document.addEventListener("astro:page-load", () => {
+  // //Following Comment block removes sticky header from mobile screens
+  // // Create a MediaQueryList object
+  // var x = window.matchMedia("(max-width: 700px)");
+  // // Attach listener function on state changes
+  // x.addEventListener("change", function () {
+  //   updateHeader(x);
+  // });
+  // function updateHeader(x: MediaQueryList) {
+  //   const container = document.querySelector(".stickyContainer");
+  //   console.log("updating header", container);
+
+  //   if (!isHTMLElement(container)) {
+  //     throw new Error(
+  //       "The header container has been manipulated and may not behave correctly",
+  //     );
+  //   }
+  //   if (x.matches) {
+  //     container.classList.remove("sticky");
+  //   } else {
+  //     if (!container.classList.contains("sticky")) {
+  //       container.classList.add("sticky");
+  //     }
+  //   }
+  // }
+  // updateHeader(x);
+
+  function initHeader() {
     const el = document.querySelector(".stickyHeader");
     const observer = new IntersectionObserver(
       ([e]) => e.target.classList.toggle("is-Stuck", e.intersectionRatio < 1),
-      { threshold: [1] },
+      { threshold: [0.99] },
     );
     if (!isHTMLElement(el)) {
       throw new Error(
@@ -42,5 +71,12 @@ import ThemeIcon from "@comps/ThemeIcon.astro";
       );
     }
     observer.observe(el);
+  }
+  // Call listener function at run time
+  initHeader();
+  // Unknown error on chrome mobile browser preventing use of the astro:pageload event listener https://github.com/withastro/astro/issues/10830
+  document.addEventListener("astro:after-swap", () => {
+    console.log("after swap");
+    initHeader();
   });
 </script>
