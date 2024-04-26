@@ -4,7 +4,7 @@ import Navbar from "@comps/reactComps/Navbar";
 import ThemeIcon from "@comps/ThemeIcon.astro";
 ---
 
-<!-- Sticky styleing is done as a class in global.css--><!-- !!! Figure out why intersection observer doesn't work on mobile then removesm:sticky for sticky -->
+<!-- Sticky styling is done as a class in global.css-->
 <div class="stickyContainer sticky top-[-1px] z-50 px-5">
   <header class="stickyHeader mx-auto flex max-w-5xl items-center px-5">
     <a href="/" class="mr-auto">
@@ -33,31 +33,6 @@ import ThemeIcon from "@comps/ThemeIcon.astro";
   function isHTMLElement(ele: unknown): ele is HTMLElement {
     return ele instanceof HTMLElement;
   }
-  // //Following Comment block removes sticky header from mobile screens
-  // // Create a MediaQueryList object
-  // var x = window.matchMedia("(max-width: 700px)");
-  // // Attach listener function on state changes
-  // x.addEventListener("change", function () {
-  //   updateHeader(x);
-  // });
-  // function updateHeader(x: MediaQueryList) {
-  //   const container = document.querySelector(".stickyContainer");
-  //   console.log("updating header", container);
-
-  //   if (!isHTMLElement(container)) {
-  //     throw new Error(
-  //       "The header container has been manipulated and may not behave correctly",
-  //     );
-  //   }
-  //   if (x.matches) {
-  //     container.classList.remove("sticky");
-  //   } else {
-  //     if (!container.classList.contains("sticky")) {
-  //       container.classList.add("sticky");
-  //     }
-  //   }
-  // }
-  // updateHeader(x);
 
   function initHeader() {
     const el = document.querySelector(".stickyHeader");
