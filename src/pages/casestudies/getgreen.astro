@@ -60,229 +60,236 @@ const goalRedesign = [
   <figure>
     <Image src={GGLogo} alt="Logo for Get Green" width="300" />
   </figure>
-  <h2>Context</h2>
-  <p>
-    Problem: The Get Green app has issues engaging users to make long-term
-    sustainable habits.
-  </p><p>
-    Goal: Design a system of consistent UI features to ensure long-term
-    engagement.
-  </p>
-  <ul>
-    <li><strong>Role:</strong> UX Designer, & User Researcher</li>
-    <li><strong>Team Size:</strong> 4</li>
-    <li><strong>Duration:</strong> 3 months</li>
-    <li>
-      <strong>UR Techniques:</strong> Diary Studies, Participatory, Usability Studies
-    </li>
-  </ul>
-  <a
-    class={buttonVariants({
-      variant: "default",
-      size: "lg",
-      class: "font-bold mt-5 ",
-    })}
-    data-astro-reload
-    id="back2saftey"
-    aria-label="Open Get Green Process book in new window"
-    target="_blank"
-    href="/GetGreenProcessBook.pdf">Download Full Process Book</a
-  >
-  <h3>Process Overview</h3>
-
-  <p><b>Problem Definition:</b></p>
-  <p>
-    Through talking to Get Green we explored the directions they wanted to grow
-    their app and they immediately talked about user retention. My team and I
-    described various methods of increasing retention, and while initially Get
-    Green wanted to explore some geo-location based features, they settled on
-    gamifying their app due to development limitations on their end.
-  </p>
-  <p><b>Exploring the problem:</b></p>
-  <p>
-    To understand where Get Green was losing users, my group sought to
-    understand long term pain points with a diary study, while searching for
-    short term pain points with a participatory design session. Additionally we
-    used a survey to search for outlining issues we might have missed in both
-    techniques.
-  </p>
-  <p><b>Design:</b></p>
-  <p>
-    The team and I then synthesized the data from our user research. First we
-    affinity mapped our raw data to help code and comprehend that data we got
-    back. Then we ideated through different design solutions on pen and paper
-    grading them on feasibility and cohesion, finally we wireframed a series of
-    potential solutions.
-  </p>
-  <p><b>Evaluation:</b></p>
-  <p>
-    Once we had a cohesive design system that addressed all the pain points we
-    found. We validated our selected solutions by running usability tests on low
-    fidelity prototypes. Once validated we created high fidelity prototypes and
-    design assets for Get Green to integrate.
-  </p>
-  <h2>Exploring the Problem Space</h2><p>
-    Get Green is a sustainability habit building app that is looking to reduce
-    its users carbon foot print through task recommendations and eco-friendly
-    goals. Due to an abundance of time and high engagement with Get Green our
-    team was able to deeply dive into the problem space. Over two weeks our team
-    set up a multiple week diary study, a survey of additional users, and a
-    focused three-person participatory design session.
-  </p>
-  <figure class="flex flex-col items-center">
-    <Image
-      src={Persona}
-      alt="Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download environmental wellness apps, few want to give up their lifestyle "
-      width="500"
-      class=""
-    />
-    <figcaption>
-      Most people using the app were passively interested in reducing their
-      carbon foot print, but did not want to give up the quality of their
-      lifestyle.
-    </figcaption>
-  </figure>
-  <p>
-    We then synthesized the data we collected through affinity mapping, and
-    created user personas based off of the participatory design and surveys.
-    Once the data from the diary studies came back we were able to create
-    accurate journey maps.
-  </p>
-
-  <figure class="flex flex-col items-center">
-    <Image
-      src={JourneyMap}
-      alt="Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app."
-      class="popout"
-    />
-    <figcaption>
-      It was an almost constant finding in our research that the app annoyed its
-      users after about 2-3 days through actionless notifications, and
-      repeatedly highlighting actions the user either could not do or had just
-      completed.
-    </figcaption>
-  </figure>
-  <p>
-    From the data we collected we offered the following advice to GetGreen.
-    <ol>
+  <section>
+    <h2>Context</h2>
+    <p>
+      Problem: The Get Green app has issues engaging users to make long-term
+      sustainable habits.
+    </p><p>
+      Goal: Design a system of consistent UI features to ensure long-term
+      engagement.
+    </p>
+    <ul>
+      <li><strong>Role:</strong> UX Designer, & User Researcher</li>
+      <li><strong>Team Size:</strong> 4</li>
+      <li><strong>Duration:</strong> 3 months</li>
       <li>
-        Smooth out information presentation in the app, by reducing first login
-        questions and adding popups on the second or third login.
+        <strong>UR Techniques:</strong> Diary Studies, Participatory, Usability Studies
       </li>
-      <li>Redesign how users add track and manage action items</li>
-      <li>Increase personalization of the app through unique goals.</li>
-    </ol>
+    </ul>
+    <a
+      class={buttonVariants({
+        variant: "default",
+        size: "lg",
+        class: "font-bold mt-5 ",
+      })}
+      data-astro-reload
+      id="back2saftey"
+      aria-label="Open Get Green Process book in new window"
+      target="_blank"
+      href="/GetGreenProcessBook.pdf">Download Full Process Book</a
+    >
+  </section><section>
+    <h3>Process Overview</h3>
 
-    After discussions with GetGreen, we prioritized the following design spaces
-    and began wireframing solutions: <ol>
-      <li>Action item redesign</li>
-      <li>Personalization Settings</li>
-      <li>App navigation & onboarding</li>
-    </ol>
-  </p>
+    <p><b>Problem Definition:</b></p>
+    <p>
+      Through talking to Get Green we explored the directions they wanted to
+      grow their app and they immediately talked about user retention. My team
+      and I described various methods of increasing retention, and while
+      initially Get Green wanted to explore some geo-location based features,
+      they settled on gamifying their app due to development limitations on
+      their end.
+    </p>
+    <p><b>Exploring the problem:</b></p>
+    <p>
+      To understand where Get Green was losing users, my group sought to
+      understand long term pain points with a diary study, while searching for
+      short term pain points with a participatory design session. Additionally
+      we used a survey to search for outlining issues we might have missed in
+      both techniques.
+    </p>
+    <p><b>Design:</b></p>
+    <p>
+      The team and I then synthesized the data from our user research. First we
+      affinity mapped our raw data to help code and comprehend that data we got
+      back. Then we ideated through different design solutions on pen and paper
+      grading them on feasibility and cohesion, finally we wireframed a series
+      of potential solutions.
+    </p>
+    <p><b>Evaluation:</b></p>
+    <p>
+      Once we had a cohesive design system that addressed all the pain points we
+      found. We validated our selected solutions by running usability tests on
+      low fidelity prototypes. Once validated we created high fidelity
+      prototypes and design assets for Get Green to integrate.
+    </p>
+  </section><section>
+    <h2>Exploring the Problem Space</h2><p>
+      Get Green is a sustainability habit building app that is looking to reduce
+      its users carbon foot print through task recommendations and eco-friendly
+      goals. Due to an abundance of time and high engagement with Get Green our
+      team was able to deeply dive into the problem space. Over two weeks our
+      team set up a multiple week diary study, a survey of additional users, and
+      a focused three-person participatory design session.
+    </p>
+    <figure class="flex flex-col items-center">
+      <Image
+        src={Persona}
+        alt="Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download environmental wellness apps, few want to give up their lifestyle "
+        width="500"
+        class=""
+      />
+      <figcaption>
+        Most people using the app were passively interested in reducing their
+        carbon foot print, but did not want to give up the quality of their
+        lifestyle.
+      </figcaption>
+    </figure>
+    <p>
+      We then synthesized the data we collected through affinity mapping, and
+      created user personas based off of the participatory design and surveys.
+      Once the data from the diary studies came back we were able to create
+      accurate journey maps.
+    </p>
 
-  <h2>Design & Redesign</h2>
-  <p>
-    To understand how we might create such features we ideated through several
-    ideas. Once we had solutions to each problem, we used wireframes to see how
-    we could combine them into a cohesive system that would continually keep
-    users engaged. These wireframes captured big picture ideas such as content
-    layout, features, and navigation of the Get Green app.
-  </p>
-  <figure class="flex flex-col items-center">
-    <Image
-      src={Wireframe}
-      alt="Wireframe of a homescreen page showing a draft layout of the Get Green app."
-      class="max-w-[250px]"
-    />
-    <figcaption>
-      Here we attempted to redesign the home screen to show users actions that
-      they could look forward to doing.
-    </figcaption>
-  </figure>
-  <p>
-    Then we took our final design system and made low fidelity (lofi)
-    prototypes. We combined the lofi prototypes with user flow diagrams to show
-    how users could go about adding and tracking action items as well as
-    navigating throughout the different functionalities.
-  </p>
-  <figure class="flex flex-col items-center">
-    <Image
-      src={LofiPrototype}
-      alt="Collection of several low fidelity screenshots with arrows pointing from page to page."
-      class="popout"
-    />
-    <figcaption>
-      In terms of overall experience, our low fidelity designs averaged at 81
-      out of 100 on the US Government's System Usability Scale.
-    </figcaption>
-  </figure>
-  <h2>Evaluation</h2>
-  <p>
-    Then we conducted a short usability test with select users on these lofi
-    designs. We had the participants complete four tasks while thinking out loud
-    throughout the process. Then we graded our prototypes by the following
-    metrics: number of critical errors made by users, satisfaction rates, and
-    our own observation of the users. This final round of user testing gave us
-    feedback on small pain points we overlooked and which user flows were used
-    more.
-  </p>
-  <p>
-    We then recreated our designs into high fidelity prototypes incorporating
-    the visual branding and UI elements of the GetGreen application. First we
-    completely redesigned the onboarding module to help users to have shorter
-    initial sessions within the app followed closely by several more consistent
-    sessions in the following days.
-  </p>
-  <figure class="flex flex-col items-center">
-    <ImgGetter imageArrayUnopt={goalPages} class="mx-auto" />
-    <figcaption>
-      One of the first screens a user should see in our redesign, prompts them
-      to choose a goal that aligns with their lifestyle.
-    </figcaption>
-  </figure>
+    <figure class="flex flex-col items-center">
+      <Image
+        src={JourneyMap}
+        alt="Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app."
+        class="popout"
+      />
+      <figcaption>
+        It was an almost constant finding in our research that the app annoyed
+        its users after about 2-3 days through actionless notifications, and
+        repeatedly highlighting actions the user either could not do or had just
+        completed.
+      </figcaption>
+    </figure>
+    <p>
+      From the data we collected we offered the following advice to GetGreen.
+      <ol>
+        <li>
+          Smooth out information presentation in the app, by reducing first
+          login questions and adding popups on the second or third login.
+        </li>
+        <li>Redesign how users add track and manage action items</li>
+        <li>Increase personalization of the app through unique goals.</li>
+      </ol>
 
-  <p>
-    We improved the interactivity of the 'action items' which would reduce user
-    frustration with the app, and allow for more flexibility when it comes to a
-    user's self monitoring.
-  </p>
+      After discussions with GetGreen, we prioritized the following design
+      spaces and began wireframing solutions: <ol>
+        <li>Action item redesign</li>
+        <li>Personalization Settings</li>
+        <li>App navigation & onboarding</li>
+      </ol>
+    </p>
+  </section><section>
+    <h2>Design & Redesign</h2>
+    <p>
+      To understand how we might create such features we ideated through several
+      ideas. Once we had solutions to each problem, we used wireframes to see
+      how we could combine them into a cohesive system that would continually
+      keep users engaged. These wireframes captured big picture ideas such as
+      content layout, features, and navigation of the Get Green app.
+    </p>
+    <figure class="flex flex-col items-center">
+      <Image
+        src={Wireframe}
+        alt="Wireframe of a homescreen page showing a draft layout of the Get Green app."
+        class="max-w-[250px]"
+      />
+      <figcaption>
+        Here we attempted to redesign the home screen to show users actions that
+        they could look forward to doing.
+      </figcaption>
+    </figure>
+    <p>
+      Then we took our final design system and made low fidelity (lofi)
+      prototypes. We combined the lofi prototypes with user flow diagrams to
+      show how users could go about adding and tracking action items as well as
+      navigating throughout the different functionalities.
+    </p>
+    <figure class="flex flex-col items-center">
+      <Image
+        src={LofiPrototype}
+        alt="Collection of several low fidelity screenshots with arrows pointing from page to page."
+        class="popout"
+      />
+      <figcaption>
+        In terms of overall experience, our low fidelity designs averaged at 81
+        out of 100 on the US Government's System Usability Scale.
+      </figcaption>
+    </figure>
+  </section><section>
+    <h2>Evaluation</h2>
+    <p>
+      Then we conducted a short usability test with select users on these lofi
+      designs. We had the participants complete four tasks while thinking out
+      loud throughout the process. Then we graded our prototypes by the
+      following metrics: number of critical errors made by users, satisfaction
+      rates, and our own observation of the users. This final round of user
+      testing gave us feedback on small pain points we overlooked and which user
+      flows were used more.
+    </p>
+    <p>
+      We then recreated our designs into high fidelity prototypes incorporating
+      the visual branding and UI elements of the GetGreen application. First we
+      completely redesigned the onboarding module to help users to have shorter
+      initial sessions within the app followed closely by several more
+      consistent sessions in the following days.
+    </p>
+    <figure class="flex flex-col items-center">
+      <ImgGetter imageArrayUnopt={goalPages} class="mx-auto" />
+      <figcaption>
+        One of the first screens a user should see in our redesign, prompts them
+        to choose a goal that aligns with their lifestyle.
+      </figcaption>
+    </figure>
 
-  <figure class="flex flex-col items-center justify-center">
-    <ImgGetter imageArrayUnopt={actionRedesign} class="mx-auto" />
-    <figcaption>
-      Here you can see the difference between the base homepage, and one after a
-      user has chosen a goal and specific actions.
-    </figcaption>
-  </figure>
-  <p>
-    Finally we increased the options available to users in their settings and
-    with their actions. This should help even out the time users initially spend
-    with the app and increase long term engagement with a goal centric
-    improvement model to build towards.
-  </p>
-  <figure class="flex flex-col items-center justify-center">
-    <ImgGetter imageArrayUnopt={goalRedesign} class="mx-auto" />
-    <figcaption>
-      Here is a collection of popups that could stem from a user trying to
-      customize an action card.
-    </figcaption>
-  </figure>
-  <h2>Reflection</h2><p>
-    Through this capstone I have learned a lot about user research and team
-    coordination. Since my group started with several user research methods I
-    learned the most about what to expect and plan for in research settings.
-    Including how to advertise for such opportunities, what to look out for and
-    how to better control who is accepted into the studies. If I could have gone
-    back and changed anything it would have been these primary user research
-    cases. While grouping them at the start of our plan allowed us to
-    efficiently run multiple of them at the same time it severely limited the
-    takeaways we could have gathered if we spaced them out and iterated our
-    designs between them. However this is an easy lesson to apply going forward
-    and in this one case it helped us to solidify our design space when our
-    sponsors had a hard time narrowing it down. In the future, the new
-    experience with user research skills will be imperative when designing for
-    spaces, micro-cultures, and technologies I do not have first hand experience
-    with.
-  </p>
+    <p>
+      We improved the interactivity of the 'action items' which would reduce
+      user frustration with the app, and allow for more flexibility when it
+      comes to a user's self monitoring.
+    </p>
+
+    <figure class="flex flex-col items-center justify-center">
+      <ImgGetter imageArrayUnopt={actionRedesign} class="mx-auto" />
+      <figcaption>
+        Here you can see the difference between the base homepage, and one after
+        a user has chosen a goal and specific actions.
+      </figcaption>
+    </figure>
+    <p>
+      Finally we increased the options available to users in their settings and
+      with their actions. This should help even out the time users initially
+      spend with the app and increase long term engagement with a goal centric
+      improvement model to build towards.
+    </p>
+    <figure class="flex flex-col items-center justify-center">
+      <ImgGetter imageArrayUnopt={goalRedesign} class="mx-auto" />
+      <figcaption>
+        Here is a collection of popups that could stem from a user trying to
+        customize an action card.
+      </figcaption>
+    </figure>
+  </section><aside>
+    <h2>Reflection</h2><p>
+      Through this capstone I have learned a lot about user research and team
+      coordination. Since my group started with several user research methods I
+      learned the most about what to expect and plan for in research settings.
+      Including how to advertise for such opportunities, what to look out for
+      and how to better control who is accepted into the studies. If I could
+      have gone back and changed anything it would have been these primary user
+      research cases. While grouping them at the start of our plan allowed us to
+      efficiently run multiple of them at the same time it severely limited the
+      takeaways we could have gathered if we spaced them out and iterated our
+      designs between them. However this is an easy lesson to apply going
+      forward and in this one case it helped us to solidify our design space
+      when our sponsors had a hard time narrowing it down. In the future, the
+      new experience with user research skills will be imperative when designing
+      for spaces, micro-cultures, and technologies I do not have first hand
+      experience with.
+    </p>
+  </aside>
 </WriteUpLayout>

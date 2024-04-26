@@ -13,10 +13,10 @@ const { title } = Astro.props;
   <img id="popupimg" src="" class="m-auto max-h-[90vh] max-w-[90vw]" />
 </div>
 <UI title={title}>
-  <div
+  <main
     class="prose prose-slate mx-auto my-5 max-w-prose dark:prose-invert lg:prose-lg">
     <slot />
-  </div>
+  </main>
 </UI>
 <script>
   // !!! add mobile support for touch or use lightbox library
