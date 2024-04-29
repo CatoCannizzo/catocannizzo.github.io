@@ -5,13 +5,13 @@ const { nobutton } = Astro.props;
 ---
 
 <!--!!! Add a nav element to this footer, add a background color to this footer, add a copywright to this footer -->
-<footer class="m-5 flex items-center justify-between">
+<footer class="mt-auto flex flex-shrink-0 items-center justify-between">
   <div>
     <p>Built with <a href="https://astro.build">{Astro.generator}</a></p>
   </div>
   {
     !nobutton && (
-      <div class=" hidden items-center sm:flex">
+      <div class="hidden items-center sm:flex">
         <p>Have Feedback? Email me at Cannizzo@uw.edu</p>
         <div class="mx-2">
           <CopyBtn client:visible name="email address" text="Cannizzo@uw.edu" />

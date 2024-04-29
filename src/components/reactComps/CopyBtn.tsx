@@ -18,7 +18,7 @@ export default function CopyBtn({ name, text }: Props) {
   function notify() {
     console.log("copied");
     navigator.clipboard.writeText(text);
-    toast({ variant: "green", description: `Copied: ${name}` });
+    toast({ variant: "green", description: `Copied: ${text}` });
   }
   // const notify = () => toast("Wow so easy!");
 

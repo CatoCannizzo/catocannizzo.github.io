@@ -19,6 +19,7 @@ const { title } = Astro.props;
       content="Cato Cannizzo's personal potfolio showcasing previous projects and his design preferences and methodology"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Cato Cannizzo" />
     <meta name="generator" content={Astro.generator} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -57,9 +58,8 @@ const { title } = Astro.props;
     </style>
     <ViewTransitions />
   </head>
-  <body class="h-full dark:bg-zinc-950 dark:text-white">
-    <div class="mx-auto max-w-5xl">
-      <slot />
-    </div>
+  <body
+    class="mx-auto flex min-h-[100dvh] max-w-5xl flex-col dark:bg-zinc-950 dark:text-white">
+    <slot />
   </body>
 </html>

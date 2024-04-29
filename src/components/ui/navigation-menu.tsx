@@ -94,7 +94,7 @@ const NavigationMenuViewport = React.forwardRef<
   <div
     className={cn(
       "absolute flex justify-center",
-      isVert && "right-[15vw] top-0",
+      isVert && "right-[-40px] top-12",
       !isVert && "right-0 top-full",
     )}>
     <NavigationMenuPrimitive.Viewport
