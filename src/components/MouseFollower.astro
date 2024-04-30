@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import img1 from "../assets/welcome/TLHello.png";
+import img2 from "../assets/welcome/TMHello.png";
+import img3 from "../assets/welcome/TRHello.png";
+import img4 from "../assets/welcome/MLHello.png";
+import img5 from "../assets/welcome/MMHello.png";
+import img6 from "../assets/welcome/MRHello.png";
+import img7 from "../assets/welcome/BLHello.png";
+import img8 from "../assets/welcome/DefaultHello.png";
+import img9 from "../assets/welcome/BRHello.png";
+
+const imageArray = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+---
+
+<!-- Makes a square picture and changes source when mouse hovers over a 3 by 3 subdivision of image tag -->
+<div id="MouseFollower" class="relative z-30 flex h-48 w-48 flex-row flex-wrap">
+  {
+    imageArray.map((image: any, index: number) => (
+      <Image
+        id={`followImage${index}`}
+        src={image}
+        alt="A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction."
+        height={196}
+        width={196}
+        class="absolute opacity-0 [transition:opacity_0.2s_ease-in;]"
+      />
+    ))
+  }
+  <!-- Subdivision that trigger image swap -->
+  <div id="iH1" class="absolute h-16 w-16"></div>
+  <div id="iH2" class="absolute left-16 h-16 w-16"></div>
+  <div id="iH3" class="absolute left-32 h-16 w-16"></div>
+  <div id="iH4" class="absolute top-16 h-16 w-16"></div>
+  <div id="iH5" class="absolute left-16 top-16 h-16 w-16"></div>
+  <div id="iH6" class="absolute left-32 top-16 h-16 w-16"></div>
+  <div id="iH7" class="absolute top-32 h-16 w-16"></div>
+  <div id="iH8" class="absolute left-16 top-32 h-16 w-16"></div>
+  <div id="iH9" class="absolute left-32 top-32 h-16 w-16"></div>
+</div>
+
+<script>
+  // Sets first image to show
+  const baseImage = document.getElementById("followImage7");
+  if (baseImage instanceof HTMLImageElement) {
+    baseImage.classList.toggle("opacity-0");
+    baseImage.classList.toggle("Shown");
+  }
+  // Called after timeout to reshow first image after 1.5s of inactivity
+  function back2Default() {
+    if (baseImage instanceof HTMLImageElement) {
+      const collection2 = document.querySelectorAll(".Shown");
+      collection2.forEach((element) => {
+        element.classList.toggle("opacity-0");
+        element.classList.toggle("Shown");
+      });
+      baseImage.classList.toggle("opacity-0");
+      baseImage.classList.toggle("Shown");
+    }
+  }
+  //Time out
+  var timeoutHandle = window.setTimeout(() => {
+    back2Default();
+  }, 1500);
+  //Changes image via opacity then calls timeout && in the middle resets timeout to prevent reset during use
+  function changeImage(imgSrc: number) {
+    const collection = document.getElementsByClassName("Shown");
+    const shownImage = collection[0];
+    const followImage = document.getElementById(`followImage${imgSrc}`);
+    window.clearTimeout(timeoutHandle);
+    if (
+      followImage instanceof HTMLImageElement &&
+      shownImage instanceof HTMLImageElement
+    ) {
+      shownImage.classList.toggle("opacity-0");
+      shownImage.classList.toggle("Shown");
+      followImage.classList.toggle("opacity-0");
+      followImage.classList.toggle("Shown");
+      timeoutHandle = window.setTimeout(() => {
+        back2Default();
+      }, 2000);
+    }
+  }
+  // !!! Match media width
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    () => {
+      return false;
+    };
+  } else {
+    const iH1Ele = document.getElementById("iH1");
+    if (iH1Ele instanceof HTMLDivElement) {
+      iH1Ele.addEventListener("mouseover", () => changeImage(0));
+    }
+    const iH2Ele = document.getElementById("iH2");
+    if (iH2Ele instanceof HTMLDivElement) {
+      iH2Ele.addEventListener("mouseover", () => changeImage(1));
+    }
+    const iH3Ele = document.getElementById("iH3");
+    if (iH3Ele instanceof HTMLDivElement) {
+      iH3Ele.addEventListener("mouseover", () => changeImage(2));
+    }
+    const iH4Ele = document.getElementById("iH4");
+    if (iH4Ele instanceof HTMLDivElement) {
+      iH4Ele.addEventListener("mouseover", () => changeImage(3));
+    }
+    const iH5Ele = document.getElementById("iH5");
+    if (iH5Ele instanceof HTMLDivElement) {
+      iH5Ele.addEventListener("mouseover", () => changeImage(4));
+    }
+    const iH6Ele = document.getElementById("iH6");
+    if (iH6Ele instanceof HTMLDivElement) {
+      iH6Ele.addEventListener("mouseover", () => changeImage(5));
+    }
+    const iH7Ele = document.getElementById("iH7");
+    if (iH7Ele instanceof HTMLDivElement) {
+      iH7Ele.addEventListener("mouseover", () => changeImage(6));
+    }
+    const iH8Ele = document.getElementById("iH8");
+    if (iH8Ele instanceof HTMLDivElement) {
+      iH8Ele.addEventListener("mouseover", () => changeImage(7));
+    }
+    const iH9Ele = document.getElementById("iH9");
+    if (iH9Ele instanceof HTMLDivElement) {
+      iH9Ele.addEventListener("mouseover", () => changeImage(8));
+    }
+  }
+</script>
