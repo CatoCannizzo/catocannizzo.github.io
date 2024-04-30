@@ -51,7 +51,7 @@ import ThemeIcon from "@comps/ThemeIcon.astro";
   initHeader();
   // Unknown error on chrome mobile browser preventing use of the astro:pageload event listener https://github.com/withastro/astro/issues/10830
   document.addEventListener("astro:after-swap", () => {
-    console.log("after swap");
+    // console.log("after swap");
     initHeader();
   });
 </script>
