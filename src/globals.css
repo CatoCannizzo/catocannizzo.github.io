@@ -10,65 +10,65 @@
     @apply bg-background text-foreground;
   }
   :root {
-    --background: 240 20% 95%; /*Base White*/
-    --foreground: 240 60% 5%; /*rich black */
+    --background: 240deg 20% 95%; /*Base White*/
+    --foreground: 240deg 60% 5%; /*rich black */
 
-    --card: 240 20% 85%; /*white*/
-    --card-foreground: 240 20% 5%;
+    --card: 240deg 20% 85%; /*white*/
+    --card-foreground: 240deg 20% 5%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 60% 5%;
+    --popover: 0deg 0% 100%;
+    --popover-foreground: 240deg 60% 5%;
 
-    --primary: 220 66% 52%; /*Lapis*/
-    --primary-foreground: 220 14.3% 98%; /*Text white seasalt*/
+    --primary: 220deg 66% 52%; /*Lapis*/
+    --primary-foreground: 220deg 14.3% 98%; /*Text white seasalt*/
 
-    --secondary: 93 56% 46%; /*The Green*/
+    --secondary: 93deg 56% 46%; /*The Green*/
     --secondary-foreground: 220 14.3% 98%;
 
-    --muted: 240 20% 85%; /*<= this is the gettingstarted shade box // shaded base white*/
+    --muted: 240deg 20% 85%; /*<= this is the gettingstarted shade box // shaded base white*/
     --muted-foreground: 220 8.9% 20%; /*Text muted*/
 
-    --accent: 50 93% 60%; /*Sunset*/ /*This is the hover color */
+    --accent: 50deg 93% 60%; /*Sunset*/ /*This is the hover color */
     --accent-foreground: 220.9 20% 8%; /*Text dark */
 
-    --destructive: 04 91% 32%; /*red */
-    --destructive-foreground: 220 14.3% 98%;
+    --destructive: 04deg 91% 32%; /*red */
+    --destructive-foreground: 220deg 14.3% 98%;
 
-    --border: 240 20% 85%;
-    --input: 240 20% 85%;
-    --ring: 240 60% 5%;
+    --border: 240deg 20% 85%;
+    --input: 240deg 20% 85%;
+    --ring: 240deg 60% 5%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 240 10% 4%;
-    --foreground: 240 20% 95%;
+    --background: 240deg 10% 4%;
+    --foreground: 240deg 20% 95%;
 
-    --card: 240 10% 14%;
-    --card-foreground: 240 20% 95%;
+    --card: 240deg 10% 14%;
+    --card-foreground: 240deg 20% 95%;
 
-    --popover: 0 0% 0%; /*!!! Make this actual in theme black*/
+    --popover: 0deg 0% 0%; /*!!! Make this actual in theme black*/
     --popover-foreground: 0 0% 100%;
 
-    --primary: 220 100% 29%; /*Lapis*/
-    --primary-foreground: 220 14.3% 98%; /*Text white seasalt*/
+    --primary: 220deg 100% 29%; /*Lapis*/
+    --primary-foreground: 220deg 14.3% 98%; /*Text white seasalt*/
 
-    --secondary: 93 56% 26%; /*The Green*/
+    --secondary: 93deg 56% 26%; /*The Green*/
     --secondary-foreground: 220 14.3% 98%;
 
-    --muted: 240 10% 14%; /*<= this is the gettingstarted shade box // shaded base white*/
-    --muted-foreground: 240 20% 80%; /*Text muted*/
+    --muted: 240deg 10% 14%; /*<= this is the gettingstarted shade box // shaded base white*/
+    --muted-foreground: 240deg 20% 80%; /*Text muted*/
 
-    --accent: 38 95% 32%; /*Sunset*/ /*This is the hover color */
-    --accent-foreground: 220.9 20% 8%; /*Text dark */
+    --accent: 38deg 95% 32%; /*Sunset*/ /*This is the hover color */
+    --accent-foreground: 220.9deg 20% 8%; /*Text dark */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0deg 62.8% 30.6%;
+    --destructive-foreground: 0deg 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 240deg 3.7% 15.9%;
+    --input: 240deg 3.7% 15.9%;
+    --ring: 240deg 4.9% 83.9%;
   }
 }
 @layer components {

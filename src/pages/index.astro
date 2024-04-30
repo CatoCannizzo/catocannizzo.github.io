@@ -6,15 +6,16 @@ import MouseFollower from "@/components/MouseFollower.astro";
 
 <UILayout nobutton={true} title="Cato's portfolio">
   <main class="w-full max-w-5xl justify-between transition-all">
-    <div class="mr-auto">
+    <!-- This bg-accent works the one using arbitrary values down below does not -->
+    <div class="mr-auto bg-accent">
       <p class="ml-6 text-6xl">Hi, I'm Cato</p>
       <p class="mb-6 pl-[5rem] text-6xl sm:pl-[10rem] md:pl-[15rem]">
         Cannizzo
       </p>
     </div>
 
-    <!-- !!! Make this a typing animation changer -->
-    <div class="mt-16 flex w-full flex-col sm:flex-row">
+    <!-- This bg-[--accent] does not work!? But why? -->
+    <div class="mt-16 flex w-full flex-col bg-[--accent] sm:flex-row">
       <ColorBgCard styles=" rounded-[50%] w-48 h-48"
         ><MouseFollower /></ColorBgCard
       ><div class="ml-auto mt-10">
