@@ -1,0 +1,56 @@
+---
+import "../globals.css";
+interface Props {
+  styles: string;
+}
+const { styles } = Astro.props;
+---
+
+<div
+  class={`${styles} mx-auto card relative flex items-center bg-card after:blur-xl 
+  before:bg-[var(--primary)]`}>
+  <slot />
+</div>
+
+<style>
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  /* These are the CSS variables I want to replace with --accent, --secondary, and --primary respectively */
+  :root {
+    --clr-1: #f8d83a;
+    --clr-2: #6fb734;
+    --clr-3: #346ad5;
+    --clr-4: #6fb734;
+    --clr-5: #f8d83a;
+  }
+
+  .card::before,
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-1),
+      var(--clr-2),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5)
+    );
+    border-radius: inherit;
+    animation: rotation 8s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
+</style>
