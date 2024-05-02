@@ -67,50 +67,62 @@ const stage3 = [
       })}
       data-astro-reload
       id="back2saftey"
+      title="Open Get Green Process book in new window"
       aria-label="Open Get Green Process book in new window"
       target="_blank"
-      href="/ACESFinalReport.pdf">Download Full Report</a>
+      href="/ACESFinalReport.pdf">Download Full Report</a
+    >
   </section><section>
     <h3>Process Overview</h3>
-
+    <h4 id="Literary Research">
+      <a href="#LiteraryResearch"> Literary Research: </a>
+    </h4>
     <p>
-      <strong>Literary Research:</strong>
-      My team and I reviewed several HCI papers on social media moderation and conducted
-      competitive analysis to see what the current methods for moderation are, as
-      well as their strengths and weaknesses. We also scoped down our design to move
-      away from a fact checking framework, and instead, designed it to act as a basis
-      for establishing epistemological media literacy, or in other words, provide
-      context instead of flag posts as false.
+      My team and I reviewed several HCI papers on social media moderation and
+      conducted competitive analysis to see what the current methods for
+      moderation are, as well as their strengths and weaknesses. We also scoped
+      down our design to move away from a fact checking framework, and instead,
+      designed it to act as a basis for establishing epistemological media
+      literacy, or in other words, provide context instead of flag posts as
+      false.
     </p>
+    <h4 id="Design ">
+      <a href="#Design"> Design: </a>
+    </h4>
     <p>
-      <strong> Design:</strong>
-      To address the points we found in our research we split our design space into
-      two different systems: Post Evaluation, and Gamification. In post evaluation
-      we came up with a 4 tiered system, with each tier slowly building upon the
-      previous stage so as to not give any one user too much power or work. However
-      having a potential moderator only able to do 1/4 the work of moderating a post
-      steeply increases the amount of community moderators needed. So we designed
-      a currency that could be exchanged for ad removal, post visibility, or gifts.
-      We also designed badges, achievements and stats summaries that could be shown
-      off on the user's profile for further incentivization.
+      To address the points we found in our research we split our design space
+      into two different systems: Post Evaluation, and Gamification. In post
+      evaluation we came up with a 4 tiered system, with each tier slowly
+      building upon the previous stage so as to not give any one user too much
+      power or work. However having a potential moderator only able to do 1/4
+      the work of moderating a post steeply increases the amount of community
+      moderators needed. So we designed a currency that could be exchanged for
+      ad removal, post visibility, or gifts. We also designed badges,
+      achievements and stats summaries that could be shown off on the user's
+      profile for further incentivization.
     </p>
+    <h4 id="Evaluation ">
+      <a href="#Evaluation"> Evaluation: </a>
+    </h4>
     <p>
-      <strong>Evaluation: </strong>After coming up with final designs of each
-      section of the system, we made low fidelity prototypes that were scripted
-      together to be clicked through and ran usability tests to evaluate them.
-      The main takeaway of this testing led us to shift our design by having the
-      warning banner for contentious posts appear half way into the video, in
-      theory, after the viewer gets invested but before they make up their mind.
+      After coming up with final designs of each section of the system, we made
+      low fidelity prototypes that were scripted together to be clicked through
+      and ran usability tests to evaluate them. The main takeaway of this
+      testing led us to shift our design by having the warning banner for
+      contentious posts appear half way into the video, in theory, after the
+      viewer gets invested but before they make up their mind.
     </p>
+    <h4 id="Conclusion ">
+      <a href="#Conclusion"> Conclusion: </a>
+    </h4>
     <p>
-      <strong>Conclusion:</strong>As social media companies grow, so do the
-      unique nuances in their diaspora of internet cultures. This makes
-      traditional moderation harder and harder as it must adapt to the specific
-      subgroup it is moderating. Incentivising a community to perform its own
-      moderation with tools that provide them the ability to foster perspective
-      answers this concern.
+      As social media companies grow, so do the unique nuances in their diaspora
+      of internet cultures. This makes traditional moderation harder and harder
+      as it must adapt to the specific subgroup it is moderating. Incentivising
+      a community to perform its own moderation with tools that provide them the
+      ability to foster perspective answers this concern.
     </p>
-  </section><section>
+  </section><section id="LiteraryResearch" class="scroll-mt-20">
     <h2>Literary Research</h2><p>
       My first step was to help inform the team via a competitive analysis, as
       other members looked up, current moderation standards, and current best
@@ -140,10 +152,11 @@ const stage3 = [
       design to move away from a fact checking framework, and instead design
       ACES to act as a base for epistemological media literacy. Or in other
       words move from trying to strictly moderate posts via community moderation
-      and instead do "soft moderation" (using informational summaries and
+      and instead do" soft moderation" (using informational summaries and
       warnings) and design the system in such a way as to be able to pass
       important information to the platform hosting the content.
-    </p><p>
+    </p>
+    <p>
       After summarizing the rest of the teams research findings and we came up
       with the following research takeaways:<ol>
         <li>
@@ -155,8 +168,8 @@ const stage3 = [
         </li>
         <li>
           <strong>Design Constraint:</strong> Each social media platform has unique
-          interactions methods making a one-size fits all solution infeasible. <br
-          />
+          interactions methods making a one-size fits all solution infeasible.
+          <br />
           <strong>Solution:</strong> Reduce solution space to only TikTok as they
           have a strong reliance on their algorithm which historically leads to echo
           chambers, and they have some of the weakest content moderation.
@@ -178,7 +191,7 @@ const stage3 = [
         to it become hidden.
       </figcaption>
     </figure>
-  </section><section>
+  </section><section id="Design" class="scroll-mt-20">
     <h2>Design</h2>
     <p>
       Our ACES system was divided into two design spaces, 'Post Evaluation'
@@ -281,7 +294,7 @@ const stage3 = [
       bonus. Once acquired these badges could be selected to be displayed on
       their profile page.
     </p>
-  </section><section>
+  </section><section id="Evaluation" class="scroll-mt-20">
     <h2>Evaluation</h2>
     <p>
       After coming up with final designs of each section of the system, we made
@@ -322,7 +335,7 @@ const stage3 = [
       removed the gift ideas, as not only did it spark contention in one of our
       testers, it was also the lowest motivating ranked overall.
     </p>
-  </section><aside>
+  </section><aside id="Conclusion" class="scroll-mt-20">
     <h2>Conclusion</h2><p>
       Moderation solutions for social media need to adapt to the changing
       attacks on our information spaces. As social media companies grow, so do
