@@ -1,5 +1,6 @@
 ---
 import UI from "./UILayout.astro";
+import UpButton from "@/components/UpButton.astro";
 interface Props {
   title: string;
 }
@@ -15,6 +16,8 @@ const { title } = Astro.props;
 <UI title={title}>
   <main
     class="prose mx-auto my-5 max-w-prose dark:prose-invert lg:prose-lg prose-figcaption:rounded prose-figcaption:bg-muted prose-figcaption:p-2 prose-figcaption:text-muted-foreground">
+    <UpButton />
+
     <slot />
   </main>
 </UI>
