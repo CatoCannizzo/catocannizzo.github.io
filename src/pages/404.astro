@@ -1,13 +1,20 @@
 ---
 import Base from "@/layouts/baseLayout.astro";
 import SafteyButton from "@/components/BackButton.astro";
+import ColorBgCard from "@/components/ColorBgCard.astro";
+import MouseFollower from "@/components/MouseFollower.astro";
 import { buttonVariants } from "@/components/ui/button";
 ---
 
 <Base title="404 page">
   <main class="flex h-screen">
     <div class="m-auto text-center">
-      <h3>It appears you are lost, and something might have broke!</h3>
+      <ColorBgCard styles="rounded-[50%] w-48 h-48"
+        ><MouseFollower /></ColorBgCard
+      >
+      <h3 class="mt-8">
+        Hey it appears you are lost, and something might have broke!
+      </h3>
       <SafteyButton butDialog="Go back to saftey" /><a
         class={buttonVariants({
           variant: "default",
