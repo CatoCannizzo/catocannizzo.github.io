@@ -1,23 +1,25 @@
 ---
 import UI from "./UILayout.astro";
-import UpButton from "@/components/UpButton.astro";
+import UpButton from "@/components/Buttons/UpButton.astro";
+import SkipButton from "@/components/Buttons/SkipButton.astro";
 interface Props {
   title: string;
 }
 const { title } = Astro.props;
 ---
 
-<!-- !!! Scroll to top to show progress --><!-- !!! Add side nave on md or higher to jump --><!-- Make this black a gray -->
+<SkipButton skipSection="maincontent" />
 <div
   id="popup"
   class="sticky left-0 top-0 hidden min-h-[100vh] cursor-zoom-out bg-black/75">
   <img id="popupimg" src="" class="m-auto max-h-[90vh] max-w-[90vw]" />
 </div>
-<UI title={title}>
-  <main
-    class="prose mx-auto my-5 max-w-prose dark:prose-invert lg:prose-lg prose-figcaption:rounded prose-figcaption:bg-muted prose-figcaption:p-2 prose-figcaption:text-muted-foreground">
-    <UpButton />
 
+<UI title={title}>
+  <UpButton />
+  <main
+    id="maincontent"
+    class="prose mx-auto my-5 max-w-prose dark:prose-invert lg:prose-lg prose-figcaption:rounded prose-figcaption:bg-muted prose-figcaption:p-2 prose-figcaption:text-muted-foreground">
     <slot />
   </main>
 </UI>
