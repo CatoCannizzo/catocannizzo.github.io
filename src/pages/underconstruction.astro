@@ -4,8 +4,8 @@ import BackButton from "@/components/Buttons/BackButton.astro";
 import CopyBtn from "@/components/reactComps/CopyBtn.tsx";
 ---
 
-<UILayout nobutton={true} title="Under construction">
-  <main class="m-auto items-center text-center">
+<UILayout skipbutton="maincontent" footbutton={true} title="Under construction">
+  <main id="maincontent" class="m-auto items-center text-center">
     <div
       class="prose prose-slate mx-auto max-w-prose dark:prose-invert lg:prose-lg">
       <h1>This page is under construction!</h1>

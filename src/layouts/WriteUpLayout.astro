@@ -1,21 +1,19 @@
 ---
 import UI from "./UILayout.astro";
 import UpButton from "@/components/Buttons/UpButton.astro";
-import SkipButton from "@/components/Buttons/SkipButton.astro";
 interface Props {
   title: string;
 }
 const { title } = Astro.props;
 ---
 
-<SkipButton skipSection="maincontent" />
 <div
   id="popup"
   class="sticky left-0 top-0 hidden min-h-[100vh] cursor-zoom-out bg-black/75">
   <img id="popupimg" src="" class="m-auto max-h-[90vh] max-w-[90vw]" />
 </div>
 
-<UI title={title}>
+<UI title={title} skipbutton="maincontent">
   <UpButton />
   <main
     id="maincontent"
