@@ -8,14 +8,15 @@ interface Props {
   title: string;
   footbutton?: boolean;
   skipbutton?: string;
+  upbutton?: boolean;
 }
-const { skipbutton, footbutton, title } = Astro.props;
+const { skipbutton, footbutton, title, upbutton } = Astro.props;
 ---
 
 <Base title={title}>
   {skipbutton && <SkipButton skipSection={skipbutton} />}
 
-  <Header transition:persist /><div
+  <Header transition:persist upbutton={upbutton} /><div
     transition:animate="slide"
     class="mx-auto flex w-full flex-col items-center
   px-5">

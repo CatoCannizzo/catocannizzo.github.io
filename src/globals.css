@@ -72,6 +72,7 @@
   }
 }
 @layer components {
+  /* !? way to get hsla into hsl */
   .is-Stuck {
     @apply rounded-b-lg  bg-secondary/[98%] shadow-md focus:ring focus:ring-ring focus:ring-opacity-75;
   }

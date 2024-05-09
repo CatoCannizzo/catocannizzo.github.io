@@ -28,7 +28,7 @@ const { image, sizes, description } = Astro.props;
     glb.reload();
   });
 </script>
-
+<!-- !!!Fix text contrast on description for mobile -->
 <style is:global>
   /* .glightbox-custom .gslide-title {
   } */
@@ -40,7 +40,7 @@ const { image, sizes, description } = Astro.props;
   .glightbox-custom .gprev,
   .glightbox-custom .gnext,
   .glightbox-custom .gclose {
-    background-color: hsl(0 0% 100%);
+    background-color: hsl(var(--destructive));
     border-radius: 0.25rem;
   }
 
@@ -63,6 +63,6 @@ const { image, sizes, description } = Astro.props;
   }
 
   .glightbox-custom .gclose:hover {
-    background-color: hsl(var(--destructive));
+    background-color: hsl(var(--destructive) / 70%);
   }
 </style>

@@ -1,5 +1,4 @@
 ---
-import { buttonVariants } from "@/components/ui/button";
 interface Props {
   skipSection: string;
 }
@@ -7,7 +6,7 @@ const { skipSection } = Astro.props;
 ---
 
 <a
-  class="absolute top-[-50px] z-50 inline-flex h-1 w-1 transform items-center justify-center overflow-hidden whitespace-nowrap rounded-md bg-destructive text-sm font-medium text-destructive-foreground ring-offset-background transition-all duration-700 focus:top-5 focus:m-2 focus:h-10 focus:w-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+  class="absolute top-[-50px] z-50 inline-flex h-1 w-1 transform items-center justify-center overflow-hidden whitespace-nowrap rounded-md bg-destructive text-sm font-medium text-destructive-foreground ring-offset-background transition-all duration-700 hover:bg-destructive/[90%] focus:top-5 focus:m-2 focus:h-10 focus:w-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
   ,
   href=`#${skipSection}`>
   skip to main content

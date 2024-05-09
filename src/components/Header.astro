@@ -2,11 +2,22 @@
 import MobileNav from "@comps/reactComps/MobileNav";
 import Navbar from "@comps/reactComps/Navbar";
 import ThemeIcon from "@comps/ThemeIcon.astro";
+import UpButton from "@/components/Buttons/UpButton.astro";
+
+interface Props {
+  upbutton?: boolean;
+}
+const { upbutton } = Astro.props;
 ---
 
-<!-- Sticky styling is done as a class in global.css-->
-<div class="sticky top-[-1px] z-40 my-3 px-5">
-  <header class="stickyHeader mx-auto flex max-w-5xl items-center px-5">
+{upbutton && <UpButton />}
+<!-- StickyHeader styling is done as a class in global.css-->
+<div
+  id="headerContainer"
+  class="sticky top-[-1px] mx-5 transition-all duration-300">
+  <header
+    id="header"
+    class="stickyHeader mx-auto flex h-fit max-w-5xl items-center px-5">
     <a href="/" aria-label="Navigate to portfolio home page" class="mr-auto">
       <svg
         class="h-16 w-16 fill-current stroke-2 text-accent"
@@ -30,6 +41,7 @@ import ThemeIcon from "@comps/ThemeIcon.astro";
 </div>
 
 <script>
+  //?! Typescript typeguard
   function isHTMLElement(ele: unknown): ele is HTMLElement {
     return ele instanceof HTMLElement;
   }
@@ -54,4 +66,64 @@ import ThemeIcon from "@comps/ThemeIcon.astro";
     // console.log("after swap");
     initHeader();
   });
+
+  // Hide Header on on scroll down
+  var didScroll = true;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = 140;
+
+  document.addEventListener("scroll", (event) => {
+    didScroll = true;
+  });
+
+  setInterval(function () {
+    if (didScroll) {
+      hasScrolled();
+      didScroll = false;
+    }
+  }, 250);
+
+  function hasScrolled() {
+    var st = window.scrollY;
+    // Make sure they scroll more than delta
+    if (Math.abs(lastScrollTop - st) <= delta) return;
+    const headCont = document.getElementById("headerContainer");
+
+    if (!isHTMLElement(headCont)) {
+      throw new Error("The Header element was not found");
+    }
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight) {
+      // Scroll Down
+
+      headCont.classList.remove("top-[-1px]");
+      headCont.classList.add("top-[-100px]");
+    } else {
+      // Scroll Up
+      if (st < lastScrollTop) {
+        headCont.classList.add("top-[-1px]");
+        headCont.classList.remove("top-[-100px]");
+      }
+    }
+    // Repeated movement of head cont for upbutton if present
+    const upButton = document.getElementById("upButton");
+    if (!upButton) {
+      lastScrollTop = st;
+      return;
+    }
+    if (st > lastScrollTop && st > navbarHeight) {
+      // Scroll Down
+      upButton.classList.remove("bottom-10");
+      upButton.classList.add("bottom-[-74px]");
+    } else {
+      // Scroll Up
+      if (st < lastScrollTop) {
+        upButton.classList.add("bottom-10");
+        upButton.classList.remove("bottom-[-74px]");
+      }
+    }
+    lastScrollTop = st;
+  }
 </script>
