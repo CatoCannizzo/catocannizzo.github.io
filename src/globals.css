@@ -48,7 +48,7 @@
     --card: 240 10% 14%;
     --card-foreground: 240 20% 95%;
 
-    --popover: 0 0% 0%; /*!!! Make this actual in theme black*/
+    --popover: 0 0% 0%; /*black*/
     --popover-foreground: 0 0% 100%;
 
     --primary: 220 100% 29%; /*Lapis*/

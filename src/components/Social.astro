@@ -8,7 +8,6 @@ interface Props {
 const { platform, username }: Props = Astro.props;
 ---
 
-<!-- !!! want to add fixed bottom-2  -->
 <a
   class="rounded bg-primary p-1 text-primary-foreground hover:bg-primary/90"
   href={`https://www.${platform}.com/${username}`}>{platform}</a

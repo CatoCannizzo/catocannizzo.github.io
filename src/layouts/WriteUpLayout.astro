@@ -1,17 +1,13 @@
 ---
 import UI from "./UILayout.astro";
 import UpButton from "@/components/Buttons/UpButton.astro";
+import "glightbox/dist/css/glightbox.min.css";
+
 interface Props {
   title: string;
 }
 const { title } = Astro.props;
 ---
-
-<div
-  id="popup"
-  class="sticky left-0 top-0 hidden min-h-[100vh] cursor-zoom-out bg-black/75">
-  <img id="popupimg" src="" class="m-auto max-h-[90vh] max-w-[90vw]" />
-</div>
 
 <UI title={title} skipbutton="maincontent">
   <UpButton />
@@ -22,42 +18,8 @@ const { title } = Astro.props;
   </main>
 </UI>
 <script>
-  // !!! add mobile support for touch or use lightbox library
-  // !!! Add collections from Astro
   //?! Typescript typeguard
-  function isHTMLImageElement(ele: unknown): ele is HTMLImageElement {
-    return ele instanceof HTMLImageElement;
-  }
-  function addPopout() {
-    const images = document.querySelectorAll("img.popout");
-    const popup = document.getElementById("popup");
-    const popupimg = document.getElementById("popupimg");
-
-    if (!isHTMLImageElement(popupimg) || !popupimg.src || !popup) {
-      throw new Error("The element popup or popupimg wasn't found");
-    } else {
-      images.forEach((img) => {
-        if (!isHTMLImageElement(img)) {
-          throw new Error("The element popup images have disappeared");
-        }
-        img.style.cursor = "zoom-in";
-        img.addEventListener("click", () => {
-          popup.classList.toggle("hidden");
-          popup.classList.toggle("flex");
-          popupimg.src = img.src;
-        });
-      });
-      popup.onclick = () => {
-        popup.classList.toggle("flex");
-        popup.classList.toggle("hidden");
-      };
-    }
-  }
-  document.addEventListener("astro:after-swap", () => {
-    addPopout();
-  });
-
-  window.addEventListener("DOMContentLoaded", function () {
-    addPopout();
-  });
+  // function isHTMLImageElement(ele: unknown): ele is HTMLImageElement {
+  //   return ele instanceof HTMLImageElement;
+  // }
 </script>
