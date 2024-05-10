@@ -26,7 +26,7 @@
     --secondary-foreground: 220 14.3% 98%;
 
     --muted: 240 20% 85%; /*<= this is the gettingstarted shade box // shaded base white*/
-    --muted-foreground: 220 8.9% 20%; /*Text muted*/
+    --muted-foreground: 220 8.9% 15%; /*Text muted*/
 
     --accent: 50 93% 60%; /*Sunset*/ /*This is the hover color */
     --accent-foreground: 220.9 20% 8%; /*Text dark */
@@ -58,7 +58,7 @@
     --secondary-foreground: 220 14.3% 98%;
 
     --muted: 240 10% 14%; /*<= this is the gettingstarted shade box // shaded base white*/
-    --muted-foreground: 240 20% 80%; /*Text muted*/
+    --muted-foreground: 240 20% 85%; /*Text muted*/
 
     --accent: 38 95% 32%; /*Sunset*/ /*This is the hover color */
     --accent-foreground: 220.9 20% 8%; /*Text dark */
@@ -69,11 +69,5 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
-  }
-}
-@layer components {
-  /* !? way to get hsla into hsl */
-  .is-Stuck {
-    @apply rounded-b-lg  bg-secondary/[98%] shadow-md focus:ring focus:ring-ring focus:ring-opacity-75;
   }
 }

@@ -12,25 +12,23 @@ const { upbutton } = Astro.props;
 
 {upbutton && <UpButton />}
 <!-- StickyHeader styling is done as a class in global.css-->
-<div
-  id="headerContainer"
-  class="sticky top-[-1px] mx-5 transition-all duration-300">
+<div id="headerContainer" class="sticky z-50 mx-10 transition-all duration-300">
   <header
     id="header"
-    class="stickyHeader mx-auto flex h-fit max-w-5xl items-center px-5">
+    class="stickyHeader mx-auto flex h-fit max-w-5xl items-center rounded-b-lg px-3 py-1">
     <a href="/" aria-label="Navigate to portfolio home page" class="mr-auto">
       <svg
         class="h-16 w-16 fill-current stroke-2 text-accent"
-        viewBox="0 0 110 96"
-        ><g
-          ><path
-            d="M77 0a48 48 0 0 0-7 1l10 6a42 42 0 0 1 6-1 42 42 0 0 1 22 7h2A48 48 0 0 0 77 0zM56 11l-10 1a48 48 0 0 0-17 36 48 48 0 0 0 17 36 38 38 0 0 0 20 0 42 42 0 0 1-18-20 42 42 0 0 1-2-4 42 42 0 0 1 0-1 42 42 0 0 1-1-5 42 42 0 0 1-1-6 42 42 0 0 1 22-36l-10-1zm52 72a42 42 0 0 1-22 6 42 42 0 0 1-6 0l-10 6a48 48 0 0 0 7 1 48 48 0 0 0 33-13z"
-          ></path>
+        viewBox="0 0 110 96">
+        <g>
           <path
-            d="M48 0A48 48 0 0 0 0 48a48 48 0 0 0 3 15 48 48 0 0 0 0 2 48 48 0 0 0 1 1 48 48 0 0 0 44 30 48 48 0 0 0 33-13h-3a42 42 0 0 1-22 7 42 42 0 0 1-41-42A42 42 0 0 1 56 7a42 42 0 0 1 22 6h3A48 48 0 0 0 48 0z"
-          ></path>
-        </g></svg
-      >
+            d="M77 0a48 48 0 0 0-7 1l10 6a42 42 0 0 1 6-1 42 42 0 0 1 22 7h2A48 48 0 0 0 77 0zM56 11l-10 1a48 48 0 0 0-17 36 48 48 0 0 0 17 36 38 38 0 0 0 20 0 42 42 0 0 1-18-20 42 42 0 0 1-2-4 42 42 0 0 1 0-1 42 42 0 0 1-1-5 42 42 0 0 1-1-6 42 42 0 0 1 22-36l-10-1zm52 72a42 42 0 0 1-22 6 42 42 0 0 1-6 0l-10 6a48 48 0 0 0 7 1 48 48 0 0 0 33-13z">
+          </path>
+          <path
+            d="M48 0A48 48 0 0 0 0 48a48 48 0 0 0 3 15 48 48 0 0 0 0 2 48 48 0 0 0 1 1 48 48 0 0 0 44 30 48 48 0 0 0 33-13h-3a42 42 0 0 1-22 7 42 42 0 0 1-41-42A42 42 0 0 1 56 7a42 42 0 0 1 22 6h3A48 48 0 0 0 48 0z">
+          </path>
+        </g>
+      </svg>
     </a>
     <div class="bg hidden sm:flex">
       <Navbar isVert={false} client:visible />
@@ -46,29 +44,9 @@ const { upbutton } = Astro.props;
     return ele instanceof HTMLElement;
   }
 
-  function initHeader() {
-    const el = document.querySelector(".stickyHeader");
-    const observer = new IntersectionObserver(
-      ([e]) => e.target.classList.toggle("is-Stuck", e.intersectionRatio < 1),
-      { threshold: [0.99] },
-    );
-    if (!isHTMLElement(el)) {
-      throw new Error(
-        "The header has been manipulated and may not behave correctly",
-      );
-    }
-    observer.observe(el);
-  }
-  // Call listener function at run time
-  initHeader();
-  // Unknown error on chrome mobile browser preventing use of the astro:pageload event listener https://github.com/withastro/astro/issues/10830
-  document.addEventListener("astro:after-swap", () => {
-    // console.log("after swap");
-    initHeader();
-  });
-
   // Hide Header on on scroll down
   var didScroll = true;
+  var backGroundAdded = false;
   var lastScrollTop = 0;
   var delta = 5;
   var navbarHeight = 140;
@@ -89,8 +67,12 @@ const { upbutton } = Astro.props;
     // Make sure they scroll more than delta
     if (Math.abs(lastScrollTop - st) <= delta) return;
     const headCont = document.getElementById("headerContainer");
+    const header = document.getElementById("header");
 
     if (!isHTMLElement(headCont)) {
+      throw new Error("The headerContainer element was not found");
+    }
+    if (!isHTMLElement(header)) {
       throw new Error("The Header element was not found");
     }
     // If they scrolled down and are past the navbar, add class .nav-up.
@@ -98,13 +80,21 @@ const { upbutton } = Astro.props;
     if (st > lastScrollTop && st > navbarHeight) {
       // Scroll Down
 
-      headCont.classList.remove("top-[-1px]");
+      headCont.classList.remove("top-0");
       headCont.classList.add("top-[-100px]");
+      if (!backGroundAdded) {
+        header.classList.add("bg-secondary/[98%]");
+        backGroundAdded = true;
+      }
     } else {
       // Scroll Up
       if (st < lastScrollTop) {
-        headCont.classList.add("top-[-1px]");
+        headCont.classList.add("top-0");
         headCont.classList.remove("top-[-100px]");
+        if (st < 50) {
+          header.classList.remove("bg-secondary/[98%]");
+          backGroundAdded = false;
+        }
       }
     }
     // Repeated movement of head cont for upbutton if present

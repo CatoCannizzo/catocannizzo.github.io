@@ -36,7 +36,23 @@ const { image, sizes, description } = Astro.props;
     background-color: hsl(var(--muted));
     padding: 1rem;
   }
-
+  .glightbox-custom .gslide-desc {
+    color: hsl(var(--muted-foreground));
+  }
+  .glightbox-mobile .glightbox-container .gslide-desc {
+    color: hsl(var(--muted-foreground));
+    .gslide-title {
+      color: hsl(var(--muted-foreground));
+      font-size: 1em;
+    }
+    .gslide-desc {
+      color: hsl(var(--muted-foreground));
+    }
+    .desc-more {
+      color: hsl(var(--card-foreground));
+      opacity: 1;
+    }
+  }
   .glightbox-custom .gprev,
   .glightbox-custom .gnext,
   .glightbox-custom .gclose {
