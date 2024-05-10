@@ -1,0 +1,84 @@
+---
+interface Props {
+  image: any;
+  sizes: string;
+  description: string;
+}
+
+const { image, sizes, description } = Astro.props;
+---
+
+<!-- data-sizes take min/max width and shows the image in the image with the w# in the src set that matches the px number-->
+<figure>
+  <a
+    href={image.src}
+    data-sizes={sizes}
+    data-srcset={image.srcSet.attribute}
+    data-description={description}
+    class="glightbox cursor-zoom-in"
+    ><img src={image.src} alt={image.attributes.alt} /></a
+  >
+</figure>
+
+<script>
+  import GLightbox from "glightbox";
+  const glb = GLightbox({ skin: "custom" });
+  document.addEventListener("astro:page-load", () => {
+    // This only runs once.
+    glb.reload();
+  });
+</script>
+<!-- !!!Fix text contrast on description for mobile -->
+<style is:global>
+  /* .glightbox-custom .gslide-title {
+  } */
+  .glightbox-custom .gdesc-inner {
+    background-color: hsl(var(--muted));
+    padding: 1rem;
+  }
+  .glightbox-custom .gslide-desc {
+    color: hsl(var(--muted-foreground));
+  }
+  .glightbox-mobile .glightbox-container .gslide-desc {
+    color: hsl(var(--muted-foreground));
+    .gslide-title {
+      color: hsl(var(--muted-foreground));
+      font-size: 1em;
+    }
+    .gslide-desc {
+      color: hsl(var(--muted-foreground));
+    }
+    .desc-more {
+      color: hsl(var(--card-foreground));
+      opacity: 1;
+    }
+  }
+  .glightbox-custom .gprev,
+  .glightbox-custom .gnext,
+  .glightbox-custom .gclose {
+    background-color: hsl(var(--destructive));
+    border-radius: 0.25rem;
+  }
+
+  .glightbox-custom .gprev path,
+  .glightbox-custom .gnext path,
+  .glightbox-custom .gclose path {
+    fill: hsl(240 60% 5%);
+  }
+  .glightbox-custom .gclose {
+    width: 35px;
+    height: 35px;
+    top: 15px;
+    right: 10px;
+    position: absolute;
+  }
+
+  .glightbox-custom .gclose svg {
+    width: 18px;
+    height: auto;
+  }
+
+  .glightbox-custom .gclose:hover {
+    background-color: hsl(var(--destructive) / 70%);
+  }
+</style>

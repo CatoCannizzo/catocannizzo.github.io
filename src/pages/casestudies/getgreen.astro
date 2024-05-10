@@ -1,7 +1,8 @@
 ---
 import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
 import ImgGetter from "@/components/ImgMapGet.astro";
-import { Image } from "astro:assets";
+import AstroLightBox from "@/components/AstroLightBox.astro";
+import { Image, getImage } from "astro:assets";
 import { buttonVariants } from "@/components/ui/button";
 
 import GGLogo from "../../assets/getgreen/getgreen-logo.png";
@@ -54,13 +55,34 @@ const goalRedesign = [
     alt: "An example popup showing the UI view of the schedule reminder.",
   },
 ];
+const PersonaOpt = await getImage({
+  src: Persona,
+  width: 500,
+  widths: [792],
+  format: "webp",
+  alt: "Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download environmental wellness apps, few want to give up their lifestyle",
+});
+const JourneyMapOpt = await getImage({
+  src: JourneyMap,
+  width: 600,
+  widths: [1600],
+  format: "webp",
+  alt: "Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app.",
+});
+const LofiPrototypeOpt = await getImage({
+  src: LofiPrototype,
+  width: 600,
+  widths: [1542],
+  format: "webp",
+  alt: "Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app.",
+});
 ---
 
 <WriteUpLayout title="Get Green">
   <figure>
-    <Image src={GGLogo} alt="Logo for Get Green" width="300" />
+    <Image src={GGLogo} alt="Typographic logo for Get Green" width="300" />
   </figure>
-  <section>
+  <section role="contentinfo">
     <h2>Context</h2>
     <p>
       Problem: The Get Green app has issues engaging users to make long-term
@@ -90,7 +112,7 @@ const goalRedesign = [
       target="_blank"
       href="/GetGreenProcessBook.pdf">Download Full Process Book</a
     >
-  </section><section>
+  </section><section role="contentinfo">
     <h3>Process Overview</h3>
     <h4>
       <a href="#ExploringProblem"> Exploring the Problem: </a>
@@ -131,7 +153,10 @@ const goalRedesign = [
       on the intricacies of setting nonleading questions that could yield data
       not just on the first time it was answered but on the fifth or tenth.
     </p>
-  </section><section id="ExploringProblem" class="scroll-mt-20">
+  </section><section
+    role="contentinfo"
+    id="ExploringProblem"
+    class="scroll-mt-20">
     <h2>Exploring the Problem Space</h2><p>
       Get Green is a sustainability habit building app that is looking to reduce
       its users carbon foot print through task recommendations and eco-friendly
@@ -141,11 +166,10 @@ const goalRedesign = [
       a focused three-person participatory design session.
     </p>
     <figure class="flex flex-col items-center">
-      <Image
-        src={Persona}
-        alt="Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download environmental wellness apps, few want to give up their lifestyle "
-        width="500"
-        class=""
+      <AstroLightBox
+        image={PersonaOpt}
+        sizes="(min-width: 640px), 792px."
+        description="Most people using the app were passively interested in reducing their carbon foot print, but did not want to give up the quality of their lifestyle."
       />
       <figcaption>
         Most people using the app were passively interested in reducing their
@@ -161,10 +185,10 @@ const goalRedesign = [
     </p>
 
     <figure class="flex flex-col items-center">
-      <Image
-        src={JourneyMap}
-        alt="Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app."
-        class="popout"
+      <AstroLightBox
+        image={JourneyMapOpt}
+        sizes="(min-width: 640px), 1600px."
+        description="It was an almost constant finding in our research that the app annoyed its users after about 2-3 days through actionless notifications, and repeatedly highlighting actions the user either could not do or had just completed."
       />
       <figcaption>
         It was an almost constant finding in our research that the app annoyed
@@ -191,7 +215,7 @@ const goalRedesign = [
         <li>App navigation & onboarding</li>
       </ol>
     </p>
-  </section><section id="Design" class="scroll-mt-20">
+  </section><section id="Design" role="contentinfo" class="scroll-mt-20">
     <h2>Design & Redesign</h2>
     <p>
       To understand how we might create such features we ideated through several
@@ -218,17 +242,17 @@ const goalRedesign = [
       navigating throughout the different functionalities.
     </p>
     <figure class="flex flex-col items-center">
-      <Image
-        src={LofiPrototype}
-        alt="Collection of several low fidelity screenshots with arrows pointing from page to page."
-        class="popout"
+      <AstroLightBox
+        image={LofiPrototypeOpt}
+        sizes="(min-width: 800px), 1542px."
+        description="In terms of overall experience, our low fidelity designs averaged at 81 out of 100 on the US Government's System Usability Scale."
       />
       <figcaption>
         In terms of overall experience, our low fidelity designs averaged at 81
         out of 100 on the US Government's System Usability Scale.
       </figcaption>
     </figure>
-  </section><section id="Evaluation" class="scroll-mt-20">
+  </section><section role="contentinfo" id="Evaluation" class="scroll-mt-20">
     <h2>Evaluation</h2>
     <p>
       Then we conducted a short usability test with select users on these lofi
@@ -280,7 +304,7 @@ const goalRedesign = [
         customize an action card.
       </figcaption>
     </figure>
-  </section><aside id="Reflection" class="scroll-mt-20">
+  </section><section id="Reflection" class="scroll-mt-20">
     <h2>Reflection</h2>
     <p>
       In this capstone I have gotten hands on experience for four different user
@@ -299,5 +323,5 @@ const goalRedesign = [
       designing for spaces, micro-cultures, and technologies I do not have first
       hand experience with.
     </p>
-  </aside>
+  </section>
 </WriteUpLayout>

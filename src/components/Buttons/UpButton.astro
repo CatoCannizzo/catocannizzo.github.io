@@ -1,0 +1,24 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<div
+  id="upButton"
+  class="fixed bottom-[-74px] right-6 z-50 transition-all duration-300 lg:right-[calc(50vw-475px)]">
+  <a
+    class={buttonVariants({
+      variant: "outline",
+      size: "icon",
+      class: " w-16 h-16 text-center no-underline drop-shadow-md ",
+    })}
+    title="Click to scroll to top"
+    href="#top"
+    ><div>
+      <div class="mt-2 font-extrabold leading-[.35] [font-size:2.25rem]">
+        ^
+      </div><div class="text-xs">
+        Back <br />to Top
+      </div>
+    </div>
+  </a>
+</div>
