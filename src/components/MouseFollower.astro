@@ -13,8 +13,10 @@ import img8 from "../assets/welcome/BRHello.png";
 const imageArray = [img1, img2, img3, img4, img5, img6, img7, img8];
 ---
 
-<!-- Makes a square picture and changes source when mouse hovers over a 3 by 3 subdivision of image tag -->
+<!-- Makes a square picture and changes source when mouse hovers/focused over a 3 by 3 subdivision of image tag -->
 <div id="MouseFollower" class="relative z-30 flex h-48 w-48 flex-row flex-wrap">
+  <!-- The default image is img99 -->
+
   <Image
     id="followImage99"
     src={img99}
@@ -36,15 +38,15 @@ const imageArray = [img1, img2, img3, img4, img5, img6, img7, img8];
     ))
   }
   <!-- Subdivision that trigger image swap -->
-  <div id="iH1" class="absolute h-16 w-16"></div>
-  <div id="iH2" class="absolute left-16 h-16 w-16"></div>
-  <div id="iH3" class="absolute left-32 h-16 w-16"></div>
-  <div id="iH4" class="absolute top-16 h-16 w-16"></div>
-  <div id="iH5" class="absolute left-16 top-16 h-16 w-16"></div>
-  <div id="iH6" class="absolute left-32 top-16 h-16 w-16"></div>
-  <div id="iH7" class="absolute top-32 h-16 w-16"></div>
-  <div id="iH8" class="absolute left-16 top-32 h-16 w-16"></div>
-  <div id="iH9" class="absolute left-32 top-32 h-16 w-16"></div>
+  <div id="iH1" tabindex="0" class="absolute h-16 w-16"></div>
+  <div id="iH2" tabindex="0" class="absolute left-16 h-16 w-16"></div>
+  <div id="iH3" tabindex="0" class="absolute left-32 h-16 w-16"></div>
+  <div id="iH4" tabindex="0" class="absolute top-16 h-16 w-16"></div>
+  <div id="iH5" tabindex="0" class="absolute left-16 top-16 h-16 w-16"></div>
+  <div id="iH6" tabindex="0" class="absolute left-32 top-16 h-16 w-16"></div>
+  <div id="iH7" tabindex="0" class="absolute top-32 h-16 w-16"></div>
+  <div id="iH8" tabindex="0" class="absolute left-16 top-32 h-16 w-16"></div>
+  <div id="iH9" tabindex="0" class="absolute left-32 top-32 h-16 w-16"></div>
 </div>
 
 <script>
@@ -73,38 +75,47 @@ const imageArray = [img1, img2, img3, img4, img5, img6, img7, img8];
       const iH1Ele = document.getElementById("iH1");
       if (iH1Ele instanceof HTMLDivElement) {
         iH1Ele.addEventListener("mouseover", () => changeImage(0));
+        iH1Ele.addEventListener("focus", () => changeImage(0));
       }
       const iH2Ele = document.getElementById("iH2");
       if (iH2Ele instanceof HTMLDivElement) {
         iH2Ele.addEventListener("mouseover", () => changeImage(1));
+        iH2Ele.addEventListener("focus", () => changeImage(1));
       }
       const iH3Ele = document.getElementById("iH3");
       if (iH3Ele instanceof HTMLDivElement) {
         iH3Ele.addEventListener("mouseover", () => changeImage(2));
+        iH3Ele.addEventListener("focus", () => changeImage(2));
       }
       const iH4Ele = document.getElementById("iH4");
       if (iH4Ele instanceof HTMLDivElement) {
         iH4Ele.addEventListener("mouseover", () => changeImage(3));
+        iH4Ele.addEventListener("focus", () => changeImage(3));
       }
       const iH5Ele = document.getElementById("iH5");
       if (iH5Ele instanceof HTMLDivElement) {
         iH5Ele.addEventListener("mouseover", () => changeImage(4));
+        iH5Ele.addEventListener("focus", () => changeImage(4));
       }
       const iH6Ele = document.getElementById("iH6");
       if (iH6Ele instanceof HTMLDivElement) {
         iH6Ele.addEventListener("mouseover", () => changeImage(5));
+        iH6Ele.addEventListener("focus", () => changeImage(5));
       }
       const iH7Ele = document.getElementById("iH7");
       if (iH7Ele instanceof HTMLDivElement) {
         iH7Ele.addEventListener("mouseover", () => changeImage(6));
+        iH7Ele.addEventListener("focus", () => changeImage(6));
       }
       const iH8Ele = document.getElementById("iH8");
       if (iH8Ele instanceof HTMLDivElement) {
         iH8Ele.addEventListener("mouseover", () => changeImage(99));
+        iH8Ele.addEventListener("focus", () => changeImage(99));
       }
       const iH9Ele = document.getElementById("iH9");
       if (iH9Ele instanceof HTMLDivElement) {
         iH9Ele.addEventListener("mouseover", () => changeImage(7));
+        iH9Ele.addEventListener("focus", () => changeImage(7));
       }
     }
   }

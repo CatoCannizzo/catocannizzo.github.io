@@ -78,7 +78,8 @@ const { image, sizes, description } = Astro.props;
     height: auto;
   }
 
-  .glightbox-custom .gclose:hover {
+  .glightbox-custom .gclose:hover,
+  .glightbox-custom .gclose:focus {
     background-color: hsl(var(--destructive) / 70%);
   }
 </style>

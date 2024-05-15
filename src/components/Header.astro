@@ -10,9 +10,8 @@ interface Props {
 const { upbutton } = Astro.props;
 ---
 
-{upbutton && <UpButton />}
 <!-- StickyHeader styling is done as a class in global.css-->
-<div id="headerContainer" class="sticky z-50 mx-10 transition-all duration-300">
+<div id="headerContainer" class="sticky z-40 mx-10 transition-all duration-300">
   <header
     id="header"
     class="stickyHeader mx-auto flex h-fit max-w-5xl items-center rounded-b-lg px-3 py-1">
@@ -37,6 +36,7 @@ const { upbutton } = Astro.props;
     <div class="px-2"><ThemeIcon /></div>
   </header>
 </div>
+{upbutton && <UpButton />}
 
 <script>
   //?! Typescript typeguard
