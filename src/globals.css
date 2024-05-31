@@ -10,7 +10,7 @@
     @apply bg-background text-foreground;
   }
   :root {
-    --background: 240 20% 95%; /*Base White*/
+    --background: 50 20% 98%; /*Base White*/
     --foreground: 240 60% 5%; /*rich black */
 
     --card: 240 20% 85%; /*white*/
@@ -31,7 +31,7 @@
     --accent: 50 93% 60%; /*Sunset*/ /*This is the active color */
     --accent-foreground: 220.9 20% 8%; /*Text dark */
 
-    --destructive: 04 91% 32%; /*red */
+    --destructive: 04 91% 40%; /*red */
     --destructive-foreground: 220 14.3% 98%;
 
     --border: 240 20% 85%;
@@ -42,7 +42,7 @@
   }
 
   .dark {
-    --background: 240 10% 4%;
+    --background: 50 10% 4%;
     --foreground: 240 20% 95%;
 
     --card: 240 10% 14%;
