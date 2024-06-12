@@ -35,7 +35,7 @@ const components: linkContainer[] = [
       },
       {
         title: "Portfolio Creation",
-        href: "/underconstruction",
+        href: "/casestudies/portfolioaccessibility",
         description: "Insight to my design methodology for this website.",
       },
     ],
@@ -147,7 +147,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
             className,
           )}
           {...props}>

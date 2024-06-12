@@ -17,6 +17,9 @@ import Wireframe from "../../assets/getgreen/Wireframe.png";
 import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
 import TimeOfDay from "../../assets/getgreen/TimeofDay.png";
 import ActionSettings from "../../assets/getgreen/ActionSettings.png";
+// !!!TODO refactor all image code to use <image> not getimage, and pass appropriately.
+// i.e. pass image string to react comp and use <image> there
+
 // import DSNoteAM from "@/assets/getgreen/DSNotificationAM.png";
 // import PDActionAM from "@/assets/getgreen/PDActionDesignAM.png";
 //!!! Add affinity mapping pictures
@@ -60,31 +63,32 @@ const PersonaOpt = await getImage({
   width: 500,
   widths: [792],
   format: "webp",
-  alt: "Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download environmental wellness apps, few want to give up their lifestyle",
+  alt: "Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download environmental wellness apps, few want to give up their lifestyle. view full image",
 });
 const JourneyMapOpt = await getImage({
   src: JourneyMap,
   width: 600,
   widths: [1600],
   format: "webp",
-  alt: "Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app.",
+  alt: "Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app. view full image",
 });
 const LofiPrototypeOpt = await getImage({
   src: LofiPrototype,
   width: 600,
   widths: [1542],
   format: "webp",
-  alt: "Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app.",
+  alt: "Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app. view full image",
 });
 ---
 
+<link rel="stylesheet" href="photoswipe/dist/photoswipe.css" />
 <WriteUpLayout title="Get Green">
   <figure>
     <h1 id="logo">
       <Image src={GGLogo} alt="Typographic logo for Get Green" width="300" />
     </h1>
   </figure>
-  <section role="contentinfo">
+  <section>
     <h2>Context</h2>
     <p>
       Problem: The Get Green app has issues engaging users to make long-term
@@ -114,20 +118,22 @@ const LofiPrototypeOpt = await getImage({
       target="_blank"
       href="/GetGreenProcessBook.pdf">Download Full Process Book</a
     >
-  </section><section role="contentinfo">
+  </section><section>
     <h3>Process Overview</h3>
     <h4>
-      <a href="#ExploringProblem"> Exploring the Problem: </a>
+      <a href="#ExploringProblem"
+        ><span class="sr-only">jump to section</span>Exploring the Problem:
+      </a>
     </h4>
     <p>
       To understand where Get Green was losing users, my group sought to
       understand long term pain points with a diary study, while searching for
       short term pain points with a participatory design session. Additionally
-      we used a survey to search for outlining issues we might have missed in
+      we used a survey to search for outlying issues we might have missed in
       both techniques.
     </p>
     <h4>
-      <a href="#Design">Design:</a>
+      <a href="#Design"><span class="sr-only">jump to section</span>Design: </a>
     </h4>
     <p>
       The team and I then synthesized the data from our user research. First we
@@ -137,7 +143,9 @@ const LofiPrototypeOpt = await getImage({
       of potential solutions.
     </p>
     <h4>
-      <a href="#Evaluation"> Evaluation: </a>
+      <a href="#Evaluation"
+        ><span class="sr-only">jump to section</span> Evaluation:
+      </a>
     </h4>
     <p>
       Once we had a cohesive design system that addressed all the pain points we
@@ -146,7 +154,9 @@ const LofiPrototypeOpt = await getImage({
       prototypes and design assets for Get Green to integrate.
     </p>
     <h4 id="Reflection ">
-      <a href="#Reflection"> Reflection: </a>
+      <a href="#Reflection">
+        <span class="sr-only">jump to section</span>Reflection:
+      </a>
     </h4>
     <p>
       By front loading so many user research methods I developed a strong first
@@ -155,10 +165,7 @@ const LofiPrototypeOpt = await getImage({
       on the intricacies of setting nonleading questions that could yield data
       not just on the first time it was answered but on the fifth or tenth.
     </p>
-  </section><section
-    role="contentinfo"
-    id="ExploringProblem"
-    class="scroll-mt-20">
+  </section><section id="ExploringProblem" class="scroll-mt-20">
     <h2>Exploring the Problem Space</h2><p>
       Get Green is a sustainability habit building app that is looking to reduce
       its users carbon foot print through task recommendations and eco-friendly
@@ -217,7 +224,7 @@ const LofiPrototypeOpt = await getImage({
         <li>App navigation & onboarding</li>
       </ol>
     </p>
-  </section><section id="Design" role="contentinfo" class="scroll-mt-20">
+  </section><section id="Design" class="scroll-mt-20">
     <h2>Design & Redesign</h2>
     <p>
       To understand how we might create such features we ideated through several
@@ -243,6 +250,29 @@ const LofiPrototypeOpt = await getImage({
       show how users could go about adding and tracking action items as well as
       navigating throughout the different functionalities.
     </p>
+    <h1>Testing here</h1>
+    <div class="pswp-gallery" id="my-gallery--individual">
+      <a
+        href={LofiPrototypeOpt.srcSet.values[0].transform.src.src}
+        data-pswp-width="1542"
+        data-pswp-height="1396"
+        target="_blank">
+        <Image src={LofiPrototype} alt="..." />
+      </a>
+      {console.log(LofiPrototypeOpt)}
+      <a
+        href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+        data-pswp-width="1669"
+        data-pswp-height="2500"
+        target="_blank">
+        <img
+          src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-200.jpg"
+          alt=""
+        />
+      </a>
+    </div>
+    <h1>end testing</h1>
+
     <figure class="flex flex-col items-center">
       <AstroLightBox
         image={LofiPrototypeOpt}
@@ -254,7 +284,7 @@ const LofiPrototypeOpt = await getImage({
         out of 100 on the US Government's System Usability Scale.
       </figcaption>
     </figure>
-  </section><section role="contentinfo" id="Evaluation" class="scroll-mt-20">
+  </section><section id="Evaluation" class="scroll-mt-20">
     <h2>Evaluation</h2>
     <p>
       Then we conducted a short usability test with select users on these lofi
@@ -272,11 +302,11 @@ const LofiPrototypeOpt = await getImage({
       initial sessions within the app followed closely by several more
       consistent sessions in the following days.
     </p>
-    <figure class="flex flex-col items-center">
+    <figure class="mx-auto flex max-w-xs flex-col">
       <ImgGetter imageArrayUnopt={goalPages} class="mx-auto" />
       <figcaption>
-        One of the first screens a user should see in our redesign, prompts them
-        to choose a goal that aligns with their lifestyle.
+        One of the first screens a user should see in our redesign. It prompts
+        them to choose a goal that aligns with their lifestyle.
       </figcaption>
     </figure>
 
@@ -286,7 +316,7 @@ const LofiPrototypeOpt = await getImage({
       comes to a user's self monitoring.
     </p>
 
-    <figure class="flex flex-col items-center justify-center">
+    <figure class="mx-auto flex max-w-xs flex-col">
       <ImgGetter imageArrayUnopt={actionRedesign} class="mx-auto" />
       <figcaption>
         Here you can see the difference between the base homepage, and one after
@@ -299,7 +329,7 @@ const LofiPrototypeOpt = await getImage({
       spend with the app and increase long term engagement with a goal centric
       improvement model to build towards.
     </p>
-    <figure class="flex flex-col items-center justify-center">
+    <figure class="mx-auto flex max-w-xs flex-col">
       <ImgGetter imageArrayUnopt={goalRedesign} class="mx-auto" />
       <figcaption>
         Here is a collection of popups that could stem from a user trying to
@@ -327,3 +357,15 @@ const LofiPrototypeOpt = await getImage({
     </p>
   </section>
 </WriteUpLayout>
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  import "photoswipe/style.css";
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#my-gallery--individual",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+
+  lightbox.init();
+</script>

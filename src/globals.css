@@ -19,18 +19,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 60% 5%;
 
-    --primary: 220 66% 52%; /*Lapis*/
-    --primary-foreground: 220 14.3% 98%; /*Text white seasalt*/
+    --primary: 50 93% 60%; /*Sunset*/
+    --primary-foreground: 220.9 20% 8%; /*Text dark */
 
-    --secondary: 93 56% 46%; /*The Green*/
-    --secondary-foreground: 220 14.3% 98%;
+    --secondary: 220 66% 52%; /*Lapis*/
+    --secondary-foreground: 220 14.3% 98%; /*Text white seasalt*/
 
     --muted: 240 20% 85%; /*<= this is the gettingstarted shade box // shaded base white*/
     --muted-foreground: 220 8.9% 15%; /*Text muted*/
 
-    --accent: 50 93% 60%; /*Sunset*/ /*This is the active color */
-    --accent-foreground: 220.9 20% 8%; /*Text dark */
-
+    --accent: 93 56% 46%; /*The Green*/
+    --accent-foreground: 220 14.3% 98%;
     --destructive: 04 91% 40%; /*red */
     --destructive-foreground: 220 14.3% 98%;
 
@@ -51,17 +50,17 @@
     --popover: 0 0% 0%; /*black*/
     --popover-foreground: 0 0% 100%;
 
-    --primary: 220 100% 29%; /*Lapis*/
-    --primary-foreground: 220 14.3% 98%; /*Text white seasalt*/
+    --primary: 38 95% 32%; /*Sunset*/ /*This is the active color */
+    --primary-foreground: 220.9 20% 8%; /*Text dark */
 
-    --secondary: 93 56% 26%; /*The Green*/
-    --secondary-foreground: 220 14.3% 98%;
+    --secondary: 220 100% 29%; /*Lapis*/
+    --secondary-foreground: 220 14.3% 98%; /*Text white seasalt*/
 
     --muted: 240 10% 14%; /*<= this is the gettingstarted shade box // shaded base white*/
     --muted-foreground: 240 20% 85%; /*Text muted*/
 
-    --accent: 38 95% 32%; /*Sunset*/ /*This is the active color */
-    --accent-foreground: 220.9 20% 8%; /*Text dark */
+    --accent: 93 56% 26%; /*The Green*/
+    --accent-foreground: 220 14.3% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;

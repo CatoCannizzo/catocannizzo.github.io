@@ -1,0 +1,230 @@
+---
+import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
+import Image from "astro/components/Image.astro";
+import Landscape from "@/assets/portfolioaccessibility/LandscapePic.jpg";
+import Achromatopsia from "@/assets/portfolioaccessibility/Achromatopsia.png";
+import Deuteranopia from "@/assets/portfolioaccessibility/Deuteranopia.png";
+import NormalColors from "@/assets/portfolioaccessibility/NormalColors.png";
+import Protanopia from "@/assets/portfolioaccessibility/Protanopia.png";
+import Tritanopia from "@/assets/portfolioaccessibility/Tritanopia.png";
+import ImgGetter from "@/components/ImgMapGet.astro";
+import Contrast from "@/assets/portfolioaccessibility/Contrast.png";
+
+const colorAccessibilityPics = [
+  {
+    src: NormalColors,
+    alt: "Home screen of Cato's portfolio.",
+  },
+  {
+    src: Protanopia,
+    alt: "Home screen of Cato's portfolio viewed with protanopia, where all green highlights now look yellow.",
+  },
+  {
+    src: Deuteranopia,
+    alt: "Home screen of Cato's portfolio viewed with dueteranopia, where once again the green highlights look yellow",
+  },
+  {
+    src: Tritanopia,
+    alt: "Home screen of Cato's portfolio viewed with tritanopia, where yellow now looks pink, and the green and blue look turquoise.",
+  },
+  {
+    src: Achromatopsia,
+    alt: "Home screen of Cato's portfolio in greyscale.",
+  },
+];
+---
+
+<WriteUpLayout title="Portfolio Accessibility">
+  <h1>Portfolio Accessibility</h1>
+  <section>
+    <h2>Summary</h2>
+    One of the most important roles a UX designer can take on is as an advocate for
+    accessibility. Extending a system so that it can be used by people of any ability
+    creates user flows that benefit everyone. This is known as the curb-cut effect
+    and <a target="_blank" href="https://inclusive.microsoft.design/">
+      microsoft has a brilliant accessibility article<span
+        class="absolute max-h-0 max-w-0 overflow-hidden">
+        (opens in new tab)</span
+      ></a
+    > on why it is helpful for a wider audience than just those a system is targeted
+    to be extended to.<br /><br /> To give an insight into my design methodology
+    this case study will explain my considerations when updating a website to follow
+    Web Content Accessibility Guidelines (WCAG) and comply with <a
+      target="_blank"
+      href="https://www.ada.gov/resources/web-guidance/"
+      >the United States Department of Justice online Americans with
+      Disabilities Act requirements<span
+        class="absolute max-h-0 max-w-0 overflow-hidden">
+        (opens in new tab)</span
+      ></a
+    >. I divide the accessibility guidelines into 3 overarching sections:
+    <ul>
+      <li>
+        <a href="#Color"
+          ><span class="sr-only">jump to section</span>Color Accessibility</a
+        >
+      </li>
+      <li>
+        <a href="#Keyboard"
+          ><span class="sr-only">jump to section</span>Keyboard Accessibility</a
+        >
+      </li>
+      <li>
+        <a href="#Screen-Reader"
+          ><span class="sr-only">jump to section</span>Screen Reader
+          Accessibility</a
+        >
+      </li>
+    </ul>
+
+    In each section I will discuss relevant standards, and showcase the tests
+    and code I use to achieve them. Additionally I elaborate on how each section
+    can serve to help more than just people with disabilities.
+  </section>
+  <section id="Color" class="scroll-mt-20">
+    <h2>Color Accessibility</h2>
+
+    Choosing an accessible color scheme is usually the easiest of the three
+    areas to implement. My first test for making an accessible color scheme is
+    to check for color blind contrast. This can be as simple as opening up a
+    website, applying filters to simulate each vision deficiency and making sure
+    that each color used to convey meaning is distinct in each deficiency.<br
+    /><br /> My color scheme uses a green, yellow, and blue designed to be reminiscent
+    of a <div
+      tabindex="0"
+      class="tooltip group relative inline-block font-medium text-[var(--tw-prose-links)] underline">
+      mountain landscape <span
+        class="tooltipcontent absolute bottom-full left-0 z-50 hidden w-64 after:absolute after:left-0 after:top-full after:ml-5 after:border-8 after:border-solid after:border-transparent after:border-t-card after:bg-transparent group-hover:block group-focus:block"
+        ><div class="h-[194px] w-[256px] rounded bg-card p-2">
+          <Image
+            src={Landscape}
+            class="not-prose rounded-sm"
+            alt="Mountains at sunset"
+            width="240"
+          />
+        </div></span
+      >
+      <!-- !!! Come back here to add scripting to tooltip to prevent out of bounds -->
+    </div> with intra-site navigation buttons and links yellow, links to other sites
+    are blue, and green as my accent color. This is import because green is not a
+    very accessiblle color. So to use it, I add it sparingly in my website, and only
+    for a pop of color. Below is my website viewed with Protanopia (no red), Deuteranopia
+    (no green), Tritanopia (no blue), and finally Achromatopsia (greyscale) filters.
+    In each image it is important to determine if each color can still be differentiated
+    for its intended role.
+    <figure class="mx-auto flex max-w-xs flex-col sm:max-w-2xl">
+      <ImgGetter
+        imageArrayUnopt={colorAccessibilityPics}
+        class=""
+      /><figcaption>
+        I intentionally limited my use of green to non-informational roles in my
+        portfolio, as some users won't be able to differentiate it from my
+        yellow or blue.
+      </figcaption>
+    </figure>
+
+    In Achromatopsia the role of colors gets removed entirely, allowing us to
+    see the websites hierarchy without any color. This becomes an important test
+    as users can force color changes on websites on the client side for a
+    variety of reasons and so the website's hierarchy should exist regardless of
+    color. Testing a website's color accessibility serves to check the website's
+    design basics, and reinforces that idea that while each individual color
+    should have meaning hierarchy should not rely on color alone. <br /><br />
+    After the color scheme is chosen the last step is to ensure text legibility.
+    All colors and the color of the text atop them need to have a minimum 4.5:1 contrast
+    to their respective background in accordance with the WCAG AA standard. To prevent
+    having to test every combination of text color and background color on a website
+    I set two or three text colors and assign one to each color in the color scheme.
+    Then when combined with text link colors I have two combinations of text color
+    to test for each background color that I use.
+    <figure class="flex flex-col items-center">
+      <Image
+        src={Contrast}
+        alt="Light text on a blue background has 4.83 contrast "
+        class="rounded"
+      /><figcaption>
+        The worst contrast I have are my light mode color scheme for out-of-site
+        links at 4.83 scoring a AA rating on the WCAG.
+      </figcaption>
+    </figure>
+  </section>
+  <section id="Keyboard" class="scroll-mt-20">
+    <h2>Keyboard Accessibility</h2> I subdivide keyboard accessibility into 3 part
+    funnel. First I make sure the website is navigable by keyboard, next I provide
+    ease of navigation by adding skip links, and finally I ensure quality of navigation
+    by making micro interaction active on keyboard.<br /><br />To ensure my
+    website is to WAI-ARIA keyboard accessibility standards while also being
+    able to code quickly, I ensure the component library I use have an focus on
+    accessibility. This led me to - <a
+      target="_blank"
+      href="https://ui.shadcn.com/">
+      ShadcnUI<span class="absolute max-h-0 max-w-0 overflow-hidden">
+        (opens in new tab)</span
+      >
+    </a>. And just by the use of keyboard accessible components a website is 80%
+    of the way to being keyboard compliant. The next part of keyboard
+    accessibility is to have ways to skip to specific content. This is as simple
+    as adding a skip button to content button before the sites nav bar, and skip
+    to section links at the top of any 'content' pages. Then the final part of
+    designing for a keyboard is just making sure that any hover effect on the
+    page, are dublicated for focus too. This is especially important for
+    tooltops, like those you might see on social link icons, and appreciated for
+    micro interactions like changing color, or movement.
+    <br /><br />Finally I tested each component in a development server by going
+    around my website with my keyboard. This showed me that my implimentation of
+    ShadcnUI, in combination other component library I was using for a light box
+    produced a bug. The lightbox library would lose tab focus when closed with
+    keyboard controls which would then revert the window back to the top of the
+    page, when nested inside a ShadcnUI card component. Bugs like these serve as
+    constant remindes that no code is foolproof and that everything should be
+    tested.
+    <br /><br /> A lightbox causing the window height to reset when closed with a
+    keyboard might not even be noticed if a user just explores the website via touch,
+    or mouse. However, this issue also serves as a great example of how keyboard
+    accessibility extends to normal users. The test for keyboard accessibility highlighted
+    something that could be perceived as a bug: someone closing the lightbox after
+    using the “esc” key instead of a mouse, say, if they took their hand off the
+    mouse when taking notes on a potential job applicant. 😉
+  </section>
+  <section id="Screen-Reader" class="scroll-mt-20">
+    <h2>Screen Reader Accessibility</h2>Finally comes screen reader
+    accessibility, and it turns out the work to make a website keyboard
+    accessible are the first steps to screen reader accessibility. With the next
+    step of increasing a website accessibility for screen readers is to ensure
+    the website has good structure, for the reader to latch onto. This includes
+    using the “section” html elements like &lt;heade&gt;, &lt;nav&gt;,
+    &lt;body&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, and
+    &lt;footer&gt;. Additionally buttons should be inside &lt;button&gt; tags or
+    have an appropriate aria-role attribute if custom made. <br /><br />Then it
+    is just a matter of adding in information that sighted users get by visual
+    relationships or from images. For me this meant going through all anchor
+    tags on my website, including section links, or image full screen tags and
+    ensuring they were descriptive of what they opened including size and file
+    type, and where they opened it. While this could sound like it would make
+    the links clunky, a common approach to add this description for sighted
+    users is to add 'title' tags to links so that additional information is
+    available on hover and focus. Then I provided appropriate aria-live alerts
+    for images that full screen on click, and double checked all my image alt
+    tags. <br /><br />Finally I tested my website by grabbing the microsoft
+    Narrator, android Talkback, and the one of the most popular third party
+    readers NVDA to ensure all alerts, carousels, links and general site
+    navigation worked as intended. !!! Add section about adding hidden text to
+    links for Screen Readers
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    Designing for accessibility can be intimidating especially considering just like
+    in the early days of CSS each screen reader has slightly different compatibility
+    and edgecases for advanced html elements. But by dividing accessibility up into
+    sections makes it much more approachable, and gives easy to define checks to
+    run with each screen reader being tested. The WCAG and Section 510 also provide
+    clear and consistent targets to check against, even if admittedly they can be
+    a little verbose. Most importantly, however, by making a website accessible,
+    you not only increase the audience for the website but also make it a better
+    experience for normal users. From allowing quick keyboard shortcuts so a user
+    does not have to mouse across the entire screen, to enforcing clear and simple
+    information presentation I hope I have showcased why accessible design is important
+    for all.
+  </section>
+</WriteUpLayout>

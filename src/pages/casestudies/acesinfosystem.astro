@@ -39,8 +39,8 @@ const stage3 = [
 ---
 
 <WriteUpLayout title="Content Evaluation">
-  <section role="contentinfo" aria-label="ACES introduction">
-    <h1 class="text-primary">ACES</h1>
+  <section aria-label="ACES introduction">
+    <h1 class="text-secondary">ACES</h1>
     <h2>Context</h2>
     <p>
       Problem: The rise of disinformation in online spaces across the world,
@@ -61,7 +61,7 @@ const stage3 = [
     </ul>
     <a
       class={buttonVariants({
-        variant: "default",
+        variant: "secondary",
         size: "lg",
         class: "font-bold mt-5 ",
       })}
@@ -75,7 +75,9 @@ const stage3 = [
 
     <h3>Process Overview</h3>
     <h4 id="Literary Research">
-      <a href="#LiteraryResearch"> Literary Research: </a>
+      <a href="#LiteraryResearch"
+        ><span class="sr-only">jump to section</span> Literary Research:
+      </a>
     </h4>
     <p>
       My team and I reviewed several HCI papers on social media moderation and
@@ -87,7 +89,9 @@ const stage3 = [
       false.
     </p>
     <h4 id="Design ">
-      <a href="#Design"> Design: </a>
+      <a href="#Design"
+        ><span class="sr-only">jump to section</span> Design:
+      </a>
     </h4>
     <p>
       To address the points we found in our research we split our design space
@@ -102,7 +106,9 @@ const stage3 = [
       profile for further incentivization.
     </p>
     <h4 id="Evaluation ">
-      <a href="#Evaluation"> Evaluation: </a>
+      <a href="#Evaluation"
+        ><span class="sr-only">jump to section</span> Evaluation:
+      </a>
     </h4>
     <p>
       After coming up with final designs of each section of the system, we made
@@ -113,7 +119,9 @@ const stage3 = [
       viewer gets invested but before they make up their mind.
     </p>
     <h4 id="Conclusion ">
-      <a href="#Conclusion"> Conclusion: </a>
+      <a href="#Conclusion"
+        ><span class="sr-only">jump to section</span> Conclusion:
+      </a>
     </h4>
     <p>
       As social media companies grow, so do the unique nuances in their diaspora
@@ -122,10 +130,7 @@ const stage3 = [
       a community to perform its own moderation with tools that provide them the
       ability to foster perspective answers this concern.
     </p>
-  </section><section
-    role="contentinfo"
-    id="LiteraryResearch"
-    class="scroll-mt-20">
+  </section><section id="LiteraryResearch" class="scroll-mt-20">
     <h2>Literary Research</h2><p>
       My first step was to help inform the team via a competitive analysis, as
       other members looked up, current moderation standards, and current best
@@ -194,7 +199,7 @@ const stage3 = [
         to it become hidden.
       </figcaption>
     </figure>
-  </section><section role="contentinfo" id="Design" class="scroll-mt-20">
+  </section><section id="Design" class="scroll-mt-20">
     <h2>Design</h2>
     <p>
       Our ACES system was divided into two design spaces, 'Post Evaluation'
@@ -229,7 +234,7 @@ const stage3 = [
           asked first to complete stage 1, then to select from a predefined list
           of reasons as to why they trust or distrust the post.
         </li>
-        <figure class="flex flex-col items-center justify-center">
+        <figure class="mx-auto flex max-w-xs flex-col">
           <ImgGetter imageArrayUnopt={stage2} class="mx-auto" />
           <figcaption>
             Stage 2 collects public opinion in a controlled manner.
@@ -240,7 +245,7 @@ const stage3 = [
           declaration to help inform other viewers of the post, using the
           information collected in stage 2.
         </li>
-        <figure class="flex flex-col items-center justify-center">
+        <figure class="mx-auto flex max-w-xs flex-col">
           <ImgGetter imageArrayUnopt={stage3} class="mx-auto" />
           <figcaption>
             Only a few users would have to complete this stage, as it would take
@@ -297,7 +302,7 @@ const stage3 = [
       bonus. Once acquired these badges could be selected to be displayed on
       their profile page.
     </p>
-  </section><section role="contentinfo" id="Evaluation" class="scroll-mt-20">
+  </section><section id="Evaluation" class="scroll-mt-20">
     <h2>Evaluation</h2>
     <p>
       After coming up with final designs of each section of the system, we made
@@ -338,7 +343,7 @@ const stage3 = [
       removed the gift ideas, as not only did it spark contention in one of our
       testers, it was also the lowest motivating ranked overall.
     </p>
-  </section><section role="contentinfo" id="Conclusion" class="scroll-mt-20">
+  </section><section id="Conclusion" class="scroll-mt-20">
     <h2>Conclusion</h2><p>
       Moderation solutions for social media need to adapt to the changing
       attacks on our information spaces. As social media companies grow, so do
