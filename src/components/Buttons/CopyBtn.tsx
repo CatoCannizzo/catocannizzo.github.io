@@ -16,7 +16,6 @@ interface Props {
 export default function CopyBtn({ name, text }: Props) {
   const { toast } = useToast();
   function notify() {
-    console.log("copied");
     navigator.clipboard.writeText(text);
     toast({ variant: "accent", description: `Copied: ${text}` });
   }

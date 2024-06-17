@@ -12,7 +12,6 @@ interface BaseImgObj {
   height?: number;
 }
 
-console.log(imageArray);
 const optimizedImages = await Promise.all(
   imageArray.map(async (image) =>
     getImage({

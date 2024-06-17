@@ -244,6 +244,7 @@ const LofiPrototypeOpt = await getImage({
         src={Wireframe}
         alt="Wireframe of a homescreen page showing a draft layout of the Get Green app."
         class="max-w-[250px]"
+        title="Wireframe of a homescreen page showing a draft layout of the Get Green app."
       />
       <figcaption>
         Here we attempted to redesign the home screen to show users actions that
@@ -356,6 +357,19 @@ const LofiPrototypeOpt = await getImage({
     children: "a",
     pswpModule: () => import("photoswipe"),
   });
-
+  // Following works with aria alert found under UI layout
+  lightbox.on("firstUpdate", () => {
+    sendUpdate("image fullscreened");
+  });
+  lightbox.on("destroy", () => {
+    sendUpdate("image closed");
+  });
   lightbox.init();
+
+  function sendUpdate(currentStatus: String) {
+    const statusBox = document.getElementById("generalAlerts");
+    if (statusBox instanceof HTMLElement) {
+      statusBox.innerHTML = `${currentStatus}`;
+    }
+  }
 </script>

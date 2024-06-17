@@ -19,7 +19,6 @@ interface Props {
 }
 
 const ImageCarousel: React.FC<Props> = ({ imgArrayOpt }) => {
-  // console.log(imgArrayOpt);
   return (
     <Carousel className="w-full ">
       <CarouselContent>

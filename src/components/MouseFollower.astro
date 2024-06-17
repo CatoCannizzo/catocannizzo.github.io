@@ -151,7 +151,6 @@ const srcList = [
 </div>
 
 <script define:vars={{ srcList }}>
-  console.log("script working");
   document.addEventListener("DOMContentLoaded", () => initImage());
 
   // Re-adds eventlisteners on astro swap
@@ -229,8 +228,6 @@ const srcList = [
       typeof nextImg === "string" &&
       screenImage instanceof HTMLImageElement
     ) {
-      console.log(screenImage.src);
-
       screenImage.src = nextImg;
 
       timeoutHandle = window.setTimeout(() => {
