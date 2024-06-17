@@ -1,6 +1,6 @@
 ---
 import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
-import ImgGetter from "@/components/ImgMapGet.astro";
+import OptimizedCarousel from "@/components/OptimizedCarousel.astro";
 import { Image } from "astro:assets";
 import { buttonVariants } from "@/components/ui/button";
 import stage1 from "@/assets/aces/Stage1.png";
@@ -235,7 +235,7 @@ const stage3 = [
           of reasons as to why they trust or distrust the post.
         </li>
         <figure class="mx-auto flex max-w-xs flex-col">
-          <ImgGetter imageArrayUnopt={stage2} class="mx-auto" />
+          <OptimizedCarousel imgArray={stage2} />
           <figcaption>
             Stage 2 collects public opinion in a controlled manner.
           </figcaption>
@@ -246,7 +246,7 @@ const stage3 = [
           information collected in stage 2.
         </li>
         <figure class="mx-auto flex max-w-xs flex-col">
-          <ImgGetter imageArrayUnopt={stage3} class="mx-auto" />
+          <OptimizedCarousel imgArray={stage3} />
           <figcaption>
             Only a few users would have to complete this stage, as it would take
             an unequal amount of time compared to the other stages.

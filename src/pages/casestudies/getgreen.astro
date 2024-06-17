@@ -1,7 +1,7 @@
 ---
 import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
-import ImgGetter from "@/components/ImgMapGet.astro";
-import AstroLightBox from "@/components/AstroLightBox.astro";
+import OptimizedCarousel from "@/components/OptimizedCarousel.astro";
+
 import { Image, getImage } from "astro:assets";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -17,8 +17,6 @@ import Wireframe from "../../assets/getgreen/Wireframe.png";
 import LofiPrototype from "../../assets/getgreen/LofiPrototype.png";
 import TimeOfDay from "../../assets/getgreen/TimeofDay.png";
 import ActionSettings from "../../assets/getgreen/ActionSettings.png";
-// !!!TODO refactor all image code to use <image> not getimage, and pass appropriately.
-// i.e. pass image string to react comp and use <image> there
 
 // import DSNoteAM from "@/assets/getgreen/DSNotificationAM.png";
 // import PDActionAM from "@/assets/getgreen/PDActionDesignAM.png";
@@ -61,21 +59,21 @@ const goalRedesign = [
 const PersonaOpt = await getImage({
   src: Persona,
   width: 500,
-  widths: [792],
+  widths: [Persona.width],
   format: "webp",
   alt: "Persona of an amalgamated user of the Get Green app with the takeaway that even out of the people who download environmental wellness apps, few want to give up their lifestyle. view full image",
 });
 const JourneyMapOpt = await getImage({
   src: JourneyMap,
   width: 600,
-  widths: [1600],
+  widths: [JourneyMap.width],
   format: "webp",
   alt: "Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app. view full image",
 });
 const LofiPrototypeOpt = await getImage({
   src: LofiPrototype,
   width: 600,
-  widths: [1542],
+  widths: [LofiPrototype.width],
   format: "webp",
   alt: "Journey map of an personified GetGreen user showing the user getting more frustrated as they realize the limitations of the GetGreen app. view full image",
 });
@@ -175,11 +173,15 @@ const LofiPrototypeOpt = await getImage({
       a focused three-person participatory design session.
     </p>
     <figure class="flex flex-col items-center">
-      <AstroLightBox
-        image={PersonaOpt}
-        sizes="(min-width: 640px), 792px."
-        description="Most people using the app were passively interested in reducing their carbon foot print, but did not want to give up the quality of their lifestyle."
-      />
+      <div class="pswp-gallery" id="my-gallery--individual">
+        <a
+          href={PersonaOpt.srcSet.values[0].url}
+          data-pswp-width={Persona.width}
+          data-pswp-height={Persona.height}
+          target="_blank">
+          <img src={PersonaOpt.src} alt={PersonaOpt.options.alt} />
+        </a>
+      </div>
       <figcaption>
         Most people using the app were passively interested in reducing their
         carbon foot print, but did not want to give up the quality of their
@@ -194,11 +196,15 @@ const LofiPrototypeOpt = await getImage({
     </p>
 
     <figure class="flex flex-col items-center">
-      <AstroLightBox
-        image={JourneyMapOpt}
-        sizes="(min-width: 640px), 1600px."
-        description="It was an almost constant finding in our research that the app annoyed its users after about 2-3 days through actionless notifications, and repeatedly highlighting actions the user either could not do or had just completed."
-      />
+      <div class="pswp-gallery" id="my-gallery--individual">
+        <a
+          href={JourneyMapOpt.srcSet.values[0].url}
+          data-pswp-width={JourneyMap.width}
+          data-pswp-height={JourneyMap.height}
+          target="_blank">
+          <img src={JourneyMapOpt.src} alt={JourneyMapOpt.options.alt} />
+        </a>
+      </div>
       <figcaption>
         It was an almost constant finding in our research that the app annoyed
         its users after about 2-3 days through actionless notifications, and
@@ -250,35 +256,17 @@ const LofiPrototypeOpt = await getImage({
       show how users could go about adding and tracking action items as well as
       navigating throughout the different functionalities.
     </p>
-    <h1>Testing here</h1>
-    <div class="pswp-gallery" id="my-gallery--individual">
-      <a
-        href={LofiPrototypeOpt.srcSet.values[0].transform.src.src}
-        data-pswp-width="1542"
-        data-pswp-height="1396"
-        target="_blank">
-        <Image src={LofiPrototype} alt="..." />
-      </a>
-      {console.log(LofiPrototypeOpt)}
-      <a
-        href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
-        data-pswp-width="1669"
-        data-pswp-height="2500"
-        target="_blank">
-        <img
-          src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-200.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-    <h1>end testing</h1>
 
     <figure class="flex flex-col items-center">
-      <AstroLightBox
-        image={LofiPrototypeOpt}
-        sizes="(min-width: 800px), 1542px."
-        description="In terms of overall experience, our low fidelity designs averaged at 81 out of 100 on the US Government's System Usability Scale."
-      />
+      <div class="pswp-gallery" id="my-gallery--individual">
+        <a
+          href={LofiPrototypeOpt.srcSet.values[0].url}
+          data-pswp-width={LofiPrototype.width}
+          data-pswp-height={LofiPrototype.height}
+          target="_blank">
+          <img src={LofiPrototypeOpt.src} alt={LofiPrototypeOpt.options.alt} />
+        </a>
+      </div>
       <figcaption>
         In terms of overall experience, our low fidelity designs averaged at 81
         out of 100 on the US Government's System Usability Scale.
@@ -303,7 +291,8 @@ const LofiPrototypeOpt = await getImage({
       consistent sessions in the following days.
     </p>
     <figure class="mx-auto flex max-w-xs flex-col">
-      <ImgGetter imageArrayUnopt={goalPages} class="mx-auto" />
+      <OptimizedCarousel imgArray={goalPages} />
+
       <figcaption>
         One of the first screens a user should see in our redesign. It prompts
         them to choose a goal that aligns with their lifestyle.
@@ -317,7 +306,7 @@ const LofiPrototypeOpt = await getImage({
     </p>
 
     <figure class="mx-auto flex max-w-xs flex-col">
-      <ImgGetter imageArrayUnopt={actionRedesign} class="mx-auto" />
+      <OptimizedCarousel imgArray={actionRedesign} />
       <figcaption>
         Here you can see the difference between the base homepage, and one after
         a user has chosen a goal and specific actions.
@@ -330,7 +319,8 @@ const LofiPrototypeOpt = await getImage({
       improvement model to build towards.
     </p>
     <figure class="mx-auto flex max-w-xs flex-col">
-      <ImgGetter imageArrayUnopt={goalRedesign} class="mx-auto" />
+      <OptimizedCarousel imgArray={goalRedesign} />
+      <!-- <CarouselImgGetter imageArrayUnopt={goalRedesign} class="mx-auto" /> -->
       <figcaption>
         Here is a collection of popups that could stem from a user trying to
         customize an action card.

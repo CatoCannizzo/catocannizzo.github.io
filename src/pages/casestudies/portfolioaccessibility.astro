@@ -7,7 +7,7 @@ import Deuteranopia from "@/assets/portfolioaccessibility/Deuteranopia.png";
 import NormalColors from "@/assets/portfolioaccessibility/NormalColors.png";
 import Protanopia from "@/assets/portfolioaccessibility/Protanopia.png";
 import Tritanopia from "@/assets/portfolioaccessibility/Tritanopia.png";
-import ImgGetter from "@/components/ImgMapGet.astro";
+import OptimizedCarousel from "@/components/OptimizedCarousel.astro";
 import Contrast from "@/assets/portfolioaccessibility/Contrast.png";
 
 const colorAccessibilityPics = [
@@ -113,10 +113,7 @@ const colorAccessibilityPics = [
     In each image it is important to determine if each color can still be differentiated
     for its intended role.
     <figure class="mx-auto flex max-w-xs flex-col sm:max-w-2xl">
-      <ImgGetter
-        imageArrayUnopt={colorAccessibilityPics}
-        class=""
-      /><figcaption>
+      <OptimizedCarousel imgArray={colorAccessibilityPics} /><figcaption>
         I intentionally limited my use of green to non-informational roles in my
         portfolio, as some users won't be able to differentiate it from my
         yellow or blue.
