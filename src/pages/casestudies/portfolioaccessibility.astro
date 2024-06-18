@@ -37,27 +37,27 @@ const colorAccessibilityPics = [
 <WriteUpLayout title="Portfolio Accessibility">
   <h1>Portfolio Accessibility</h1>
   <section>
-    <h2>Summary</h2>
-    One of the most important roles a UX designer can take on is as an advocate for
-    accessibility. Extending a system so that it can be used by people of any ability
-    creates user flows that benefit everyone. This is known as the curb-cut effect
-    and <a target="_blank" href="https://inclusive.microsoft.design/">
-      microsoft has a brilliant accessibility article<span
-        class="absolute max-h-0 max-w-0 overflow-hidden">
-        (opens in new tab)</span
-      ></a
-    > on why it is helpful for a wider audience than just those a system is targeted
-    to be extended to.<br /><br /> To give an insight into my design methodology
-    this case study will explain my considerations when updating a website to follow
-    Web Content Accessibility Guidelines (WCAG) and comply with <a
-      target="_blank"
-      href="https://www.ada.gov/resources/web-guidance/"
-      >the United States Department of Justice online Americans with
-      Disabilities Act requirements<span
-        class="absolute max-h-0 max-w-0 overflow-hidden">
-        (opens in new tab)</span
-      ></a
-    >. I divide the accessibility guidelines into 3 overarching sections:
+    <h2>Overview</h2>
+    <p>
+      One of the most important roles a UX designer can take on is as an
+      advocate for accessibility. Extending a system so that it can be used by
+      people of any ability creates user flows that benefit everyone. This is
+      known as the curb-cut effect and <a
+        href="https://inclusive.microsoft.design/">
+        microsoft has a brilliant accessibility article</a
+      > on why it is helpful for a wider audience than just those a system is targeted
+      to be extended to.
+    </p><p>
+      To give an insight into my design methodology this case study will explain
+      my considerations when updating a website to follow Web Content
+      Accessibility Guidelines (WCAG) and to comply with the United States
+      Department of Justice <a
+        href="https://www.ada.gov/resources/web-guidance/"
+        >online Americans with Disabilities Act requirements</a
+      >. I divide the accessibility guidelines into 3 overarching sections. In
+      each section I will discuss relevant standards, and showcase the tests and
+      code I use to achieve them.
+    </p>
     <ul>
       <li>
         <a href="#Color"
@@ -76,21 +76,36 @@ const colorAccessibilityPics = [
         >
       </li>
     </ul>
-
-    In each section I will discuss relevant standards, and showcase the tests
-    and code I use to achieve them. Additionally I elaborate on how each section
-    can serve to help more than just people with disabilities.
   </section>
   <section id="Color" class="scroll-mt-20">
     <h2>Color Accessibility</h2>
+    <p>
+      The first "standard" in color accessibility that I check is a color blind
+      contrast check. Standard is in quotes here because WCAG do not actually
+      regulate the color combinations that a website can use. <a
+        href="https://webaim.org/articles/contrast/#sc141">WCAG section 1.4.1</a
+      > instead opts to say that color should not be the only visual means of conveying
+      information. So while I still like to open a website and apply filters to simulate
+      each vision deficiency this is more to inform my design side how the colors
+      I chose can be perceived. The actual test is to make sure that each color used
+      to convey meaning is supplemented with another visual form of indication.
+    </p>
 
-    Choosing an accessible color scheme is usually the easiest of the three
-    areas to implement. My first test for making an accessible color scheme is
-    to check for color blind contrast. This can be as simple as opening up a
-    website, applying filters to simulate each vision deficiency and making sure
-    that each color used to convey meaning is distinct in each deficiency.<br
-    /><br /> My color scheme uses a green, yellow, and blue designed to be reminiscent
-    of a <div
+    <p>
+      Below is my website viewed with Protanopia (no red), Deuteranopia (no
+      green), Tritanopia (no blue), and finally Achromatopsia (greyscale)
+      filters. In each image it is important to determine if each color can
+      still be differentiated for its intended role.
+    </p>
+    <figure class="mx-auto flex max-w-xs flex-col sm:max-w-2xl">
+      <OptimizedCarousel imgArray={colorAccessibilityPics} /><figcaption>
+        I intentionally limited my use of green to non-informational roles in my
+        portfolio, as some users won't be able to differentiate it from my
+        yellow or blue.
+      </figcaption>
+    </figure>
+    My color scheme uses a green, yellow, and blue designed to be reminiscent of
+    a <div
       tabindex="0"
       class="tooltip group relative inline-block font-medium text-[var(--tw-prose-links)] underline">
       mountain landscape <span
@@ -104,36 +119,30 @@ const colorAccessibilityPics = [
           />
         </div></span
       >
-      <!-- !!! Come back here to add scripting to tooltip to prevent out of bounds -->
-    </div> with intra-site navigation buttons and links yellow, links to other sites
-    are blue, and green as my accent color. This is import because green is not a
-    very accessiblle color. So to use it, I add it sparingly in my website, and only
-    for a pop of color. Below is my website viewed with Protanopia (no red), Deuteranopia
-    (no green), Tritanopia (no blue), and finally Achromatopsia (greyscale) filters.
-    In each image it is important to determine if each color can still be differentiated
-    for its intended role.
-    <figure class="mx-auto flex max-w-xs flex-col sm:max-w-2xl">
-      <OptimizedCarousel imgArray={colorAccessibilityPics} /><figcaption>
-        I intentionally limited my use of green to non-informational roles in my
-        portfolio, as some users won't be able to differentiate it from my
-        yellow or blue.
-      </figcaption>
-    </figure>
-
-    In Achromatopsia the role of colors gets removed entirely, allowing us to
-    see the websites hierarchy without any color. This becomes an important test
-    as users can force color changes on websites on the client side for a
-    variety of reasons and so the website's hierarchy should exist regardless of
-    color. Testing a website's color accessibility serves to check the website's
-    design basics, and reinforces that idea that while each individual color
-    should have meaning hierarchy should not rely on color alone. <br /><br />
-    After the color scheme is chosen the last step is to ensure text legibility.
-    All colors and the color of the text atop them need to have a minimum 4.5:1 contrast
-    to their respective background in accordance with the WCAG AA standard. To prevent
-    having to test every combination of text color and background color on a website
-    I set two or three text colors and assign one to each color in the color scheme.
-    Then when combined with text link colors I have two combinations of text color
-    to test for each background color that I use.
+    </div>. This should immediately raise concerns as green can blend with both
+    yellow and blue depending on a persons color vision. So to be able to use a
+    color scheme that I feel represents me, I limit my use of Green to color
+    accents. This leaves me with intra-site navigation buttons and links yellow,
+    links to other sites as blue, and green as my accent color.
+    <p>
+      In Achromatopsia the role of colors gets removed entirely, allowing us to
+      see the websites hierarchy without any color. This becomes an important
+      test as users can force color changes on websites on the client side for a
+      variety of reasons and so the website's hierarchy should exist regardless
+      of color. Testing a website's color accessibility serves to check the
+      website's design basics, and reinforces that idea that while each
+      individual color should have meaning hierarchy should not rely on color
+      alone.
+    </p><p>
+      After the color scheme is chosen the last step is to ensure text
+      legibility. All colors and the color of the text atop them need to have a
+      minimum 4.5:1 contrast to their respective background in accordance with
+      the WCAG AA standard. To prevent having to test every combination of text
+      color and background color on a website I set two or three text colors and
+      assign one to each color in the color scheme. Then when combined with text
+      link colors I have two combinations of text color to test for each
+      background color that I use.
+    </p>
     <figure class="flex flex-col items-center">
       <Image
         src={Contrast}
