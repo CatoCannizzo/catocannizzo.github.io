@@ -125,8 +125,8 @@ export default function NavMenu({ isVert }: { isVert: boolean }) {
         <NavigationMenuItem>
           <a
             className={navigationMenuTriggerStyle()}
-            aria-label="Open P D F resume in new window"
-            target="_blank"
+            aria-label="Open P D F resume"
+            title="Open PDF resume"
             href="/Cannizzo.pdf"
             data-astro-reload>
             Portfolio
