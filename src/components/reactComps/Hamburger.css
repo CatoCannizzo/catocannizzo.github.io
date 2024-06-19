@@ -1,0 +1,13 @@
+.line {
+  transition: stroke-dasharray 0.7s ease-in-out;
+  transition: stroke-dashoffset 0.7s ease-in-out;
+
+  transform-origin: center;
+  stroke-dashoffset: -218;
+  stroke-dasharray: 60 47.1 60 47.1 60 1000;
+}
+
+.HamButton[aria-expanded="true"] .line {
+  stroke-dasharray: 40 00 45 600 85 1000;
+  stroke-dashoffset: -0;
+}

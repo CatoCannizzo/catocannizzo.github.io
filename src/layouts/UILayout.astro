@@ -15,6 +15,7 @@ const { skipbutton, footbutton, title, upbutton } = Astro.props;
 
 <Base title={title}>
   {skipbutton && <SkipButton skipSection={skipbutton} />}
+  <div role="status" id="generalAlerts" class="sr-only"></div>
 
   <Header transition:persist upbutton={upbutton} /><div
     transition:animate="slide"

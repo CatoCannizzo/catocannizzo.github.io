@@ -19,9 +19,8 @@ interface Props {
 }
 
 const ImageCarousel: React.FC<Props> = ({ imgArrayOpt }) => {
-  // console.log(imgArrayOpt);
   return (
-    <Carousel className="w-full max-w-xs">
+    <Carousel className="w-full ">
       <CarouselContent>
         {imgArrayOpt.map((image, index) => (
           <CarouselItem key={index}>

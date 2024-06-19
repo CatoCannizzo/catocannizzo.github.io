@@ -1,0 +1,28 @@
+---
+import type { ImageMetadata } from "astro";
+
+import ImageCarousel from "@/components/reactComps/ImageCarousel";
+import { getImage } from "astro:assets";
+const imageArray: BaseImgObj[] = Astro.props.imgArray;
+
+interface BaseImgObj {
+  src: ImageMetadata;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
+const optimizedImages = await Promise.all(
+  imageArray.map(async (image) =>
+    getImage({
+      src: image.src,
+      format: "webp",
+      alt: image.alt,
+      height: image.height || null,
+      width: image.width || null,
+    }),
+  ),
+);
+---
+
+<ImageCarousel client:visible imgArrayOpt={optimizedImages} />

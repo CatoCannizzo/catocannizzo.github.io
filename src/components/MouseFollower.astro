@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
 import img1 from "../assets/welcome/TLHello.png";
 import img2 from "../assets/welcome/TMHello.png";
 import img3 from "../assets/welcome/TRHello.png";
@@ -7,63 +7,161 @@ import img4 from "../assets/welcome/MLHello.png";
 import img5 from "../assets/welcome/MMHello.png";
 import img6 from "../assets/welcome/MRHello.png";
 import img7 from "../assets/welcome/BLHello.png";
-import img99 from "../assets/welcome/DefaultHello.png";
-import img8 from "../assets/welcome/BRHello.png";
+import imgD from "../assets/welcome/DefaultHello.png";
+import img9 from "../assets/welcome/BRHello.png";
 
-const imageArray = [img1, img2, img3, img4, img5, img6, img7, img8];
+const optImg1 = await getImage({
+  src: img1,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const optImg2 = await getImage({
+  src: img2,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const optImg3 = await getImage({
+  src: img3,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const optImg4 = await getImage({
+  src: img4,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const optImg5 = await getImage({
+  src: img5,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const optImg6 = await getImage({
+  src: img6,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const optImg7 = await getImage({
+  src: img7,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const optImg9 = await getImage({
+  src: img9,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const optImg8 = await getImage({
+  src: imgD,
+  width: 196,
+  format: "webp",
+  alt: "A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction.",
+});
+const srcList = [
+  optImg1.src,
+  optImg2.src,
+  optImg3.src,
+  optImg4.src,
+  optImg5.src,
+  optImg6.src,
+  optImg7.src,
+  optImg8.src,
+  optImg9.src,
+];
 ---
 
-<!-- Makes a square picture and changes source when mouse hovers over a 3 by 3 subdivision of image tag -->
-<div id="MouseFollower" class="relative z-30 flex h-48 w-48 flex-row flex-wrap">
-  <Image
-    id="followImage99"
-    src={img99}
+<!-- !!!Make this fast load, and make sure to have default image be a prop that can be changed for the 404 page -->
+<div
+  id="MouseFollower"
+  tabindex="0"
+  class="relative z-30 flex h-48 w-48 flex-row flex-wrap"
+  aria-label="A interactive welcoming image of Cato, that swaps between 9 photos of Cato looking at different areas of the screen">
+  <!-- The default image is img99 -->
+
+  <img
+    id="followerImg"
+    src={optImg8.src}
     alt="A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction."
-    height={196}
-    width={196}
-    class="Shown absolute [transition:opacity_0.2s_ease-in;]"
+    height="196"
+    width="196"
+    class="absolute [transition:opacity_0.2s_ease-in;]"
   />
-  {
-    imageArray.map((image: any, index: number) => (
-      <Image
-        id={`followImage${index}`}
-        src={image}
-        alt="A image of Cato the creator of this site, as the mouse moves to a different portion of the image, the image changes to one where Cato is looking in that direction."
-        height={196}
-        width={196}
-        class="absolute opacity-0 [transition:opacity_0.2s_ease-in;]"
-      />
-    ))
-  }
-  <!-- Subdivision that trigger image swap -->
-  <div id="iH1" class="absolute h-16 w-16"></div>
-  <div id="iH2" class="absolute left-16 h-16 w-16"></div>
-  <div id="iH3" class="absolute left-32 h-16 w-16"></div>
-  <div id="iH4" class="absolute top-16 h-16 w-16"></div>
-  <div id="iH5" class="absolute left-16 top-16 h-16 w-16"></div>
-  <div id="iH6" class="absolute left-32 top-16 h-16 w-16"></div>
-  <div id="iH7" class="absolute top-32 h-16 w-16"></div>
-  <div id="iH8" class="absolute left-16 top-32 h-16 w-16"></div>
-  <div id="iH9" class="absolute left-32 top-32 h-16 w-16"></div>
+  <!-- Subdivisions that trigger image swap -->
+  <div
+    id="iH1"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato look up and left"
+    class="absolute h-16 w-16">
+  </div>
+  <div
+    id="iH2"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato look up"
+    class="absolute left-16 h-16 w-16">
+  </div>
+  <div
+    id="iH3"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato look up and right"
+    class="absolute left-32 h-16 w-16">
+  </div>
+  <div
+    id="iH4"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato look left"
+    class="absolute top-16 h-16 w-16">
+  </div>
+  <div
+    id="iH5"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato cover his face"
+    class="absolute left-16 top-16 h-16 w-16">
+  </div>
+  <div
+    id="iH6"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato look right"
+    class="absolute left-32 top-16 h-16 w-16">
+  </div>
+  <div
+    id="iH7"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato look down and left"
+    class="absolute top-32 h-16 w-16">
+  </div>
+  <div
+    id="iH8"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato wave"
+    class="absolute left-16 top-32 h-16 w-16">
+  </div>
+  <div
+    id="iH9"
+    tabindex="0"
+    aria-label="The section of screen that makes Cato look down and right"
+    class="absolute left-32 top-32 h-16 w-16">
+  </div>
 </div>
 
-<script>
+<script define:vars={{ srcList }}>
   document.addEventListener("DOMContentLoaded", () => initImage());
 
-  // Re-adds first image on astro swap
+  // Re-adds eventlisteners on astro swap
   document.addEventListener("astro:after-swap", () => {
-    // needed to update pointer
-    baseImage = document.getElementById("followImage99");
     initImage();
   });
 
   //Time out used in change image
   var timeoutHandle = 0;
-  var baseImage = document.getElementById("followImage99");
 
   function initImage() {
-    // Sets first image to show
-
     // Prevents image change on mobile
     if (window.matchMedia("(max-width: 767px)").matches) {
       () => {
@@ -72,55 +170,65 @@ const imageArray = [img1, img2, img3, img4, img5, img6, img7, img8];
     } else {
       const iH1Ele = document.getElementById("iH1");
       if (iH1Ele instanceof HTMLDivElement) {
-        iH1Ele.addEventListener("mouseover", () => changeImage(0));
+        iH1Ele.addEventListener("mouseover", () => changeImage(1));
+        iH1Ele.addEventListener("focus", () => changeImage(1));
       }
       const iH2Ele = document.getElementById("iH2");
       if (iH2Ele instanceof HTMLDivElement) {
-        iH2Ele.addEventListener("mouseover", () => changeImage(1));
+        iH2Ele.addEventListener("mouseover", () => changeImage(2));
+        iH2Ele.addEventListener("focus", () => changeImage(2));
       }
       const iH3Ele = document.getElementById("iH3");
       if (iH3Ele instanceof HTMLDivElement) {
-        iH3Ele.addEventListener("mouseover", () => changeImage(2));
+        iH3Ele.addEventListener("mouseover", () => changeImage(3));
+        iH3Ele.addEventListener("focus", () => changeImage(3));
       }
       const iH4Ele = document.getElementById("iH4");
       if (iH4Ele instanceof HTMLDivElement) {
-        iH4Ele.addEventListener("mouseover", () => changeImage(3));
+        iH4Ele.addEventListener("mouseover", () => changeImage(4));
+        iH4Ele.addEventListener("focus", () => changeImage(4));
       }
       const iH5Ele = document.getElementById("iH5");
       if (iH5Ele instanceof HTMLDivElement) {
-        iH5Ele.addEventListener("mouseover", () => changeImage(4));
+        iH5Ele.addEventListener("mouseover", () => changeImage(5));
+        iH5Ele.addEventListener("focus", () => changeImage(5));
       }
       const iH6Ele = document.getElementById("iH6");
       if (iH6Ele instanceof HTMLDivElement) {
-        iH6Ele.addEventListener("mouseover", () => changeImage(5));
+        iH6Ele.addEventListener("mouseover", () => changeImage(6));
+        iH6Ele.addEventListener("focus", () => changeImage(6));
       }
       const iH7Ele = document.getElementById("iH7");
       if (iH7Ele instanceof HTMLDivElement) {
-        iH7Ele.addEventListener("mouseover", () => changeImage(6));
+        iH7Ele.addEventListener("mouseover", () => changeImage(7));
+        iH7Ele.addEventListener("focus", () => changeImage(7));
       }
       const iH8Ele = document.getElementById("iH8");
       if (iH8Ele instanceof HTMLDivElement) {
-        iH8Ele.addEventListener("mouseover", () => changeImage(99));
+        iH8Ele.addEventListener("mouseover", () => changeImage(8));
+        iH8Ele.addEventListener("focus", () => changeImage(8));
       }
       const iH9Ele = document.getElementById("iH9");
       if (iH9Ele instanceof HTMLDivElement) {
-        iH9Ele.addEventListener("mouseover", () => changeImage(7));
+        iH9Ele.addEventListener("mouseover", () => changeImage(9));
+        iH9Ele.addEventListener("focus", () => changeImage(9));
       }
     }
   }
 
-  //Changes image via opacity then calls timeout & in the middle resets timeout to prevent reset during use
-  function changeImage(imgSrc: number) {
-    const collection = document.getElementsByClassName("Shown");
-    const shownImage = collection[0];
-    const followImage = document.getElementById(`followImage${imgSrc}`);
+  //Changes image via src then calls timeout & in the middle of timeout
+  //resets timeout to prevent reset during use
+  function changeImage(imgSrc) {
+    // adjusting for index
+    imgSrc = imgSrc - 1;
+    const nextImg = srcList[imgSrc];
+    const screenImage = document.getElementById("followerImg");
     window.clearTimeout(timeoutHandle);
     if (
-      followImage instanceof HTMLImageElement &&
-      shownImage instanceof HTMLImageElement
+      typeof nextImg === "string" &&
+      screenImage instanceof HTMLImageElement
     ) {
-      shownImage.classList.replace("Shown", "opacity-0");
-      followImage.classList.replace("opacity-0", "Shown");
+      screenImage.src = nextImg;
 
       timeoutHandle = window.setTimeout(() => {
         back2Default();
@@ -129,14 +237,9 @@ const imageArray = [img1, img2, img3, img4, img5, img6, img7, img8];
   }
   // Called after timeout to reshow first image after 1.5s of inactivity
   function back2Default() {
-    if (baseImage instanceof HTMLImageElement) {
-      const collection2 = document.querySelectorAll(".Shown");
-
-      collection2.forEach((element) => {
-        element.classList.replace("Shown", "opacity-0");
-      });
-
-      baseImage.classList.replace("opacity-0", "Shown");
+    const screenImage = document.getElementById("followerImg");
+    if (screenImage instanceof HTMLImageElement) {
+      screenImage.src = srcList[7];
     }
   }
 </script>

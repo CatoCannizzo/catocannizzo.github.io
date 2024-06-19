@@ -10,15 +10,15 @@ interface Props {
 const { upbutton } = Astro.props;
 ---
 
-{upbutton && <UpButton />}
 <!-- StickyHeader styling is done as a class in global.css-->
-<div id="headerContainer" class="sticky z-50 mx-10 transition-all duration-300">
+<div id="headerContainer" class="sticky z-40 mx-10 transition-all duration-300">
   <header
     id="header"
     class="stickyHeader mx-auto flex h-fit max-w-5xl items-center rounded-b-lg px-3 py-1">
     <a href="/" aria-label="Navigate to portfolio home page" class="mr-auto">
+      <!--  -->
       <svg
-        class="h-16 w-16 fill-current stroke-2 text-accent"
+        class="h-16 w-16 fill-current stroke-2 text-primary"
         viewBox="0 0 110 96">
         <g>
           <path
@@ -37,6 +37,7 @@ const { upbutton } = Astro.props;
     <div class="px-2"><ThemeIcon /></div>
   </header>
 </div>
+{upbutton && <UpButton />}
 
 <script>
   //?! Typescript typeguard
@@ -83,7 +84,7 @@ const { upbutton } = Astro.props;
       headCont.classList.remove("top-0");
       headCont.classList.add("top-[-100px]");
       if (!backGroundAdded) {
-        header.classList.add("bg-secondary/[98%]");
+        header.classList.add("bg-accent/[98%]");
         backGroundAdded = true;
       }
     } else {
@@ -92,7 +93,7 @@ const { upbutton } = Astro.props;
         headCont.classList.add("top-0");
         headCont.classList.remove("top-[-100px]");
         if (st < 50) {
-          header.classList.remove("bg-secondary/[98%]");
+          header.classList.remove("bg-accent/[98%]");
           backGroundAdded = false;
         }
       }
