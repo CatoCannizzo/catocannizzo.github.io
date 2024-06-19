@@ -1,4 +1,5 @@
 ---
+import { Code } from "astro:components";
 import WriteUpLayout from "@/layouts/WriteUpLayout.astro";
 import Image from "astro/components/Image.astro";
 import Landscape from "@/assets/portfolioaccessibility/LandscapePic.jpg";
@@ -175,11 +176,11 @@ const colorAccessibilityPics = [
       'content' pages.
     </p>
     <p>
-      Then the last part of my keyboard design'funnel' of designing for a
-      keyboard is just making sure that any hover effect on the page, are
-      dublicated for focus too. This is especially important for tooltips, like
-      those you might see on social link icons, and appreciated for micro
-      interactions like a change of color, or movement.
+      Then the last part of my keyboard design 'funnel' is just making sure that
+      any hover effect on the page, are dublicated for focus too. This is
+      especially important for tooltips, like those you might see on social link
+      icons, and appreciated for micro interactions like a change of color, or
+      movement.
     </p>
     <p>
       Then the most important part of keyboard accessibility is to test it! I
@@ -200,14 +201,18 @@ const colorAccessibilityPics = [
   <section id="Screen-Reader" class="scroll-mt-20">
     <h2>Screen Reader Accessibility</h2><p>
       Finally comes screen reader accessibility, and this is such a multifaceted
-      issue that multiple WCAG guidlines could apply. So I will again focus on
-      the steps I took for my website. The most basic of which is to ensure the
-      site has good structure, for the reader to latch onto. This includes using
-      the “section” html elements like &lt;header&gt;, &lt;nav&gt;,
-      &lt;body&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, and
-      &lt;footer&gt;. And that buttons should be inside &lt;button&gt; tags or
-      have an appropriate aria-role attribute if custom made and links should be
-      treated like-wise and should avoid using 'target='blank''.
+      issue that multiple WCAG guidlines apply. So instead of listing them all I
+      will again focus on the steps I took for my website. The most basic of
+      which might be <a
+        href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms.html"
+        >WCAG guideline 2.4</a
+      > which is to ensure the site has good structure, for the screen reader to
+      latch onto. This includes using the “landmark” html elements like &lt;header&gt;,
+      &lt;nav&gt;, &lt;body&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;,
+      and &lt;footer&gt; and to use &lt;H&gt; tags sequentially. Next buttons should
+      be inside &lt;button&gt; tags or have an appropriate aria-role attribute if
+      custom made and links should be treated like-wise and should avoid using 'target='_blank''
+      attribute.
     </p>
     <p>
       Then it is just a matter of adding in information that sighted users get
@@ -215,12 +220,52 @@ const colorAccessibilityPics = [
       all anchor tags on my website, including section links, or image full
       screen tags and ensuring they were descriptive of what they opened
       including size and file type, and where they opened it. While this could
-      sound like it would make the links clunky, but a common approach is to add
-      this description in invisible span tags, and for sighted users is to add
-      'title' tags to links so that additional information is available on
-      hover. Then I provided appropriate aria-live status updates for images
-      that full screen on click, and double checked all my image alt tags.
-    </p><p>
+      make the links clunky, a common approach is to add this description in
+      invisible span tags, and for sighted users is to add 'title' tags to links
+      so that additional information is available on hover.
+    </p>
+
+    <p>
+      Another place that can be tricky to impliment accessibility for screen
+      readers is with any pop up modal. In my portfolio these are found with the
+      'click-to-fullscreen' images in some of my case studies. The most
+      important thing to keep in mind is that opening a modal should 'lock' the
+      rest of the page preventing it from changing or being interacted with.
+      Once that has been accomplished the next focus of an accessibility minded
+      developer should be 'focus.' The focused element when the modal opens
+      should be on a non-destructive option, this is especially prevelant for
+      modals that pop up for deletion events. And focus when the modal closes
+      needs to return to the button the prompted the modal to open. (I talk
+      about my own issue with this briefly under my keyboard accessibility
+      section.) Additionally to help increase the accessibility of these modals,
+      I provided aria-live status updates for when the image is full screened
+      and closed. While this feature is not required, it took me all of 11 short
+      lines code to implement. I have shared the code below to show just how
+      easy it can be to add accessibility features.
+    </p>
+    <Code
+      code={`//HTML in page
+<div role="status" id="generalAlerts" class="sr-only"></div>
+
+// JS
+lightbox.on("firstUpdate", () => {
+  sendUpdate("image fullscreened");
+});
+lightbox.on("destroy", () => {
+  sendUpdate("image closed");
+});
+lightbox.init();
+
+function sendUpdate(currentStatus: String) {
+  const statusBox = document.getElementById("generalAlerts");
+  if (statusBox instanceof HTMLElement) {
+    statusBox.innerHTML = \`\${currentStatus}\`;
+}}`}
+      lang="js"
+      theme="dark-plus"
+    />
+
+    <p>
       Finally I tested my website by grabbing the microsoft Narrator, android
       Talkback, and the one of the most popular third party readers NVDA to
       ensure all alerts, carousels, links and general site navigation worked as
