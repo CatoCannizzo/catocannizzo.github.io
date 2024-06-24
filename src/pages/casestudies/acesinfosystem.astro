@@ -15,25 +15,25 @@ import passive from "@/assets/aces/PassiveInc.png";
 const stage2 = [
   {
     src: stage2neg,
-    alt: "A image of TikTok with a popup up showing a list of reasons to not trust a tiktok",
+    alt: "A TikTok screen with a popup up showing a list of reasons to not trust a tiktok",
   },
   {
     src: stage2pos,
-    alt: "A image of TikTok with a popup showing a list of reasons to trust a tiktok",
+    alt: "A TikTok screen with a popup showing a list of reasons to trust a tiktok",
   },
 ];
 const stage3 = [
   {
     src: stage3info,
-    alt: "A image of TikTok with a popup showing a user instructions for how to complete stage 3",
+    alt: "A TikTok screen with a popup showing a user instructions for how to complete stage 3",
   },
   {
     src: stage3pro,
-    alt: "A image of TikTok with a popup showing summarized information from stage 2",
+    alt: "A TikTok screen with a popup showing summarized information from stage 2",
   },
   {
     src: stage3creation,
-    alt: "A image of TikTok with a popup showing a user typing in a write up for stage 3",
+    alt: "A TikTok screen with a popup showing a user typing in a write up for stage 3",
   },
 ];
 ---
@@ -187,7 +187,10 @@ const stage3 = [
       </ol>
     </p>
     <figure class="flex flex-col items-center">
-      <Image src={tiktok} alt="General purpose image of TikTok" />
+      <Image
+        src={tiktok}
+        alt="A silhouetted hand and phone with the tiktok logo shown on the screen of the phone"
+      />
       <figcaption>
         Misinformation on TikTok poses an interesting challenge as users can use
         audio from other videos, making the original content and claims attached
@@ -215,7 +218,7 @@ const stage3 = [
         <figure class="flex flex-col items-center">
           <Image
             src={stage1}
-            alt="A image of tiktok with a pop up asking if the user trusts the information presented."
+            alt="A tiktok screen with a pop up asking if the user trusts the information presented."
             width="300"
             class=""
           />
@@ -254,7 +257,7 @@ const stage3 = [
         <figure class="flex flex-col items-center justify-center">
           <Image
             src={stage4}
-            alt="A background image of TikTok with a pop up asking the user to select between 3 summaries."
+            alt="A Tiktok screen with a pop up asking the user to select between 3 summaries."
             width="300"
             class=""
           />
@@ -283,7 +286,7 @@ const stage3 = [
     <figure class="flex flex-col items-center justify-center">
       <Image
         src={passive}
-        alt="A image of a profile page on Tik Tok where a new section called moderator stats has been added showing the users moderation streak, consensus matching, and the consistency is key bage."
+        alt="A profile page on Tik Tok where a new section called moderator stats has been added showing the users moderation streak, consensus matching, and the consistency is key bage."
         width="300"
         class=""
       />
