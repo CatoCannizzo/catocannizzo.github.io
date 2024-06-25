@@ -40,7 +40,7 @@ const { upbutton } = Astro.props;
 {upbutton && <UpButton />}
 
 <script>
-  //?! Typescript typeguard
+  //!? Typescript typeguard
   function isHTMLElement(ele: unknown): ele is HTMLElement {
     return ele instanceof HTMLElement;
   }
