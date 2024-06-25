@@ -10,7 +10,14 @@ interface BaseImgObj {
   alt: string;
   width?: number;
   height?: number;
+  caption?: string;
 }
+type OptImageObject = {
+  options: object;
+  src: string;
+  caption?: string;
+  attributes: any;
+};
 
 const optimizedImages = await Promise.all(
   imageArray.map(async (image) =>
@@ -23,6 +30,16 @@ const optimizedImages = await Promise.all(
     }),
   ),
 );
+
+//following lines should append caption to newly created optimized images from Astro GetImage function above
+const optImages = await optimizedImages;
+optImages.map(appendCap);
+
+function appendCap(optImages: OptImageObject, index: number) {
+  if (imageArray[index].caption != null) {
+    optImages.caption = imageArray[index].caption;
+  }
+}
 ---
 
 <ImageCarousel client:visible imgArrayOpt={optimizedImages} />

@@ -25,35 +25,49 @@ const goalPages = [
   {
     src: GoalPage,
     alt: "An alternative Get Green on boarding experience that prompts the user to select a goal they want to accomplish with the app.",
+    caption:
+      "One of the first screens a user should see in our redesign. It prompts them to choose a goal that aligns with their lifestyle.",
+    width: 320,
   },
   {
     src: GoalActions,
     alt: "A redesigned Get Green home screen showing a template where a user can measure their goal progress and see current, upcoming, and actions with subtasks",
+    caption:
+      "Next the user is prompted to select several actions that are tied to the previously selected goal.",
+    width: 320,
   },
 ];
 const actionRedesign = [
   {
     src: HomenoGoal,
     alt: "A redesigned Get Green home screen showing a blank template where a user can add goals and actions.",
+    caption:
+      "An empty homescreen, an example of what the app would look like if the user skipped the on boarding.",
+    height: 700,
   },
   {
     src: HomePage,
     alt: "A redesigned Get Green home screen showing a template where a user can measure their goal progress and see current, upcoming, and actions with subtasks",
-    height: "700",
+    height: 700,
+    caption:
+      "A full home screen with actions that the user scheduled for that day, and an upcoming action for later in the week that the user previously worked on.",
   },
 ];
 const goalRedesign = [
   {
     src: ActionSettings,
     alt: "An example popup showing actions a user can take if they click on the settings of a action card. Such as editing action frequency, customizing notifications, scheduling a reminder, or sharing or removing the action.",
+    width: 320,
   },
   {
     src: HabitFreq,
     alt: "An example popup showing the UI view of the set action frequency.",
+    width: 320,
   },
   {
     src: TimeOfDay,
     alt: "An example popup showing the UI view of the schedule reminder.",
+    width: 320,
   },
 ];
 const PersonaOpt = await getImage({
@@ -286,14 +300,7 @@ const LofiPrototypeOpt = await getImage({
       initial sessions within the app followed closely by several more
       consistent sessions in the following days.
     </p>
-    <figure class="mx-auto flex max-w-xs flex-col">
-      <OptimizedCarousel imgArray={goalPages} />
-
-      <figcaption>
-        One of the first screens a user should see in our redesign. It prompts
-        them to choose a goal that aligns with their lifestyle.
-      </figcaption>
-    </figure>
+    <OptimizedCarousel imgArray={goalPages} />
 
     <p>
       We improved the interactivity of the 'action items' which would reduce
@@ -301,27 +308,19 @@ const LofiPrototypeOpt = await getImage({
       comes to a user's self monitoring.
     </p>
 
-    <figure class="mx-auto flex max-w-xs flex-col">
-      <OptimizedCarousel imgArray={actionRedesign} />
-      <figcaption>
-        Here you can see the difference between the base homepage, and one after
-        a user has chosen a goal and specific actions.
-      </figcaption>
-    </figure>
+    <OptimizedCarousel imgArray={actionRedesign} />
+
     <p>
       Finally we increased the options available to users in their settings and
       with their actions. This should help even out the time users initially
       spend with the app and increase long term engagement with a goal centric
       improvement model to build towards.
     </p>
-    <figure class="mx-auto flex max-w-xs flex-col">
-      <OptimizedCarousel imgArray={goalRedesign} />
-      <!-- <CarouselImgGetter imageArrayUnopt={goalRedesign} class="mx-auto" /> -->
-      <figcaption>
-        Here is a collection of popups that could stem from a user trying to
-        customize an action card.
-      </figcaption>
-    </figure>
+    <OptimizedCarousel imgArray={goalRedesign} />
+    <figcaption class="mx-auto max-w-xs">
+      Here is a collection of popups that could stem from a user trying to
+      customize an action card.
+    </figcaption>
   </section><section id="Reflection" class="scroll-mt-20">
     <h2>Reflection</h2>
     <p>

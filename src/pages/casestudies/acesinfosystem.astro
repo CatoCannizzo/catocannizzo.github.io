@@ -16,24 +16,34 @@ const stage2 = [
   {
     src: stage2neg,
     alt: "A TikTok screen with a popup up showing a list of reasons to not trust a tiktok",
+    caption:
+      "If the user selects they do not trust the post in stage 1 they will be asked to select from a list of potential reasons why.",
   },
   {
     src: stage2pos,
     alt: "A TikTok screen with a popup showing a list of reasons to trust a tiktok",
+    caption:
+      "If the user instead selected that they trust the post they would be shown an opposite list of potential reasons.",
   },
 ];
 const stage3 = [
   {
     src: stage3info,
     alt: "A TikTok screen with a popup showing a user instructions for how to complete stage 3",
+    caption:
+      "Only a few users would be asked to complete this stage, as it would take an unequal amount of time compared to the other stages.",
   },
   {
     src: stage3pro,
     alt: "A TikTok screen with a popup showing summarized information from stage 2",
+    caption:
+      "The users would be given an overview of the top reasons for trusting and distrusting the post.",
   },
   {
     src: stage3creation,
     alt: "A TikTok screen with a popup showing a user typing in a write up for stage 3",
+    caption:
+      "Finally the volunteer would be asked to synthesize their opinion into a brief summary.",
   },
 ];
 ---
@@ -232,24 +242,15 @@ const stage3 = [
           asked first to complete stage 1, then to select from a predefined list
           of reasons as to why they trust or distrust the post.
         </li>
-        <figure class="mx-auto flex max-w-xs flex-col">
-          <OptimizedCarousel imgArray={stage2} />
-          <figcaption>
-            Stage 2 collects public opinion in a controlled manner.
-          </figcaption>
-        </figure>
+        <OptimizedCarousel imgArray={stage2} />
+
         <li>
           Stage 3 called “summary declaration” asks a few volunteers to write a
           declaration to help inform other viewers of the post, using the
           information collected in stage 2.
         </li>
-        <figure class="mx-auto flex max-w-xs flex-col">
-          <OptimizedCarousel imgArray={stage3} />
-          <figcaption>
-            Only a few users would have to complete this stage, as it would take
-            an unequal amount of time compared to the other stages.
-          </figcaption>
-        </figure>
+        <OptimizedCarousel imgArray={stage3} />
+
         <li>
           Stage 4 would be “verify declaration” where another large group would
           be asked to pick the most informative summary out of several options.

@@ -13,6 +13,7 @@ type ImageObject = {
   options: object;
   src: string;
   attributes: ImgHTMLAttributes<HTMLImageElement>;
+  caption?: string;
 };
 interface Props {
   imgArrayOpt: ImageObject[];
@@ -20,23 +21,21 @@ interface Props {
 
 const ImageCarousel: React.FC<Props> = ({ imgArrayOpt }) => {
   return (
-    <Carousel className="w-full ">
+    <Carousel className="mx-auto w-full max-w-xs sm:max-w-md lg:max-w-2xl">
       <CarouselContent>
         {imgArrayOpt.map((image, index) => (
           <CarouselItem key={index}>
-            <div>
-              <Card>
-                <CardContent className="flex items-center justify-center p-2">
-                  <img
-                    src={image.src}
-                    decoding={image.attributes.decoding}
-                    loading={image.attributes.loading}
-                    width={image.attributes.width}
-                    alt={image.attributes.alt}
-                  />
-                </CardContent>
-              </Card>
-            </div>
+            <figure className="flex flex-col">
+              <img
+                className="mx-auto"
+                src={image.src}
+                decoding={image.attributes.decoding}
+                loading={image.attributes.loading}
+                width={image.attributes.width}
+                alt={image.attributes.alt}
+              />
+              {image.caption && <figcaption>{image.caption}</figcaption>}
+            </figure>
           </CarouselItem>
         ))}
       </CarouselContent>

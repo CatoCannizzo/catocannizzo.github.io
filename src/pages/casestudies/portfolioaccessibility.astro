@@ -15,22 +15,32 @@ const colorAccessibilityPics = [
   {
     src: NormalColors,
     alt: "Home screen of Cato's portfolio.",
+    caption: "Normal Colors",
+    width: 320,
   },
   {
     src: Protanopia,
     alt: "protanopia view of Cato's portfolio, where all green highlights now look yellow.",
+    caption: "Protanopia",
+    width: 320,
   },
   {
     src: Deuteranopia,
     alt: "dueteranopia view of Cato's portfolio, where once again the green highlights look yellow",
+    caption: "Deuteranopia",
+    width: 320,
   },
   {
     src: Tritanopia,
     alt: "tritanopia view of Cato's portfolio, where yellow now looks pink, and the green and blue look turquoise.",
+    caption: "Tritanopia",
+    width: 320,
   },
   {
     src: Achromatopsia,
     alt: "Home screen of Cato's portfolio in greyscale.",
+    caption: "Achromatopsia",
+    width: 320,
   },
 ];
 ---
@@ -98,26 +108,8 @@ const colorAccessibilityPics = [
       (Achromatopsia) filters. In each image it is important to determine if
       each colored element can still be differentiated for its intended role.
     </p>
-    <figure class="mx-auto flex max-w-xs flex-col sm:max-w-2xl">
-      <OptimizedCarousel imgArray={colorAccessibilityPics} /><figcaption>
-        My color scheme uses a green, yellow, and blue designed to be
-        reminiscent of a <div
-          tabindex="0"
-          class="tooltip group relative inline-block font-medium text-[var(--tw-prose-links)] underline">
-          mountain landscape <span
-            class="tooltipcontent absolute bottom-full left-0 z-50 hidden w-64 after:absolute after:left-0 after:top-full after:ml-5 after:border-8 after:border-solid after:border-transparent after:border-t-card after:bg-transparent group-hover:block group-focus:block"
-            ><div class="h-[194px] w-[256px] rounded bg-card p-2">
-              <Image
-                src={Landscape}
-                class="not-prose rounded-sm"
-                alt="Mountains at sunset"
-                width="240"
-              />
-            </div></span
-          >
-        </div>.
-      </figcaption>
-    </figure>
+    <!-- sm:max-w-2xl -->
+    <OptimizedCarousel imgArray={colorAccessibilityPics} />
 
     <p>
       In Achromatopsia the role of colors gets removed entirely, allowing us to
@@ -263,6 +255,7 @@ function sendUpdate(currentStatus: String) {
 }}`}
       lang="js"
       theme="dark-plus"
+      wrap
     />
 
     <p>
