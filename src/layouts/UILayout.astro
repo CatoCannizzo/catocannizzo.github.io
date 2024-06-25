@@ -14,6 +14,7 @@ const { skipbutton, footbutton, title, upbutton } = Astro.props;
 ---
 
 <Base title={title}>
+  <!-- !? Conditional Rendering -->
   {skipbutton && <SkipButton skipSection={skipbutton} />}
   <div role="status" id="generalAlerts" class="sr-only"></div>
 
