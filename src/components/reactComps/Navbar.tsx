@@ -34,7 +34,7 @@ const components: linkContainer[] = [
           "Developing a hypothetical system to combat misinformation.",
       },
       {
-        title: "Portfolio Creation",
+        title: "Accessibility Design",
         href: "/casestudies/portfolioaccessibility",
         description: "Insight to my design methodology for this website.",
       },
