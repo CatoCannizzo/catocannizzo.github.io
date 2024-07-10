@@ -8,7 +8,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<UI title={title} skipbutton="maincontent" upbutton={true}>
+<UI title={title} skipbutton="maincontent" skipToTopButton={true}>
   <main
     id="maincontent"
     class="prose mx-auto my-5 max-w-prose dark:prose-invert lg:prose-lg prose-figcaption:rounded prose-figcaption:bg-muted prose-figcaption:p-2 prose-figcaption:text-muted-foreground">
