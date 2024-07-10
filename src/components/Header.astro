@@ -5,9 +5,9 @@ import ThemeIcon from "@comps/ThemeIcon.astro";
 import UpButton from "@/components/Buttons/UpButton.astro";
 
 interface Props {
-  upbutton?: boolean;
+  skipToTopButton?: boolean;
 }
-const { upbutton } = Astro.props;
+const { skipToTopButton } = Astro.props;
 ---
 
 <!-- StickyHeader styling is done as a class in global.css-->
@@ -34,10 +34,10 @@ const { upbutton } = Astro.props;
       <Navbar isVert={false} client:visible />
     </div>
     <MobileNav client:visible />
-    <div class="px-2"><ThemeIcon /></div>
+    <ThemeIcon />
   </header>
 </div>
-{upbutton && <UpButton />}
+{skipToTopButton && <UpButton />}
 
 <script>
   //!? Typescript typeguard

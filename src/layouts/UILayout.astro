@@ -3,14 +3,15 @@ import Base from "./baseLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import SkipButton from "@/components/Buttons/SkipButton.astro";
+import type UpButton from "@/components/Buttons/UpButton.astro";
 
 interface Props {
   title: string;
-  footbutton?: boolean;
+  NoFeedback?: boolean;
   skipbutton?: string;
-  upbutton?: boolean;
+  skipToTopButton?: boolean;
 }
-const { skipbutton, footbutton, title, upbutton } = Astro.props;
+const { skipbutton, NoFeedback, title, skipToTopButton } = Astro.props;
 ---
 
 <Base title={title}>
@@ -18,11 +19,11 @@ const { skipbutton, footbutton, title, upbutton } = Astro.props;
   {skipbutton && <SkipButton skipSection={skipbutton} />}
   <div role="status" id="generalAlerts" class="sr-only"></div>
 
-  <Header transition:persist upbutton={upbutton} /><div
+  <Header transition:persist skipToTopButton={skipToTopButton} /><div
     transition:animate="slide"
     class="mx-auto flex w-full flex-col items-center
   px-5">
     <slot />
   </div>
-  <Footer footbutton={footbutton} />
+  <Footer NoFeedback={NoFeedback} />
 </Base>
