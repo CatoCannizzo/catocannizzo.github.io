@@ -40,28 +40,22 @@ const components: linkContainer[] = [
       },
     ],
   },
-  {
-    grouping: "Other Work",
-    list: [
-      // {
-      //   title: "SILI",
-      //   href: "/underconstruction",
-      //   description:
-      //     "Silly Ideas for Loony Issues - I make up problems, then make up solutions.",
-      // },
-      {
-        title: "Product Teardown",
-        href: "/underconstruction",
-        description: "Analyzing the design process for other products.",
-      },
-      {
-        title: "Digital Designs",
-        href: "/underconstruction",
-        description:
-          "Fictitious websites designed to practice web development standards.",
-      },
-    ],
-  },
+  //   {
+  //     grouping: "Other Work",
+  //     list: [
+  //       {
+  //         title: "Product Teardown",
+  //         href: "/underconstruction",
+  //         description: "Analyzing the design process for other products.",
+  //       },
+  //       {
+  //         title: "Digital Designs",
+  //         href: "/underconstruction",
+  //         description:
+  //           "Fictitious websites designed to practice web development standards.",
+  //       },
+  //     ],
+  //   },
 ];
 
 export default function NavMenu({ isVert }: { isVert: boolean }) {
@@ -104,6 +98,11 @@ export default function NavMenu({ isVert }: { isVert: boolean }) {
               ))}
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <a className={navigationMenuTriggerStyle()} href="/contact">
+            Contact
+          </a>
         </NavigationMenuItem>
         {/* <NavigationMenuItem>
           <NavigationMenuTrigger>

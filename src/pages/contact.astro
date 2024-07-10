@@ -1,0 +1,164 @@
+---
+// This page contains css styles outside of tailwind!
+// See <style> below
+import UILayout from "@/layouts/UILayout.astro";
+import { Button } from "@comps/ui/button";
+---
+
+<UILayout title="Contact Me" NoFeedback={true}>
+  <div class="prose flex w-full flex-col items-center dark:prose-invert">
+    <h1 class="mb-0 mt-5">Hello!</h1>
+    <div
+      role="marquee"
+      aria-label="Dynamic prompt: What is your question? What is something I can improve? What is your favorite blank?">
+      <h2 aria-hidden class="mt-0">
+        What's <span class="typed-text"></span>
+        <span class="cursor blink ml-1 inline-block w-1 bg-accent">&nbsp;</span>
+      </h2>
+    </div>
+
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      id="form"
+      class="w-full">
+      <fieldset class="flex w-full flex-col items-center gap-3">
+        <h2 class="mb-0 mt-0">Contact Form</h2>
+        <input
+          type="hidden"
+          name="access_key"
+          value="108c23eb-7cb4-41f9-bcbd-5437566dec4d"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="New Submission from Web3Forms"
+        />
+        <input
+          type="hidden"
+          name="redirect"
+          value="https://web3forms.com/success"
+        />
+        <input type="checkbox" name="botcheck" id="" style="display: none;" />
+        <label for="name">Name</label>
+        <input
+          class="bg-card px-2 md:w-1/2"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="First Last"
+          required
+        />
+        <label for="email">Email Address</label>
+        <input
+          class="bg-card px-2 md:w-1/2"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="name@company.com"
+          required
+        />
+        <label for="message">Your Message</label>
+        <textarea
+          rows="5"
+          name="message"
+          id="message"
+          placeholder="Lorem est nunc, venenatis in, tristique eu."
+          class="bg-card px-2 md:w-full"
+          required></textarea>
+        <Button type="submit" variant="accent"> Send Message </Button>
+      </fieldset>
+    </form>
+
+    <style>
+      .cursor {
+        display: inline-block;
+        width: 3px;
+        margin-left: 4px;
+        background: hsl(var(--accent));
+      }
+
+      .blink {
+        animation: blink 0.8s ease-in-out infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          background: hsl(var(--accent));
+        }
+        40%,
+        50% {
+          background: transparent;
+        }
+      }
+    </style>
+
+    <script>
+      // !!! Add reduced motion turn off, & ability to pause
+      const typedText = document.querySelector(".typed-text");
+      const cursor = document.querySelector(".cursor");
+
+      function isHTMLElement(ele: unknown): ele is HTMLElement {
+        return ele instanceof HTMLElement;
+      }
+      if (!isHTMLElement(typedText)) {
+        throw new Error("The typewriter element was not found");
+      }
+      if (!isHTMLElement(cursor)) {
+        throw new Error("The cursor element was not found");
+      }
+
+      const textArray = [
+        "your question?",
+        "the bug you found?",
+        "your favorite hike?",
+        "your suggestion?",
+        "your job offer? :)",
+        "something I can improve?",
+        "your comment?",
+        "your favorite hike?",
+        "the best feature of my site?",
+        "your concern?",
+        "your thoughts on todays socio-economic climate of the world?",
+      ];
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      const erase = () => {
+        if (charIndex > 0) {
+          cursor.classList.remove("blink");
+          typedText.textContent = textArray[textArrayIndex].slice(
+            0,
+            charIndex - 1,
+          );
+          charIndex--;
+          setTimeout(erase, 50);
+        } else {
+          cursor.classList.add("blink");
+          textArrayIndex++;
+          if (textArrayIndex > textArray.length - 1) {
+            textArrayIndex = 0;
+          }
+          setTimeout(type, 750);
+        }
+      };
+
+      const type = () => {
+        if (charIndex <= textArray[textArrayIndex].length - 1) {
+          cursor.classList.remove("blink");
+          typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, 120);
+        } else {
+          cursor.classList.add("blink");
+          setTimeout(erase, 2250);
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        type();
+      });
+    </script>
+  </div>
+</UILayout>

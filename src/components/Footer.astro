@@ -1,22 +1,29 @@
 ---
-import CopyBtn from "./Buttons/CopyBtn";
 import { buttonVariants } from "@/components/ui/button";
 
-const { nobutton } = Astro.props;
+const { NoFeedback } = Astro.props;
 ---
 
 <!--!!! Add a nav element to this footer, add a background color to this footer, add a copywright to this footer -->
 <footer class="mt-auto flex flex-shrink-0 items-center justify-between">
   <div>
-    <p>Built with <a href="https://astro.build">{Astro.generator}</a></p>
+    <p class="ml-1 max-w-24 text-sm md:max-w-40 md:text-base">
+      Built with <a href="https://astro.build">{Astro.generator}</a>
+    </p>
   </div>
   {
-    !nobutton && (
+    !NoFeedback && (
       <div class="hidden items-center md:flex">
-        <p>Have Feedback? Email me at Cannizzo@uw.edu</p>
-        <div class="mx-2">
-          <CopyBtn client:visible name="email address" text="Cannizzo@uw.edu" />
-        </div>
+        <p>Have Feedback?</p>{" "}
+        <a
+          class={buttonVariants({
+            variant: "ghost",
+            size: "sm",
+            class: "mx-1 focus:bg-primary",
+          })}
+          href={`/contact`}>
+          Email Me!
+        </a>
       </div>
     )
   }
