@@ -32,7 +32,7 @@ const optimizedImages = await Promise.all(
 );
 
 //following lines should append caption to newly created optimized images from Astro GetImage function above
-const optImages = await optimizedImages;
+const optImages = optimizedImages;
 optImages.map(appendCap);
 
 function appendCap(optImages: OptImageObject, index: number) {
