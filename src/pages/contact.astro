@@ -9,11 +9,15 @@ import { Button } from "@comps/ui/button";
   <div class="prose flex w-full flex-col items-center dark:prose-invert">
     <h1 class="mb-0 mt-5">Hello!</h1>
     <div
+      id="typewriter"
       role="marquee"
-      aria-label="Dynamic prompt: What is your question? What is something I can improve? What is your favorite blank?">
+      aria-label="Dynamic prompt: What is your question? What is something I can improve? What is your favorite blank?"
+      tabindex="0">
       <h2 aria-hidden class="mt-0">
         What's <span class="typed-text"></span>
-        <span class="cursor blink ml-1 inline-block w-1 bg-accent">&nbsp;</span>
+        <!-- blink span has <style tags> below -->
+        <span class="cursor blink -ml-1 inline-block w-1 bg-accent">&nbsp;</span
+        >
       </h2>
     </div>
 
@@ -71,13 +75,6 @@ import { Button } from "@comps/ui/button";
     </form>
 
     <style>
-      .cursor {
-        display: inline-block;
-        width: 3px;
-        margin-left: 4px;
-        background: hsl(var(--accent));
-      }
-
       .blink {
         animation: blink 0.8s ease-in-out infinite;
       }
@@ -96,20 +93,14 @@ import { Button } from "@comps/ui/button";
 
     <script>
       // !!! Add reduced motion turn off, & ability to pause
-      const typedText = document.querySelector(".typed-text");
-      const cursor = document.querySelector(".cursor");
+      var typedText: HTMLElement;
+      var cursor: HTMLElement;
 
       function isHTMLElement(ele: unknown): ele is HTMLElement {
         return ele instanceof HTMLElement;
       }
-      if (!isHTMLElement(typedText)) {
-        throw new Error("The typewriter element was not found");
-      }
-      if (!isHTMLElement(cursor)) {
-        throw new Error("The cursor element was not found");
-      }
 
-      const textArray = [
+      const textArray: string[] = [
         "your question?",
         "the bug you found?",
         "your favorite hike?",
@@ -120,27 +111,31 @@ import { Button } from "@comps/ui/button";
         "your favorite hike?",
         "the best feature of my site?",
         "your concern?",
-        "your thoughts on todays socio-economic climate of the world?",
+        "your thoughts on the socio-economic climate of today's world?",
       ];
-      let textArrayIndex = 0;
-      let charIndex = 0;
+      let textArrayIndex: number = 0;
+      let charIndex: number = 0;
+      // !? follow the use of setInterval here to learn to prevent multiple, recusive calls on page load (compared to previouslly used setTimeout)
+      let intervalId: number;
+      let switcher: Function;
 
       const erase = () => {
         if (charIndex > 0) {
-          cursor.classList.remove("blink");
-          typedText.textContent = textArray[textArrayIndex].slice(
+          cursor!.classList.remove("blink");
+          typedText!.textContent = textArray[textArrayIndex].slice(
             0,
             charIndex - 1,
           );
           charIndex--;
-          setTimeout(erase, 50);
         } else {
-          cursor.classList.add("blink");
+          cursor!.classList.add("blink");
           textArrayIndex++;
           if (textArrayIndex > textArray.length - 1) {
             textArrayIndex = 0;
           }
-          setTimeout(type, 750);
+          clearInterval(intervalId);
+          switcher = type;
+          intervalId = setInterval(switcher, 170);
         }
       };
 
@@ -149,15 +144,33 @@ import { Button } from "@comps/ui/button";
           cursor.classList.remove("blink");
           typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
           charIndex++;
-          setTimeout(type, 120);
         } else {
           cursor.classList.add("blink");
-          setTimeout(erase, 2250);
+          clearInterval(intervalId);
+          switcher = erase;
+          intervalId = setInterval(switcher, 85);
         }
       };
 
-      document.addEventListener("DOMContentLoaded", () => {
-        type();
+      document.addEventListener("astro:page-load", () => {
+        typedText = document.querySelector(".typed-text");
+        cursor = document.querySelector(".cursor");
+        charIndex = 0;
+        if (!isHTMLElement(typedText)) {
+          throw new Error("The typewriter span was not found");
+        }
+        if (!isHTMLElement(cursor)) {
+          throw new Error("The cursor element was not found");
+        }
+        if (intervalId !== undefined) {
+          clearInterval(intervalId);
+        }
+        intervalId = setInterval(type, 170);
+        var typewriter = document.querySelector("typewriter");
+        if (!isHTMLElement(typewriter)) {
+          throw new Error("The typewriter div was not found");
+        }
+        typewriter.addEventListener();
       });
     </script>
   </div>
