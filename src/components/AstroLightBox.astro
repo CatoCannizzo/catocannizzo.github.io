@@ -25,7 +25,6 @@ const { image, sizes, description } = Astro.props;
   import GLightbox from "glightbox";
   const glb = GLightbox({ skin: "custom" });
   document.addEventListener("astro:page-load", () => {
-    // This only runs once.
     glb.reload();
   });
 </script>
