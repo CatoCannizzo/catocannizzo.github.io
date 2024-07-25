@@ -141,7 +141,8 @@ const srcList = [
   </div>
 </div>
 
-<script define:vars={{ srcList }}>
+<!-- use of vars here makes this inline and typescript is unused see: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.-->
+<script is:inline define:vars={{ srcList }}>
   document.addEventListener("DOMContentLoaded", () => initImage());
 
   // Re-adds eventlisteners on astro swap
@@ -151,7 +152,6 @@ const srcList = [
 
   //Time out used in change image
   var timeoutHandle = 0;
-
   function initImage() {
     // Prevents image change on mobile
     if (window.matchMedia("(max-width: 767px)").matches) {
