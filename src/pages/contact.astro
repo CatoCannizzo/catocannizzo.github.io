@@ -116,7 +116,8 @@ import { Button } from "@comps/ui/button";
       let textArrayIndex: number = 0;
       let charIndex: number = 0;
       // !? follow the use of setInterval here to learn to prevent multiple, recusive calls on page load (compared to previouslly used setTimeout)
-      let intervalId: ReturnType<typeof setTimeout>;
+      // IntervalId should be type number or ReturnType<typeof setTimeout> but both through errors
+      let intervalId: any;
       let switcher: Function;
 
       const erase = () => {
